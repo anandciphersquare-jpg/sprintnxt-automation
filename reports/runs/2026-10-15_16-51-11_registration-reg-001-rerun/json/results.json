@@ -1,0 +1,1379 @@
+{
+  "schema": 1,
+  "run": {
+    "id": "2026-10-15_16-51-11_registration-reg-001-rerun",
+    "name": "Registration REG-001 rerun",
+    "project": "SprintNXT",
+    "start": "2026-10-15T16:51:11.344+05:30",
+    "end": "2026-10-15T16:51:32.474+05:30",
+    "duration_ms": 21129,
+    "environment": "UAT",
+    "base_url": "https://uat.sprintnxt.in/NexGenV4Front",
+    "build": "local",
+    "executed_by": "Office",
+    "browser": "chromium 145.0.7632.6",
+    "platform": "Windows 10 (AMD64)",
+    "python": "3.13.3",
+    "pytest": "9.0.2",
+    "playwright": "1.58.0",
+    "command": "pytest tests/test_registration.py::test_register_happy_path --headed --report-name Registration REG-001 rerun -p no:cacheprovider",
+    "markexpr": "",
+    "ci": {},
+    "workers": 1,
+    "exit_status": 0,
+    "hostname": "DESKTOP-0EGM1TC",
+    "pdf": true,
+    "generated": "2026-10-15T16:51:32.478+05:30",
+    "dir": "reports/runs/2026-10-15_16-51-11_registration-reg-001-rerun"
+  },
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "executed": 1,
+    "pass_rate": 100.0,
+    "flaky": 0,
+    "retried": 0,
+    "test_time_ms": 20658,
+    "modules": [
+      {
+        "module": "Registration",
+        "total": 1,
+        "duration_ms": 20658,
+        "PASS": 1,
+        "FAIL": 0,
+        "BLOCKED": 0,
+        "SKIPPED": 0
+      }
+    ],
+    "categories": {}
+  },
+  "tests": [
+    {
+      "id": "REG-001",
+      "nodeid": "tests/test_registration.py::test_register_happy_path[chromium]",
+      "title": "Register a new merchant with valid details",
+      "module": "Registration",
+      "feature": "Merchant signup",
+      "types": [
+        "Functional",
+        "Smoke"
+      ],
+      "preconditions": [
+        "Signup page is open",
+        "UAT OTP is fixed to SNXT_OTP (default 123456)"
+      ],
+      "expected": "Email and mobile verify via OTP and the 'Registration Successful' page is shown",
+      "description": "",
+      "file": "tests\\test_registration.py",
+      "line": 24,
+      "markers": [
+        "positive",
+        "registration",
+        "smoke"
+      ],
+      "status": "PASS",
+      "actual": "As expected: Email and mobile verify via OTP and the 'Registration Successful' page is shown",
+      "failure_reason": "",
+      "failure_category": "",
+      "error": "",
+      "test_data": {
+        "person": {
+          "first_name": "Ekiya",
+          "last_name": "Karan",
+          "business_name": "Chander Sule"
+        }
+      },
+      "steps": [
+        {
+          "title": "Open the signup page",
+          "depth": 0,
+          "start_ms": 4896,
+          "duration_ms": 1424,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/sign-up",
+          "depth": 1,
+          "start_ms": 5119,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Register merchant 'qa.auto+1792063278131644@gmail.com' / '9839550417'",
+          "depth": 0,
+          "start_ms": 6322,
+          "duration_ms": 6428,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "first": "Ekiya",
+            "last": "Karan",
+            "business": "Chander Sule",
+            "email": "qa.auto+1792063278131644@gmail.com",
+            "mobile": "9839550417",
+            "password": "k%5ZA6MsCsAf",
+            "confirm": null,
+            "verify_email": true,
+            "verify_mobile": true
+          },
+          "error": ""
+        },
+        {
+          "title": "Enter name 'Ekiya Karan' and business 'Chander Sule'",
+          "depth": 1,
+          "start_ms": 6322,
+          "duration_ms": 597,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "first": "Ekiya",
+            "last": "Karan",
+            "business": "Chander Sule"
+          },
+          "error": ""
+        },
+        {
+          "title": "Enter email 'qa.auto+1792063278131644@gmail.com'",
+          "depth": 1,
+          "start_ms": 6920,
+          "duration_ms": 109,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.auto+1792063278131644@gmail.com"
+          },
+          "error": ""
+        },
+        {
+          "title": "Verify email with OTP",
+          "depth": 1,
+          "start_ms": 7029,
+          "duration_ms": 1694,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "code": null
+          },
+          "error": ""
+        },
+        {
+          "title": "Enter mobile '9839550417'",
+          "depth": 1,
+          "start_ms": 8723,
+          "duration_ms": 97,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "mobile": "9839550417"
+          },
+          "error": ""
+        },
+        {
+          "title": "Verify mobile with OTP",
+          "depth": 1,
+          "start_ms": 8820,
+          "duration_ms": 3212,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "code": null
+          },
+          "error": ""
+        },
+        {
+          "title": "Enter password and confirm password",
+          "depth": 1,
+          "start_ms": 12032,
+          "duration_ms": 571,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "password": "k%5ZA6MsCsAf",
+            "confirm": null
+          },
+          "error": ""
+        },
+        {
+          "title": "Click Sign Up (skipped when the button stays disabled)",
+          "depth": 1,
+          "start_ms": 12603,
+          "duration_ms": 147,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Check for the 'Registration Successful' page",
+          "depth": 0,
+          "start_ms": 12750,
+          "duration_ms": 1415,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "timeout": 15000
+          },
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/info-register-successfully",
+          "depth": 1,
+          "start_ms": 13702,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 79.9,
+          "at_ms": 6414,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/signup/email/send-otp",
+          "status": 200,
+          "duration_ms": 162.6,
+          "at_ms": 7821,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"email\": \"qa.auto+1792063278131644@gmail.com\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"OTP sent to qa.auto+1792063278131644@gmail.com\",\n  \"data\": {\n    \"resend_in\": 30,\n    \"expires_in\": 300,\n    \"sends_left\": 2\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/signup/email/verify-otp",
+          "status": 200,
+          "duration_ms": 1483.7,
+          "at_ms": 10232,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"email\": \"qa.auto+1792063278131644@gmail.com\",\n  \"otp\": \"123456\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Email verified\",\n  \"data\": {\n    \"verified\": true,\n    \"verify_token\": \"ev_735a891bcfc6d4f5d417d9c40c893b71726acbf1fa756db4db4c670d25dadec8\",\n    \"token_expires_in\": 1800\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/signup/mobile/send-otp",
+          "status": 200,
+          "duration_ms": 116.1,
+          "at_ms": 10966,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"mobile\": \"9839550417\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"OTP sent to 9839550417\",\n  \"data\": {\n    \"resend_in\": 30,\n    \"expires_in\": 300,\n    \"sends_left\": 2\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/signup/mobile/verify-otp",
+          "status": 200,
+          "duration_ms": 203.1,
+          "at_ms": 12377,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"mobile\": \"9839550417\",\n  \"otp\": \"123456\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Mobile number verified\",\n  \"data\": {\n    \"verified\": true,\n    \"verify_token\": \"mv_005a4bd0689ca345886342e8dd4f6abe9f6ad3c4dce915d9525bde0c87d2152a\",\n    \"token_expires_in\": 1800\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/register",
+          "status": 200,
+          "duration_ms": 937.1,
+          "at_ms": 13718,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"fullname\": \"Chander Sule\",\n  \"fname\": \"Ekiya\",\n  \"lname\": \"Karan\",\n  \"email\": \"qa.auto+1792063278131644@gmail.com\",\n  \"phone\": \"9839550417\",\n  \"role\": 4,\n  \"password\": \"k%5ZA6MsCsAf\",\n  \"password_confirmation\": \"k%5ZA6MsCsAf\",\n  \"email_verify_token\": \"ev_735a891bcfc6d4f5d417d9c40c893b71726acbf1fa756db4db4c670d25dadec8\",\n  \"mobile_verify_token\": \"mv_005a4bd0689ca345886342e8dd4f6abe9f6ad3c4dce915d9525bde0c87d2152a\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"User registered successfully\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 9816,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   REG-001  tests/test_registration.py::test_register_happy_path[chromium]",
+      "start": "2026-10-15T16:51:11.809+05:30",
+      "end": "2026-10-15T16:51:32.468+05:30",
+      "duration_ms": 20658,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "duration_ms": 20658,
+          "failure_reason": "",
+          "failure_category": ""
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    }
+  ],
+  "history": [
+    {
+      "run_id": "2026-10-15_13-40-41_demo-sequential",
+      "name": "Demo - sequential",
+      "start": "2026-10-15T13:40:41.471+05:30",
+      "duration_ms": 21736,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_13-40-41_demo-sequential/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_13-41-13_demo-parallel",
+      "name": "Demo - parallel",
+      "start": "2026-10-15T13:41:13.351+05:30",
+      "duration_ms": 35688,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_13-41-13_demo-parallel/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_14-23-42_demo-log-order-check",
+      "name": "Demo - log order check",
+      "start": "2026-10-15T14:23:42.217+05:30",
+      "duration_ms": 26069,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_14-23-42_demo-log-order-check/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_15-04-03_full-suite",
+      "name": "Full suite",
+      "start": "2026-10-15T15:04:03.605+05:30",
+      "duration_ms": 1347807,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_15-04-03_full-suite/html/index.html",
+      "total": 81,
+      "passed": 2,
+      "failed": 64,
+      "blocked": 14,
+      "skipped": 1,
+      "pass_rate": 2.5,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-01-08_demo-media-check",
+      "name": "Demo - media check",
+      "start": "2026-10-15T16:01:08.705+05:30",
+      "duration_ms": 34211,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-01-08_demo-media-check/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_16-40-58_registration-headed",
+      "name": "Registration (headed)",
+      "start": "2026-10-15T16:40:58.097+05:30",
+      "duration_ms": 402964,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-40-58_registration-headed/html/index.html",
+      "total": 42,
+      "passed": 41,
+      "failed": 1,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 97.6,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-51-11_registration-reg-001-rerun",
+      "name": "Registration REG-001 rerun",
+      "start": "2026-10-15T16:51:11.344+05:30",
+      "duration_ms": 21129,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-51-11_registration-reg-001-rerun/html/index.html",
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 100.0,
+      "flaky": 0
+    }
+  ],
+  "test_history": {
+    "examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "-",
+      "BLOCKED",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]": [
+      "SKIPPED",
+      "SKIPPED",
+      "SKIPPED",
+      "-",
+      "SKIPPED",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "-",
+      "BLOCKED",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]": [
+      "SKIPPED",
+      "SKIPPED",
+      "SKIPPED",
+      "-",
+      "SKIPPED",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-"
+    ],
+    "tests/test_admin_activation.py::test_admin_login[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_admin_activation.py::test_activate_merchant[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_change_password_valid_roundtrip[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_wrong_current_password[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-length-10-below-min]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_new_confirm_mismatch[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]": [
+      "-",
+      "-",
+      "-",
+      "SKIPPED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_valid_email[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_empty[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]": [
+      "-",
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_valid[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_wrong_password[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_unregistered_email[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_empty[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_register_happy_path[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "FAIL",
+      "PASS"
+    ],
+    "tests/test_registration.py::test_required_fields_block_submit[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-short]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-length-10-below-min]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_password_mismatch[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_wrong_email_otp_does_not_verify[chromium]": [
+      "-",
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_duplicate_email[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR '1'='1]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-<script>alert('xss')</script>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-length-16-above-max]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-long]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-length-16-above-max]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-'; DROP TABLE users;--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-<img src=x onerror=alert('xss')>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-uppercase]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-non-numeric]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-uppercase]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR 1=1--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-<svg/onload=alert('xss')>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-lowercase]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-tld]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-invalid-start-digit]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-lowercase]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-admin'--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-\"><script>alert(1)</script>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-digit]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-double-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-double-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-space]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-digit]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' UNION SELECT NULL--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-javascript:alert('xss')]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-special]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-space-in-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-symbols]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-special]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-1' AND SLEEP(5)--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-far-too-short]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-all-zeros]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-far-too-short]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-\" OR \"\"=\"]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-"
+    ]
+  }
+}

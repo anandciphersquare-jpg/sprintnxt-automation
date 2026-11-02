@@ -1,0 +1,27 @@
+2026-10-15 17:09:15,696 INFO    [reporting] Run 2026-10-15_17-09-15_forgot-password started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-09-15_forgot-password)
+2026-10-15 17:09:16,194 INFO    [reporting] START   FPW-FD211  tests/test_forgot_password.py::test_forgot_valid_email[chromium]
+2026-10-15 17:09:23,973 INFO    [reporting] FINISH  FPW-FD211  BLOCKED  tests/test_forgot_password.py::test_forgot_valid_email[chromium]  7.78s  -> Set SNXT_MERCHANT_EMAIL to a registered merchant for the positive reset test
+2026-10-15 17:09:23,976 INFO    [reporting] START   FPW-7AA29[no-at-or-domain]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]
+2026-10-15 17:09:41,132 INFO    [reporting] FINISH  FPW-7AA29[no-at-or-domain]  PASS  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]  17.15s
+2026-10-15 17:09:41,136 INFO    [reporting] START   FPW-46640  tests/test_forgot_password.py::test_forgot_empty[chromium]
+2026-10-15 17:09:47,554 INFO    [reporting] FINISH  FPW-46640  PASS  tests/test_forgot_password.py::test_forgot_empty[chromium]  6.42s
+2026-10-15 17:09:47,557 INFO    [reporting] START   FPW-0182C  tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]
+2026-10-15 17:09:53,799 INFO    [reporting] FINISH  FPW-0182C  PASS  tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]  6.24s
+2026-10-15 17:09:53,802 INFO    [reporting] START   FPW-7AA29[missing-at]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]
+2026-10-15 17:10:09,918 INFO    [reporting] FINISH  FPW-7AA29[missing-at]  PASS  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]  16.11s
+2026-10-15 17:10:09,922 INFO    [reporting] START   FPW-7AA29[missing-domain]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]
+2026-10-15 17:10:25,534 INFO    [reporting] FINISH  FPW-7AA29[missing-domain]  PASS  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]  15.61s
+2026-10-15 17:10:25,539 INFO    [reporting] START   FPW-7AA29[missing-tld]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]
+2026-10-15 17:10:40,658 INFO    [reporting] FINISH  FPW-7AA29[missing-tld]  PASS  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]  15.12s
+2026-10-15 17:10:40,662 INFO    [reporting] START   FPW-7AA29[double-at]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]
+2026-10-15 17:10:55,978 INFO    [reporting] FINISH  FPW-7AA29[double-at]  PASS  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]  15.31s
+2026-10-15 17:10:55,982 INFO    [reporting] START   FPW-7AA29[space-in-local]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]
+2026-10-15 17:11:16,420 INFO    [reporting] FINISH  FPW-7AA29[space-in-local]  PASS  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]  20.44s
+2026-10-15 17:11:16,425 INFO    [reporting] START   FPW-7AA29[illegal-chars]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]
+2026-10-15 17:11:32,492 INFO    [reporting] FINISH  FPW-7AA29[illegal-chars]  PASS  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]  16.05s
+2026-10-15 17:11:32,527 INFO    [reporting] START   FPW-7AA29[missing-local]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]
+2026-10-15 17:11:47,356 INFO    [reporting] FINISH  FPW-7AA29[missing-local]  PASS  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]  14.83s
+2026-10-15 17:11:47,359 INFO    [reporting] START   FPW-7AA29[empty]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]
+2026-10-15 17:12:03,176 INFO    [reporting] FINISH  FPW-7AA29[empty]  PASS  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]  15.81s
+2026-10-15 17:12:10,345 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_17-07-19_login
+2026-10-15 17:12:10,345 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-09-15_forgot-password\html\index.html

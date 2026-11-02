@@ -1,0 +1,11 @@
+2026-10-16 12:33:53,745 INFO    [reporting] Run 2026-10-16_12-33-53_add-bank-failures started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_12-33-53_add-bank-failures)
+2026-10-16 12:33:53,825 INFO    [reporting] START   BANK-012  tests/test_add_bank.py::test_account_number_letters[chromium]
+2026-10-16 12:34:14,659 INFO    [reporting] FINISH  BANK-012  FAIL  tests/test_add_bank.py::test_account_number_letters[chromium]  20.83s  -> Letters accepted as an account number assert '' + where '' = field_error('Bank Account Number') + where field_error = <pages.add_bank_page.AddBankPage object at
+2026-10-16 12:34:14,663 INFO    [reporting] START   BANK-013  tests/test_add_bank.py::test_organisation_symbols[chromium]
+2026-10-16 12:34:16,345 INFO    [reporting] FINISH  BANK-013  FAIL  tests/test_add_bank.py::test_organisation_symbols[chromium]  1.68s  -> '@@##' accepted as organisation name assert '' + where '' = field_error('Organisation Name') + where field_error = <pages.add_bank_page.AddBankPage object at 0x
+2026-10-16 12:34:16,350 INFO    [reporting] START   BANK-007[Registered Mobile Number]  tests/test_add_bank.py::test_mandatory[chromium-Registered Mobile Number]
+2026-10-16 12:34:18,925 INFO    [reporting] FINISH  BANK-007[Registered Mobile Number]  FAIL  tests/test_add_bank.py::test_mandatory[chromium-Registered Mobile Number]  2.58s  -> Registered Mobile Number: got '' assert 'Field is required' in '' + where '' = field_error('Registered Mobile Number') + where field_error = <pages.add_bank_pag
+2026-10-16 12:34:18,928 INFO    [reporting] START   BANK-009[mobile-letters]  tests/test_add_bank.py::test_invalid_input[chromium-mobile-letters]
+2026-10-16 12:34:21,420 INFO    [reporting] FINISH  BANK-009[mobile-letters]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-mobile-letters]  2.49s
+2026-10-16 12:34:28,910 INFO    [reporting] Deleted old screenshots/videos: 2026-10-16_12-21-18_add-bank-failures
+2026-10-16 12:34:28,910 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_12-33-53_add-bank-failures\html\index.html

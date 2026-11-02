@@ -1,0 +1,13 @@
+2026-10-15 13:41:19,634 INFO    [reporting] Run 2026-10-15_13-41-13_demo-parallel started (worker=gw1, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_13-41-13_demo-parallel)
+2026-10-15 13:41:19,680 INFO    [reporting] START   DEMO-003  examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]
+2026-10-15 13:41:30,165 INFO    [reporting] FINISH  DEMO-003  FAIL  examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]  10.47s  -> Expected a lockout warning, got: 'Invalid email or password' assert 'attempts remaining' in 'invalid email or password' + where 'invalid email or password' = <b
+2026-10-15 13:41:30,172 INFO    [reporting] START   DEMO-004  examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]
+2026-10-15 13:41:36,673 INFO    [reporting] FINISH  DEMO-004  FAIL  examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]  6.49s  -> TimeoutError: Locator.wait_for: Timeout 2500ms exceeded.
+2026-10-15 13:41:36,681 INFO    [reporting] START   DEMO-006  examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]
+2026-10-15 13:41:38,927 INFO    [reporting] FINISH  DEMO-006  BLOCKED  examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]  2.24s  -> Admin URL/credentials not provided (SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS)
+2026-10-15 13:41:38,933 INFO    [reporting] START   DEMO-008  examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]
+2026-10-15 13:41:42,061 INFO    [reporting] FINISH  DEMO-008  BLOCKED  examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]  3.11s  -> ConnectionError: Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED
+2026-10-15 13:41:42,067 INFO    [reporting] START   DEMO-010  examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]
+2026-10-15 13:41:44,571 INFO    [reporting] FINISH  DEMO-010  SKIPPED  examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]  2.50s  -> Expected failure (xfail): BUG-1432: password field accepts 16 characters
+2026-10-15 13:41:44,579 INFO    [reporting] START   DEMO-002[empty]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]
+2026-10-15 13:41:48,259 INFO    [reporting] FINISH  DEMO-002[empty]  PASS  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]  3.68s

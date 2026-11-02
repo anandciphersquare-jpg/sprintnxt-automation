@@ -1,0 +1,5 @@
+2026-10-15 16:51:11,377 INFO    [reporting] Run 2026-10-15_16-51-11_registration-reg-001-rerun started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_16-51-11_registration-reg-001-rerun)
+2026-10-15 16:51:11,809 INFO    [reporting] START   REG-001  tests/test_registration.py::test_register_happy_path[chromium]
+2026-10-15 16:51:32,471 INFO    [reporting] FINISH  REG-001  PASS  tests/test_registration.py::test_register_happy_path[chromium]  20.66s
+2026-10-15 16:51:39,079 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_16-40-58_registration-headed
+2026-10-15 16:51:39,080 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_16-51-11_registration-reg-001-rerun\html\index.html

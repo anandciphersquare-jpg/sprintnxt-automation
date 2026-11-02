@@ -1,0 +1,5 @@
+2026-10-15 17:02:17,778 INFO    [reporting] Run 2026-10-15_17-02-17_e2e started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-02-17_e2e)
+2026-10-15 17:02:18,731 INFO    [reporting] START   E2E-06F59  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]
+2026-10-15 17:02:52,292 INFO    [reporting] FINISH  E2E-06F59  FAIL  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]  33.55s  -> Registration did not reach the success page assert False + where False = is_registration_success() + where is_registration_success = <pages.registration_page.Re
+2026-10-15 17:03:01,223 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_17-01-54_admin
+2026-10-15 17:03:01,223 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-02-17_e2e\html\index.html

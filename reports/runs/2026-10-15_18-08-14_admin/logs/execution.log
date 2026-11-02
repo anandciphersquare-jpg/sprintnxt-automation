@@ -1,0 +1,9 @@
+2026-10-15 18:08:14,738 INFO    [reporting] Run 2026-10-15_18-08-14_admin started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_18-08-14_admin)
+2026-10-15 18:08:15,223 INFO    [reporting] START   ADM-001  tests/test_admin_activation.py::test_admin_login[chromium]
+2026-10-15 18:08:37,436 INFO    [reporting] FINISH  ADM-001  PASS  tests/test_admin_activation.py::test_admin_login[chromium]  22.21s
+2026-10-15 18:08:37,441 INFO    [reporting] START   ADM-002  tests/test_admin_activation.py::test_register_partner_list[chromium]
+2026-10-15 18:08:46,554 INFO    [reporting] FINISH  ADM-002  PASS  tests/test_admin_activation.py::test_register_partner_list[chromium]  9.11s
+2026-10-15 18:08:46,558 INFO    [reporting] START   ADM-003  tests/test_admin_activation.py::test_activate_merchant[chromium]
+2026-10-15 18:08:54,699 INFO    [reporting] FINISH  ADM-003  BLOCKED  tests/test_admin_activation.py::test_activate_merchant[chromium]  8.14s  -> Set SNXT_MERCHANT_EMAIL to the merchant you want to activate (E2E-001 covers a fresh one)
+2026-10-15 18:09:02,023 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_17-12-16_e2e
+2026-10-15 18:09:02,024 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_18-08-14_admin\html\index.html

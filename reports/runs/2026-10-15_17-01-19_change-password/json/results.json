@@ -1,0 +1,2108 @@
+{
+  "schema": 1,
+  "run": {
+    "id": "2026-10-15_17-01-19_change-password",
+    "name": "Change Password",
+    "project": "SprintNXT",
+    "start": "2026-10-15T17:01:19.810+05:30",
+    "end": "2026-10-15T17:01:41.167+05:30",
+    "duration_ms": 21357,
+    "environment": "UAT",
+    "base_url": "https://uat.sprintnxt.in/NexGenV4Front",
+    "build": "local",
+    "executed_by": "Office",
+    "browser": "chromium 145.0.7632.6",
+    "platform": "Windows 10 (AMD64)",
+    "python": "3.13.3",
+    "pytest": "9.0.2",
+    "playwright": "1.58.0",
+    "command": "pytest -m change_password --report-name Change Password --headed -p no:cacheprovider",
+    "markexpr": "change_password",
+    "ci": {},
+    "workers": 1,
+    "exit_status": 0,
+    "hostname": "DESKTOP-0EGM1TC",
+    "pdf": true,
+    "generated": "2026-10-15T17:01:41.171+05:30",
+    "dir": "reports/runs/2026-10-15_17-01-19_change-password"
+  },
+  "summary": {
+    "total": 11,
+    "passed": 0,
+    "failed": 0,
+    "blocked": 11,
+    "skipped": 0,
+    "executed": 11,
+    "pass_rate": 0.0,
+    "flaky": 0,
+    "retried": 0,
+    "test_time_ms": 20588,
+    "modules": [
+      {
+        "module": "Change Password",
+        "total": 11,
+        "duration_ms": 20588,
+        "PASS": 0,
+        "FAIL": 0,
+        "BLOCKED": 11,
+        "SKIPPED": 0
+      }
+    ],
+    "categories": {
+      "Precondition Not Met": 11
+    }
+  },
+  "tests": [
+    {
+      "id": "CPW-F1F80",
+      "nodeid": "tests/test_change_password.py::test_change_password_valid_roundtrip[chromium]",
+      "title": "Change to a new password, then change back so seeded creds stay valid",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Functional"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "Change to a new password, then change back so seeded creds stay valid.",
+      "file": "tests\\test_change_password.py",
+      "line": 14,
+      "markers": [
+        "change_password",
+        "positive"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {},
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-f1f80_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-f1f80_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-F1F80  tests/test_change_password.py::test_change_password_valid_roundtrip[chromium]",
+      "start": "2026-10-15T17:01:20.447+05:30",
+      "end": "2026-10-15T17:01:27.192+05:30",
+      "duration_ms": 6744,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 6744,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-8E7F5",
+      "nodeid": "tests/test_change_password.py::test_wrong_current_password[chromium]",
+      "title": "Wrong current password",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 26,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {},
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-8e7f5_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-8e7f5_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-8E7F5  tests/test_change_password.py::test_wrong_current_password[chromium]",
+      "start": "2026-10-15T17:01:27.207+05:30",
+      "end": "2026-10-15T17:01:28.549+05:30",
+      "duration_ms": 1341,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1341,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-5EF02[length-10-below-min]",
+      "nodeid": "tests/test_change_password.py::test_invalid_new_password[chromium-length-10-below-min]",
+      "title": "Invalid new password [length-10-below-min]",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 32,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {
+        "pw": "Ab@1234567",
+        "reason": "length-10-below-min"
+      },
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-5ef02-length-10-below-min_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-5ef02-length-10-below-min_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-5EF02[length-10-below-min]  tests/test_change_password.py::test_invalid_new_password[chromium-length-10-below-min]",
+      "start": "2026-10-15T17:01:28.559+05:30",
+      "end": "2026-10-15T17:01:29.839+05:30",
+      "duration_ms": 1280,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1280,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-33BAC",
+      "nodeid": "tests/test_change_password.py::test_new_confirm_mismatch[chromium]",
+      "title": "New confirm mismatch",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 39,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {},
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-33bac_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-33bac_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-33BAC  tests/test_change_password.py::test_new_confirm_mismatch[chromium]",
+      "start": "2026-10-15T17:01:29.850+05:30",
+      "end": "2026-10-15T17:01:31.177+05:30",
+      "duration_ms": 1327,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1327,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-5EF02[length-16-above-max]",
+      "nodeid": "tests/test_change_password.py::test_invalid_new_password[chromium-length-16-above-max]",
+      "title": "Invalid new password [length-16-above-max]",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 32,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {
+        "pw": "Ab@1234567890123",
+        "reason": "length-16-above-max"
+      },
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-5ef02-length-16-above-max_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-5ef02-length-16-above-max_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-5EF02[length-16-above-max]  tests/test_change_password.py::test_invalid_new_password[chromium-length-16-above-max]",
+      "start": "2026-10-15T17:01:31.188+05:30",
+      "end": "2026-10-15T17:01:32.513+05:30",
+      "duration_ms": 1325,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1325,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-5EF02[no-uppercase]",
+      "nodeid": "tests/test_change_password.py::test_invalid_new_password[chromium-no-uppercase]",
+      "title": "Invalid new password [no-uppercase]",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 32,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {
+        "pw": "ab@123456789",
+        "reason": "no-uppercase"
+      },
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-5ef02-no-uppercase_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-5ef02-no-uppercase_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-5EF02[no-uppercase]  tests/test_change_password.py::test_invalid_new_password[chromium-no-uppercase]",
+      "start": "2026-10-15T17:01:32.526+05:30",
+      "end": "2026-10-15T17:01:33.783+05:30",
+      "duration_ms": 1257,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1257,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-5EF02[no-lowercase]",
+      "nodeid": "tests/test_change_password.py::test_invalid_new_password[chromium-no-lowercase]",
+      "title": "Invalid new password [no-lowercase]",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 32,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {
+        "pw": "AB@123456789",
+        "reason": "no-lowercase"
+      },
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-5ef02-no-lowercase_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-5ef02-no-lowercase_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-5EF02[no-lowercase]  tests/test_change_password.py::test_invalid_new_password[chromium-no-lowercase]",
+      "start": "2026-10-15T17:01:33.794+05:30",
+      "end": "2026-10-15T17:01:35.165+05:30",
+      "duration_ms": 1371,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1371,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-5EF02[no-digit]",
+      "nodeid": "tests/test_change_password.py::test_invalid_new_password[chromium-no-digit]",
+      "title": "Invalid new password [no-digit]",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 32,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {
+        "pw": "Abcd@efghijk",
+        "reason": "no-digit"
+      },
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-5ef02-no-digit_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-5ef02-no-digit_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-5EF02[no-digit]  tests/test_change_password.py::test_invalid_new_password[chromium-no-digit]",
+      "start": "2026-10-15T17:01:35.179+05:30",
+      "end": "2026-10-15T17:01:36.553+05:30",
+      "duration_ms": 1373,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1373,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-5EF02[no-special]",
+      "nodeid": "tests/test_change_password.py::test_invalid_new_password[chromium-no-special]",
+      "title": "Invalid new password [no-special]",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 32,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {
+        "pw": "Abcd12345678",
+        "reason": "no-special"
+      },
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-5ef02-no-special_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-5ef02-no-special_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-5EF02[no-special]  tests/test_change_password.py::test_invalid_new_password[chromium-no-special]",
+      "start": "2026-10-15T17:01:36.563+05:30",
+      "end": "2026-10-15T17:01:37.952+05:30",
+      "duration_ms": 1389,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1389,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-5EF02[far-too-short]",
+      "nodeid": "tests/test_change_password.py::test_invalid_new_password[chromium-far-too-short]",
+      "title": "Invalid new password [far-too-short]",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 32,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {
+        "pw": "Ab@1",
+        "reason": "far-too-short"
+      },
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-5ef02-far-too-short_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-5ef02-far-too-short_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-5EF02[far-too-short]  tests/test_change_password.py::test_invalid_new_password[chromium-far-too-short]",
+      "start": "2026-10-15T17:01:37.963+05:30",
+      "end": "2026-10-15T17:01:39.268+05:30",
+      "duration_ms": 1304,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1304,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "CPW-5EF02[empty]",
+      "nodeid": "tests/test_change_password.py::test_invalid_new_password[chromium-empty]",
+      "title": "Invalid new password [empty]",
+      "module": "Change Password",
+      "feature": "Change password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Seeded merchant is logged in (SNXT_MERCHANT_EMAIL / SNXT_MERCHANT_PASS)",
+        "Merchant is logged in and the Change Password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_change_password.py",
+      "line": 32,
+      "markers": [
+        "change_password",
+        "negative"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {
+        "pw": "",
+        "reason": "empty"
+      },
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/cpw-5ef02-empty_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/cpw-5ef02-empty_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   CPW-5EF02[empty]  tests/test_change_password.py::test_invalid_new_password[chromium-empty]",
+      "start": "2026-10-15T17:01:39.278+05:30",
+      "end": "2026-10-15T17:01:41.155+05:30",
+      "duration_ms": 1877,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 1877,
+          "failure_reason": "Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    }
+  ],
+  "history": [
+    {
+      "run_id": "2026-10-15_13-40-41_demo-sequential",
+      "name": "Demo - sequential",
+      "start": "2026-10-15T13:40:41.471+05:30",
+      "duration_ms": 21736,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_13-40-41_demo-sequential/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_13-41-13_demo-parallel",
+      "name": "Demo - parallel",
+      "start": "2026-10-15T13:41:13.351+05:30",
+      "duration_ms": 35688,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_13-41-13_demo-parallel/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_14-23-42_demo-log-order-check",
+      "name": "Demo - log order check",
+      "start": "2026-10-15T14:23:42.217+05:30",
+      "duration_ms": 26069,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_14-23-42_demo-log-order-check/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_15-04-03_full-suite",
+      "name": "Full suite",
+      "start": "2026-10-15T15:04:03.605+05:30",
+      "duration_ms": 1347807,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_15-04-03_full-suite/html/index.html",
+      "total": 81,
+      "passed": 2,
+      "failed": 64,
+      "blocked": 14,
+      "skipped": 1,
+      "pass_rate": 2.5,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-01-08_demo-media-check",
+      "name": "Demo - media check",
+      "start": "2026-10-15T16:01:08.705+05:30",
+      "duration_ms": 34211,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-01-08_demo-media-check/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_16-40-58_registration-headed",
+      "name": "Registration (headed)",
+      "start": "2026-10-15T16:40:58.097+05:30",
+      "duration_ms": 402964,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-40-58_registration-headed/html/index.html",
+      "total": 42,
+      "passed": 41,
+      "failed": 1,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 97.6,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-51-11_registration-reg-001-rerun",
+      "name": "Registration REG-001 rerun",
+      "start": "2026-10-15T16:51:11.344+05:30",
+      "duration_ms": 21129,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-51-11_registration-reg-001-rerun/html/index.html",
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 100.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-52-16_login",
+      "name": "Login",
+      "start": "2026-10-15T16:52:16.301+05:30",
+      "duration_ms": 270293,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-52-16_login/html/index.html",
+      "total": 13,
+      "passed": 0,
+      "failed": 12,
+      "blocked": 1,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-57-09_forgot-password",
+      "name": "Forgot Password",
+      "start": "2026-10-15T16:57:09.803+05:30",
+      "duration_ms": 227823,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-57-09_forgot-password/html/index.html",
+      "total": 12,
+      "passed": 1,
+      "failed": 11,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 8.3,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_17-01-19_change-password",
+      "name": "Change Password",
+      "start": "2026-10-15T17:01:19.810+05:30",
+      "duration_ms": 21357,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_17-01-19_change-password/html/index.html",
+      "total": 11,
+      "passed": 0,
+      "failed": 0,
+      "blocked": 11,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    }
+  ],
+  "test_history": {
+    "examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]": [
+      "SKIPPED",
+      "SKIPPED",
+      "SKIPPED",
+      "-",
+      "SKIPPED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]": [
+      "SKIPPED",
+      "SKIPPED",
+      "SKIPPED",
+      "-",
+      "SKIPPED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_admin_activation.py::test_admin_login[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_admin_activation.py::test_activate_merchant[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_change_password_valid_roundtrip[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_change_password.py::test_wrong_current_password[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-length-10-below-min]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_change_password.py::test_new_confirm_mismatch[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]": [
+      "-",
+      "-",
+      "-",
+      "SKIPPED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_valid_email[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_empty[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]": [
+      "-",
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "PASS",
+      "-"
+    ],
+    "tests/test_login.py::test_login_valid[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_wrong_password[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_unregistered_email[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_empty[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_register_happy_path[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "FAIL",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_required_fields_block_submit[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-short]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-length-10-below-min]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_password_mismatch[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_wrong_email_otp_does_not_verify[chromium]": [
+      "-",
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_duplicate_email[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR '1'='1]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-<script>alert('xss')</script>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-length-16-above-max]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-long]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-length-16-above-max]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-'; DROP TABLE users;--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-<img src=x onerror=alert('xss')>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-uppercase]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-non-numeric]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-uppercase]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR 1=1--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-<svg/onload=alert('xss')>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-lowercase]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-tld]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-invalid-start-digit]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-lowercase]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-admin'--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-\"><script>alert(1)</script>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-digit]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-double-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-double-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-space]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-digit]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' UNION SELECT NULL--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-javascript:alert('xss')]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-special]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-space-in-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-symbols]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-special]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-1' AND SLEEP(5)--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-far-too-short]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-all-zeros]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-far-too-short]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-\" OR \"\"=\"]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ]
+  }
+}

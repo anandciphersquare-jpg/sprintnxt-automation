@@ -1,0 +1,94 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+E2E-001,Register -> admin activates -> merchant logs in,End-to-End,Merchant onboarding,"End-to-End, Functional","Signup and admin portals reachable
+UAT OTP is 123456
+Admin credentials in .env","merchant email = qa.auto+1792068449010429@gmail.com
+merchant mobile = 6192256814
+activation remarks = Activated by QA automation","1. Open the signup page
+2. Register merchant 'qa.auto+1792068449010429@gmail.com' / '6192256814'
+3.   Enter name 'Max Sathe' and business 'Pillay PLC'
+4.   Enter email 'qa.auto+1792068449010429@gmail.com'
+5.   Verify email with OTP
+6.   Enter mobile '6192256814'
+7.   Verify mobile with OTP
+8.   Enter password and confirm password
+9.   Click Sign Up (skipped when the button stays disabled)
+10. Check for the 'Registration Successful' page
+11. Open the admin login
+12. Log in to the admin panel
+13. Open Register Partner
+14. Search partner 'qa.auto+1792068449010429@gmail.com'
+15. Activate partner 'qa.auto+1792068449010429@gmail.com' with remarks 'Activated by QA automation' [FAILED]","Merchant registers, admin activates it from Register Partner with remarks, and the merchant then logs in to the dashboard",Not as expected: TimeoutError: Locator.wait_for: Timeout 20000ms exceeded.,FAIL,TimeoutError: Locator.wait_for: Timeout 20000ms exceeded.,Element Not Found / Not Actionable,"page = <Page url='https://uat.sprintnxt.in/NexGenV4Front/#/auth/info-register-successfully'>
+browser = <Browser type=<BrowserType name=chromium executable_path=C:\Users\Office\AppData\Local\ms-playwright\chromium-1208\chrome-win64\chrome.exe> version=145.0.7632.6>
+browser_context_args = {'geolocation': {'latitude': 28.6139, 'longitude': 77.209}, 'ignore_https_errors': True, 'permissions': ['geolocation'], 'record_video_dir': 'C:\\Users\\Office\\AppData\\Local\\Temp\\playwright-pytest-p9o01x99', ...}
+config = <config.Config object at 0x0000022CC8D5E210>
+
+    @pytest.mark.positive
+    @tc(""E2E-001"", ""Register -> admin activates -> merchant logs in"", feature=""Merchant onboarding"",
+        types=[""End-to-End"", ""Functional""],
+        preconditions=[""Signup and admin portals reachable"", ""UAT OTP is 123456"", ""Admin credentials in .env""],
+        expected=""Merchant registers, admin activates it from Register Partner with remarks, ""
+                 ""and the merchant then logs in to the dashboard"")
+    def test_full_merchant_journey(page, browser, browser_context_args, config):
+        person = valid_person()
+        email, mobile, password = unique_email(), valid_mobile(), valid_password()
+        report.data(""merchant email"", email)
+        report.data(""merchant mobile"", mobile)
+        report.data(""activation remarks"", ACTIVATION_REMARKS)
+    
+        # 1) Merchant registers (merchant window)
+        reg = RegistrationPage(page, config).open()
+        reg.register(person[""first_name""], person[""last_name""], person[""business_name""],
+                     email, mobile, password)
+        assert reg.is_registration_success(), ""Registration did not reach the success page""
+        report.screenshot(""Merchant: registration successful"", page)
+    
+        # 2) Admin activates the new partner in a second window (opened now; merchant window stays open)
+        with open_admin_window(browser, browser_context_args, config) as admin_page:
+            admin = AdminPage(admin_page, config).open_login().login()
+            admin.open_register_partner().search_partner(email)
+            assert admin.partner_status(email).lower() == ""inactive"", ""New partner should start Inactive""
+>           admin.activate_partner(email, ACTIVATION_REMARKS)
+
+tests\test_e2e_merchant_journey.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\admin_page.py:112: in activate_partner
+    result.locator("".swal2-icon-success, .swal2-icon-error"").first.wait_for(timeout=20000)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:18074: in wait_for
+    self._sync(self._impl_obj.wait_for(timeout=timeout, state=state))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:710: in wait_for
+    await self._frame.wait_for_selector(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:369: in wait_for_selector
+    await self._channel.send(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x0000022CC8D06660>
+cb = <function Channel.send.<locals>.<lambda> at 0x0000022CC97C04A0>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 20000ms exceeded.
+E           Call log:
+E             - waiting for locator("".swal2-popup.swal2-show"").locator("".swal2-icon-success, .swal2-icon-error"").first to be visible
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError","screenshots/181742_E2E-001_a1_1.png
+screenshots/181816_E2E-001_a1_2.png",videos/e2e-001_a1_2.webm,traces/e2e-001_a1_1.zip,2026-10-15T18:17:19.929+05:30,2026-10-15T18:18:32.009+05:30,72.08,chromium 145.0.7632.6,UAT,Office,local,20,1,0,0,False,tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]

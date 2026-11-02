@@ -1,0 +1,33 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+E2E-001,Register -> admin activates -> merchant logs in,End-to-End,Merchant onboarding,"End-to-End, Functional","Signup and admin portals reachable
+UAT OTP is 123456
+Admin credentials in .env","merchant email = qa.auto+1792068835260190@gmail.com
+merchant mobile = 8829314130
+activation remarks = Activated by QA automation","1. Open the signup page
+2. Register merchant 'qa.auto+1792068835260190@gmail.com' / '8829314130'
+3.   Enter name 'Timothy Barad' and business 'Chauhan LLC'
+4.   Enter email 'qa.auto+1792068835260190@gmail.com'
+5.   Verify email with OTP
+6.   Enter mobile '8829314130'
+7.   Verify mobile with OTP
+8.   Enter password and confirm password
+9.   Click Sign Up (skipped when the button stays disabled)
+10. Check for the 'Registration Successful' page
+11. Open the admin login
+12. Log in to the admin panel
+13. Open Register Partner
+14. Search partner 'qa.auto+1792068835260190@gmail.com'
+15. Activate partner 'qa.auto+1792068835260190@gmail.com' with remarks 'Activated by QA automation'
+16. Wait for partner 'qa.auto+1792068835260190@gmail.com' to show Active
+17. Open the login page
+18. Log in as 'qa.auto+1792068835260190@gmail.com'
+19.   Click Sign In (skipped when the button stays disabled)
+20. Finish login (OTP / Proceed if asked)
+21. Create a new password on first login
+22. Open the login page
+23. Log in as 'qa.auto+1792068835260190@gmail.com'
+24.   Click Sign In (skipped when the button stays disabled)
+25. Finish login (OTP / Proceed if asked)","Merchant registers, admin activates it from Register Partner with remarks, and the merchant then logs in to the dashboard","As expected: Merchant registers, admin activates it from Register Partner with remarks, and the merchant then logs in to the dashboard",PASS,,,,"screenshots/182409_E2E-001_a1_1.png
+screenshots/182426_E2E-001_a1_2.png
+screenshots/182432_E2E-001_a1_3.png
+screenshots/182443_E2E-001_a1_4.png",,,2026-10-15T18:23:46.189+05:30,2026-10-15T18:25:02.411+05:30,76.22,chromium 145.0.7632.6,UAT,Office,local,27,1,0,0,False,tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]

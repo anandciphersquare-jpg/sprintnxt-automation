@@ -1,0 +1,268 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+REG-001,Register a new merchant with valid details,Registration,Merchant signup,"Functional, Smoke","Signup page is open
+UAT OTP is fixed to SNXT_OTP (default 123456)","person = {'first_name': 'Garima', 'last_name': 'Chokshi', 'business_name': 'Dada Ramachandran'}","1. Open the signup page
+2. Register merchant 'qa.auto+1792062675496193@gmail.com' / '9992454762'
+3.   Enter name 'Garima Chokshi' and business 'Dada Ramachandran'
+4.   Enter email 'qa.auto+1792062675496193@gmail.com'
+5.   Verify email with OTP
+6.   Enter mobile '9992454762'
+7.   Verify mobile with OTP
+8.   Enter password and confirm password
+9.   Click Sign Up (skipped when the button is disabled)
+10. Check for the 'Registration Successful' page",Email and mobile verify via OTP and the 'Registration Successful' page is shown,Not as expected: Expected the 'Registration Successful' page assert False + where False = is_registration_success() + where is_registration_success = <pages.registration_page.RegistrationPage object at 0x00000175A8245FD0>.is_registration_success,FAIL,Expected the 'Registration Successful' page assert False + where False = is_registration_success() + where is_registration_success = <pages.registration_page.RegistrationPage object at 0x00000175A8245FD0>.is_registration_success,Assertion Failure,"reg = <pages.registration_page.RegistrationPage object at 0x00000175A8245FD0>
+
+    @pytest.mark.positive
+    @pytest.mark.smoke
+    @tc(""REG-001"", ""Register a new merchant with valid details"", feature=""Merchant signup"",
+        types=[""Functional"", ""Smoke""], preconditions=[SIGNUP_OPEN, UAT_OTP],
+        expected=""Email and mobile verify via OTP and the 'Registration Successful' page is shown"")
+    def test_register_happy_path(reg):
+        p = valid_person()
+        report.data(""person"", p)
+        reg.register(p[""first_name""], p[""last_name""], p[""business_name""],
+                     unique_email(), valid_mobile(), valid_password())
+>       assert reg.is_registration_success(), ""Expected the 'Registration Successful' page""
+E       AssertionError: Expected the 'Registration Successful' page
+E       assert False
+E        +  where False = is_registration_success()
+E        +    where is_registration_success = <pages.registration_page.RegistrationPage object at 0x00000175A8245FD0>.is_registration_success
+
+tests\test_registration.py:34: AssertionError",screenshots/164137_REG-001_a1_1.png,videos/reg-001_a1_2.webm,traces/reg-001_a1_1.zip,2026-10-15T16:40:58.609+05:30,2026-10-15T16:41:41.506+05:30,42.9,chromium 145.0.7632.6,UAT,Office,local,5,1,0,0,False,tests/test_registration.py::test_register_happy_path[chromium]
+REG-002,Empty form cannot be submitted,Registration,Form validation,"Negative, Validation",Signup page is open,,"1. Open the signup page
+2. Click Sign Up (skipped when the button is disabled)
+3. Check for the 'Registration Successful' page",Sign Up is disabled (or required-field errors are shown) and nothing is submitted,As expected: Sign Up is disabled (or required-field errors are shown) and nothing is submitted,PASS,,,,,,,2026-10-15T16:41:41.521+05:30,2026-10-15T16:41:53.607+05:30,12.09,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_required_fields_block_submit[chromium]
+REG-003[no-at-or-domain],Invalid email format is rejected [no-at-or-domain],Registration,Email validation,"Negative, Validation, Boundary",Signup page is open,"email = plainaddress
+reason = no-at-or-domain","1. Open the signup page
+2. Enter name 'Andrew Mistry' and business 'Mutti Bhat and Ramakrishnan'
+3. Enter email 'plainaddress'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Email is not verified and registration does not complete,As expected: Email is not verified and registration does not complete,PASS,,,,,,,2026-10-15T16:41:53.614+05:30,2026-10-15T16:42:04.518+05:30,10.9,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_email_rejected[chromium-no-at-or-domain]
+REG-004[too-short],Invalid mobile number is rejected [too-short],Registration,Mobile validation,"Negative, Validation, Boundary",Signup page is open,"mobile = 12345
+reason = too-short","1. Open the signup page
+2. Enter name 'Wishi Sura' and business 'Dave Badami'
+3. Enter mobile '12345'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Registration does not complete,As expected: Registration does not complete,PASS,,,,,,,2026-10-15T16:42:04.525+05:30,2026-10-15T16:42:16.588+05:30,12.06,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-short]
+REG-005[length-10-below-min],Password violating the policy is rejected [length-10-below-min],Registration,Password policy,"Negative, Validation, Boundary",Signup page is open,"pw = Ab@1234567
+reason = length-10-below-min","1. Open the signup page
+2. Enter name 'Unnati Baral' and business 'Joshi Shere and Garg'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page","Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)","As expected: Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)",PASS,,,,,,,2026-10-15T16:42:16.595+05:30,2026-10-15T16:42:26.192+05:30,9.6,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_password_rejected[chromium-length-10-below-min]
+REG-006,Password and confirm password must match,Registration,Password policy,"Negative, Validation",Signup page is open,,"1. Open the signup page
+2. Enter name 'Indali Sheth' and business 'Narang Bir and Apte'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",A mismatch error is shown and registration does not complete,As expected: A mismatch error is shown and registration does not complete,PASS,,,,,,,2026-10-15T16:42:26.200+05:30,2026-10-15T16:42:34.997+05:30,8.8,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_password_mismatch[chromium]
+REG-007,Wrong email OTP does not verify the email,Registration,Email OTP,"Negative, Security","Signup page is open
+UAT OTP is fixed to SNXT_OTP (default 123456)",,"1. Open the signup page
+2. Enter name 'Widisha Lalla' and business 'Dasgupta Inc'
+3. Enter email 'qa.auto+1792062757646353@gmail.com'
+4. Verify email with OTP",Email stays unverified after entering 000000,As expected: Email stays unverified after entering 000000,PASS,,,,,,,2026-10-15T16:42:35.004+05:30,2026-10-15T16:42:47.109+05:30,12.11,chromium 145.0.7632.6,UAT,Office,local,3,2,1,0,False,tests/test_registration.py::test_wrong_email_otp_does_not_verify[chromium]
+REG-008,Already-registered email cannot register again,Registration,Duplicate detection,"Negative, Functional","Signup page is open
+UAT OTP is fixed to SNXT_OTP (default 123456)",email = qa.auto+1792062769279572@gmail.com,"1. Open the signup page
+2. Register merchant 'qa.auto+1792062769279572@gmail.com' / '6293241222'
+3.   Enter name 'Dalbir Chakrabarti' and business 'Ben Barad and Iyer'
+4.   Enter email 'qa.auto+1792062769279572@gmail.com'
+5.   Verify email with OTP
+6.   Enter mobile '6293241222'
+7.   Verify mobile with OTP
+8.   Enter password and confirm password
+9.   Click Sign Up (skipped when the button is disabled)
+10. Check for the 'Registration Successful' page
+11. Open the signup page
+12. Enter name 'Dalbir Chakrabarti' and business 'Ben Barad and Iyer'
+13. Enter email 'qa.auto+1792062769279572@gmail.com'
+14. Click Sign Up (skipped when the button is disabled)",Second registration with the same email is blocked,As expected: Second registration with the same email is blocked,PASS,,,,,,,2026-10-15T16:42:47.115+05:30,2026-10-15T16:43:05.733+05:30,18.62,chromium 145.0.7632.6,UAT,Office,local,6,1,0,0,False,tests/test_registration.py::test_duplicate_email[chromium]
+REG-D66B9[' OR '1'='1],Sqli in name fields [' OR '1'='1],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = ' OR '1'='1,"1. Open the signup page
+2. Enter name '' OR '1'='1 ' OR '1'='1' and business '' OR '1'='1'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:43:05.741+05:30,2026-10-15T16:43:11.366+05:30,5.62,chromium 145.0.7632.6,UAT,Office,local,1,0,0,0,False,tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR '1'='1]
+REG-F0CE1[<script>alert('xss')</script>],Xss in name fields [<script>alert('xss')</script>],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = <script>alert('xss')</script>,"1. Open the signup page
+2. Enter name '<script>alert('xss')</script> QA' and business 'QA Corp'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:43:11.371+05:30,2026-10-15T16:43:17.013+05:30,5.64,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration_security.py::test_xss_in_name_fields[chromium-<script>alert('xss')</script>]
+REG-003[missing-at],Invalid email format is rejected [missing-at],Registration,Email validation,"Negative, Validation, Boundary",Signup page is open,"email = missingatsign.com
+reason = missing-at","1. Open the signup page
+2. Enter name 'Yashica Gulati' and business 'Mallick Kamdar'
+3. Enter email 'missingatsign.com'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Email is not verified and registration does not complete,As expected: Email is not verified and registration does not complete,PASS,,,,,,,2026-10-15T16:43:17.018+05:30,2026-10-15T16:43:25.340+05:30,8.32,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_email_rejected[chromium-missing-at]
+REG-004[too-long],Invalid mobile number is rejected [too-long],Registration,Mobile validation,"Negative, Validation, Boundary",Signup page is open,"mobile = 12345678901234
+reason = too-long","1. Open the signup page
+2. Enter name 'Jyoti Borah' and business 'Nadkarni Group'
+3. Enter mobile '12345678901234'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Registration does not complete,As expected: Registration does not complete,PASS,,,,,,,2026-10-15T16:43:25.347+05:30,2026-10-15T16:43:32.461+05:30,7.11,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-long]
+REG-005[length-16-above-max],Password violating the policy is rejected [length-16-above-max],Registration,Password policy,"Negative, Validation, Boundary",Signup page is open,"pw = Ab@1234567890123
+reason = length-16-above-max","1. Open the signup page
+2. Enter name 'Yashoda Narain' and business 'Kanda LLC'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page","Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)","As expected: Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)",PASS,,,,,,,2026-10-15T16:43:32.466+05:30,2026-10-15T16:43:43.939+05:30,11.47,chromium 145.0.7632.6,UAT,Office,local,1,2,1,0,False,tests/test_registration.py::test_invalid_password_rejected[chromium-length-16-above-max]
+REG-D66B9['; DROP TABLE users;--],Sqli in name fields ['; DROP TABLE users;--],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = '; DROP TABLE users;--,"1. Open the signup page
+2. Enter name ''; DROP TABLE users;-- '; DROP TABLE users;--' and business ''; DROP TABLE users;--'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:43:43.946+05:30,2026-10-15T16:43:48.460+05:30,4.51,chromium 145.0.7632.6,UAT,Office,local,1,0,0,0,False,tests/test_registration_security.py::test_sqli_in_name_fields[chromium-'; DROP TABLE users;--]
+REG-F0CE1[<img src=x onerror=alert('xss')>],Xss in name fields [<img src=x onerror=alert('xss')>],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = <img src=x onerror=alert('xss')>,"1. Open the signup page
+2. Enter name '<img src=x onerror=alert('xss')> QA' and business 'QA Corp'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:43:48.464+05:30,2026-10-15T16:43:53.247+05:30,4.78,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration_security.py::test_xss_in_name_fields[chromium-<img src=x onerror=alert('xss')>]
+REG-003[missing-domain],Invalid email format is rejected [missing-domain],Registration,Email validation,"Negative, Validation, Boundary",Signup page is open,"email = user@
+reason = missing-domain","1. Open the signup page
+2. Enter name 'Banjeet Thaman' and business 'Bhatt Ltd'
+3. Enter email 'user@'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Email is not verified and registration does not complete,As expected: Email is not verified and registration does not complete,PASS,,,,,,,2026-10-15T16:43:53.253+05:30,2026-10-15T16:44:02.648+05:30,9.39,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_email_rejected[chromium-missing-domain]
+REG-004[non-numeric],Invalid mobile number is rejected [non-numeric],Registration,Mobile validation,"Negative, Validation, Boundary",Signup page is open,"mobile = 98765abcde
+reason = non-numeric","1. Open the signup page
+2. Enter name 'Frado Nanda' and business 'Buch and Sons'
+3. Enter mobile '98765abcde'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Registration does not complete,As expected: Registration does not complete,PASS,,,,,,,2026-10-15T16:44:02.655+05:30,2026-10-15T16:44:10.240+05:30,7.58,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_mobile_rejected[chromium-non-numeric]
+REG-005[no-uppercase],Password violating the policy is rejected [no-uppercase],Registration,Password policy,"Negative, Validation, Boundary",Signup page is open,"pw = ab@123456789
+reason = no-uppercase","1. Open the signup page
+2. Enter name 'Oscar Goel' and business 'Boase Kala'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page","Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)","As expected: Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)",PASS,,,,,,,2026-10-15T16:44:10.246+05:30,2026-10-15T16:44:18.899+05:30,8.65,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_password_rejected[chromium-no-uppercase]
+REG-D66B9[' OR 1=1--],Sqli in name fields [' OR 1=1--],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = ' OR 1=1--,"1. Open the signup page
+2. Enter name '' OR 1=1-- ' OR 1=1--' and business '' OR 1=1--'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:44:18.904+05:30,2026-10-15T16:44:22.396+05:30,3.49,chromium 145.0.7632.6,UAT,Office,local,1,0,0,0,False,tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR 1=1--]
+REG-F0CE1[<svg/onload=alert('xss')>],Xss in name fields [<svg/onload=alert('xss')>],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = <svg/onload=alert('xss')>,"1. Open the signup page
+2. Enter name '<svg/onload=alert('xss')> QA' and business 'QA Corp'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:44:22.401+05:30,2026-10-15T16:44:30.849+05:30,8.45,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration_security.py::test_xss_in_name_fields[chromium-<svg/onload=alert('xss')>]
+REG-003[missing-tld],Invalid email format is rejected [missing-tld],Registration,Email validation,"Negative, Validation, Boundary",Signup page is open,"email = user@domain
+reason = missing-tld","1. Open the signup page
+2. Enter name 'Gautam Nagar' and business 'Cheema Kari and Sibal'
+3. Enter email 'user@domain'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Email is not verified and registration does not complete,As expected: Email is not verified and registration does not complete,PASS,,,,,,,2026-10-15T16:44:30.854+05:30,2026-10-15T16:44:38.638+05:30,7.78,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_email_rejected[chromium-missing-tld]
+REG-004[invalid-start-digit],Invalid mobile number is rejected [invalid-start-digit],Registration,Mobile validation,"Negative, Validation, Boundary",Signup page is open,"mobile = 0123456789
+reason = invalid-start-digit","1. Open the signup page
+2. Enter name 'Wahab Krishna' and business 'Mistry Sandhu and Wadhwa'
+3. Enter mobile '0123456789'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Registration does not complete,As expected: Registration does not complete,PASS,,,,,,,2026-10-15T16:44:38.645+05:30,2026-10-15T16:44:46.662+05:30,8.02,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_mobile_rejected[chromium-invalid-start-digit]
+REG-005[no-lowercase],Password violating the policy is rejected [no-lowercase],Registration,Password policy,"Negative, Validation, Boundary",Signup page is open,"pw = AB@123456789
+reason = no-lowercase","1. Open the signup page
+2. Enter name 'Manthan Anand' and business 'Buch Deshmukh and Divan'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page","Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)","As expected: Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)",PASS,,,,,,,2026-10-15T16:44:46.668+05:30,2026-10-15T16:44:54.925+05:30,8.26,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_password_rejected[chromium-no-lowercase]
+REG-D66B9[admin'--],Sqli in name fields [admin'--],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = admin'--,"1. Open the signup page
+2. Enter name 'admin'-- admin'--' and business 'admin'--'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:44:54.930+05:30,2026-10-15T16:44:59.544+05:30,4.61,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration_security.py::test_sqli_in_name_fields[chromium-admin'--]
+"REG-F0CE1[""><script>alert(1)</script>]","Xss in name fields [""><script>alert(1)</script>]",Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open","payload = ""><script>alert(1)</script>","1. Open the signup page
+2. Enter name '""><script>alert(1)</script> QA' and business 'QA Corp'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:44:59.550+05:30,2026-10-15T16:45:09.371+05:30,9.82,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,"tests/test_registration_security.py::test_xss_in_name_fields[chromium-""><script>alert(1)</script>]"
+REG-003[double-at],Invalid email format is rejected [double-at],Registration,Email validation,"Negative, Validation, Boundary",Signup page is open,"email = user@@domain.com
+reason = double-at","1. Open the signup page
+2. Enter name 'Krishna Chad' and business 'Sharaf Sant and Mangat'
+3. Enter email 'user@@domain.com'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Email is not verified and registration does not complete,As expected: Email is not verified and registration does not complete,PASS,,,,,,,2026-10-15T16:45:09.377+05:30,2026-10-15T16:45:17.772+05:30,8.39,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_email_rejected[chromium-double-at]
+REG-004[contains-space],Invalid mobile number is rejected [contains-space],Registration,Mobile validation,"Negative, Validation, Boundary",Signup page is open,"mobile = 98765 43210
+reason = contains-space","1. Open the signup page
+2. Enter name 'Faqid Bandi' and business 'Mital and Sons'
+3. Enter mobile '98765 43210'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Registration does not complete,As expected: Registration does not complete,PASS,,,,,,,2026-10-15T16:45:17.777+05:30,2026-10-15T16:45:26.307+05:30,8.53,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-space]
+REG-005[no-digit],Password violating the policy is rejected [no-digit],Registration,Password policy,"Negative, Validation, Boundary",Signup page is open,"pw = Abcd@efghijk
+reason = no-digit","1. Open the signup page
+2. Enter name 'Samar Bedi' and business 'Shroff Kannan'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page","Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)","As expected: Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)",PASS,,,,,,,2026-10-15T16:45:26.315+05:30,2026-10-15T16:45:37.049+05:30,10.73,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_password_rejected[chromium-no-digit]
+REG-D66B9[' UNION SELECT NULL--],Sqli in name fields [' UNION SELECT NULL--],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = ' UNION SELECT NULL--,"1. Open the signup page
+2. Enter name '' UNION SELECT NULL-- ' UNION SELECT NULL--' and business '' UNION SELECT NULL--'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:45:37.057+05:30,2026-10-15T16:45:43.161+05:30,6.1,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' UNION SELECT NULL--]
+REG-F0CE1[javascript:alert('xss')],Xss in name fields [javascript:alert('xss')],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = javascript:alert('xss'),"1. Open the signup page
+2. Enter name 'javascript:alert('xss') QA' and business 'QA Corp'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:45:43.166+05:30,2026-10-15T16:45:49.852+05:30,6.68,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration_security.py::test_xss_in_name_fields[chromium-javascript:alert('xss')]
+REG-003[space-in-local],Invalid email format is rejected [space-in-local],Registration,Email validation,"Negative, Validation, Boundary",Signup page is open,"email = user name@domain.com
+reason = space-in-local","1. Open the signup page
+2. Enter name 'Yashawini Mohan' and business 'D Alia Keer and Sheth'
+3. Enter email 'user name@domain.com'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Email is not verified and registration does not complete,As expected: Email is not verified and registration does not complete,PASS,,,,,,,2026-10-15T16:45:49.858+05:30,2026-10-15T16:46:00.491+05:30,10.63,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_email_rejected[chromium-space-in-local]
+REG-004[contains-symbols],Invalid mobile number is rejected [contains-symbols],Registration,Mobile validation,"Negative, Validation, Boundary",Signup page is open,"mobile = +91-9876543210
+reason = contains-symbols","1. Open the signup page
+2. Enter name 'Barkha Chatterjee' and business 'Sharma and Sons'
+3. Enter mobile '+91-9876543210'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Registration does not complete,As expected: Registration does not complete,PASS,,,,,,,2026-10-15T16:46:00.496+05:30,2026-10-15T16:46:11.076+05:30,10.58,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-symbols]
+REG-005[no-special],Password violating the policy is rejected [no-special],Registration,Password policy,"Negative, Validation, Boundary",Signup page is open,"pw = Abcd12345678
+reason = no-special","1. Open the signup page
+2. Enter name 'Watika Jani' and business 'Mahal Chaudhari and Patla'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page","Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)","As expected: Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)",PASS,,,,,,,2026-10-15T16:46:11.082+05:30,2026-10-15T16:46:20.408+05:30,9.32,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_password_rejected[chromium-no-special]
+REG-D66B9[1' AND SLEEP(5)--],Sqli in name fields [1' AND SLEEP(5)--],Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open",payload = 1' AND SLEEP(5)--,"1. Open the signup page
+2. Enter name '1' AND SLEEP(5)-- 1' AND SLEEP(5)--' and business '1' AND SLEEP(5)--'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:46:20.413+05:30,2026-10-15T16:46:26.008+05:30,5.59,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration_security.py::test_sqli_in_name_fields[chromium-1' AND SLEEP(5)--]
+REG-003[illegal-chars],Invalid email format is rejected [illegal-chars],Registration,Email validation,"Negative, Validation, Boundary",Signup page is open,"email = user!#@domain.com
+reason = illegal-chars","1. Open the signup page
+2. Enter name 'Kamya Merchant' and business 'Mittal Nagar'
+3. Enter email 'user!#@domain.com'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Email is not verified and registration does not complete,As expected: Email is not verified and registration does not complete,PASS,,,,,,,2026-10-15T16:46:26.015+05:30,2026-10-15T16:46:34.506+05:30,8.49,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_email_rejected[chromium-illegal-chars]
+REG-004[all-zeros],Invalid mobile number is rejected [all-zeros],Registration,Mobile validation,"Negative, Validation, Boundary",Signup page is open,"mobile = 0000000000
+reason = all-zeros","1. Open the signup page
+2. Enter name 'Nathan Dalal' and business 'Goda Viswanathan and Dutta'
+3. Enter mobile '0000000000'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Registration does not complete,As expected: Registration does not complete,PASS,,,,,,,2026-10-15T16:46:34.513+05:30,2026-10-15T16:46:45.708+05:30,11.2,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_mobile_rejected[chromium-all-zeros]
+REG-005[far-too-short],Password violating the policy is rejected [far-too-short],Registration,Password policy,"Negative, Validation, Boundary",Signup page is open,"pw = Ab@1
+reason = far-too-short","1. Open the signup page
+2. Enter name 'Amrita Chaudhari' and business 'Desai Ltd'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page","Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)","As expected: Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)",PASS,,,,,,,2026-10-15T16:46:45.717+05:30,2026-10-15T16:46:54.060+05:30,8.34,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_password_rejected[chromium-far-too-short]
+"REG-D66B9["" OR """"=""]","Sqli in name fields ["" OR """"=""]",Registration,Registration security,Security,"Browser launched with a fresh context (geolocation granted)
+Signup page is open","payload = "" OR """"=""","1. Open the signup page
+2. Enter name '"" OR """"="" "" OR """"=""' and business '"" OR """"=""'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T16:46:54.065+05:30,2026-10-15T16:46:57.798+05:30,3.73,chromium 145.0.7632.6,UAT,Office,local,1,0,0,0,False,"tests/test_registration_security.py::test_sqli_in_name_fields[chromium-"" OR """"=""]"
+REG-003[missing-local],Invalid email format is rejected [missing-local],Registration,Email validation,"Negative, Validation, Boundary",Signup page is open,"email = @nouser.com
+reason = missing-local","1. Open the signup page
+2. Enter name 'Oviya Lal' and business 'Sharaf LLC'
+3. Enter email '@nouser.com'
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Email is not verified and registration does not complete,As expected: Email is not verified and registration does not complete,PASS,,,,,,,2026-10-15T16:46:57.801+05:30,2026-10-15T16:47:08.717+05:30,10.91,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_email_rejected[chromium-missing-local]
+REG-004[empty],Invalid mobile number is rejected [empty],Registration,Mobile validation,"Negative, Validation, Boundary",Signup page is open,"mobile = 
+reason = empty","1. Open the signup page
+2. Enter name 'Aarini More' and business 'Nagarajan Ramaswamy'
+3. Enter mobile ''
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Registration does not complete,As expected: Registration does not complete,PASS,,,,,,,2026-10-15T16:47:08.725+05:30,2026-10-15T16:47:18.596+05:30,9.87,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_mobile_rejected[chromium-empty]
+REG-005[empty],Password violating the policy is rejected [empty],Registration,Password policy,"Negative, Validation, Boundary",Signup page is open,"pw = 
+reason = empty","1. Open the signup page
+2. Enter name 'Jagvi Pandey' and business 'Comar Ltd'
+3. Enter password and confirm password
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page","Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)","As expected: Registration does not complete (policy: 12-15 chars, upper, lower, digit, special)",PASS,,,,,,,2026-10-15T16:47:18.602+05:30,2026-10-15T16:47:28.424+05:30,9.82,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_password_rejected[chromium-empty]
+REG-003[empty],Invalid email format is rejected [empty],Registration,Email validation,"Negative, Validation, Boundary",Signup page is open,"email = 
+reason = empty","1. Open the signup page
+2. Enter name 'Suhani Shanker' and business 'Luthra Sheth'
+3. Enter email ''
+4. Click Sign Up (skipped when the button is disabled)
+5. Check for the 'Registration Successful' page",Email is not verified and registration does not complete,As expected: Email is not verified and registration does not complete,PASS,,,,,,,2026-10-15T16:47:28.431+05:30,2026-10-15T16:47:41.055+05:30,12.62,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_registration.py::test_invalid_email_rejected[chromium-empty]

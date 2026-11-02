@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="generator" content="SprintNXT reporting (pytest + Playwright)">
+<title>{{TITLE}}</title>
+<style>/*{{CSS}}*/</style>
+</head>
+<body>
+<div id="app" class="app" aria-busy="true">
+  <noscript><p style="padding:24px">This report needs JavaScript. Raw data: ../json/results.json</p></noscript>
+</div>
+<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Screenshot preview" hidden>
+  <div class="modal-bar">
+    <span id="modal-caption" class="modal-caption"></span>
+    <span class="modal-actions">
+      <a id="modal-open" class="btn btn-ghost" target="_blank" rel="noopener">Open original</a>
+      <button type="button" class="btn btn-ghost" data-modal="prev" aria-label="Previous image">←</button>
+      <button type="button" class="btn btn-ghost" data-modal="next" aria-label="Next image">→</button>
+      <button type="button" class="btn btn-ghost" data-modal="close" aria-label="Close preview">✕</button>
+    </span>
+  </div>
+  <div class="modal-stage" data-modal="close"><img id="modal-img" alt=""></div>
+</div>
+<script type="application/json" id="report-data">{{DATA}}</script>
+<script>/*{{JS}}*/</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+REG-001,Register a new merchant with valid details,Registration,Merchant signup,"Functional, Smoke","Signup page is open
+UAT OTP is fixed to SNXT_OTP (default 123456)","person = {'first_name': 'Ekiya', 'last_name': 'Karan', 'business_name': 'Chander Sule'}","1. Open the signup page
+2. Register merchant 'qa.auto+1792063278131644@gmail.com' / '9839550417'
+3.   Enter name 'Ekiya Karan' and business 'Chander Sule'
+4.   Enter email 'qa.auto+1792063278131644@gmail.com'
+5.   Verify email with OTP
+6.   Enter mobile '9839550417'
+7.   Verify mobile with OTP
+8.   Enter password and confirm password
+9.   Click Sign Up (skipped when the button stays disabled)
+10. Check for the 'Registration Successful' page",Email and mobile verify via OTP and the 'Registration Successful' page is shown,As expected: Email and mobile verify via OTP and the 'Registration Successful' page is shown,PASS,,,,,,,2026-10-15T16:51:11.809+05:30,2026-10-15T16:51:32.468+05:30,20.66,chromium 145.0.7632.6,UAT,Office,local,6,1,0,0,False,tests/test_registration.py::test_register_happy_path[chromium]

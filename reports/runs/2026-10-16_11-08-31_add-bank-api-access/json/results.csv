@@ -1,0 +1,319 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+BANK-001,Working banks are listed,Add Bank,Select bank,"Functional, Smoke",Activated merchant is logged in,,"1. Open the login page
+2. Log in as 'qa.auto+1792068835260190@gmail.com'
+3.   Click Sign In (skipped when the button stays disabled)
+4. Finish login (OTP / Proceed if asked)
+5. Open Add Bank",IDFC First Bank and HDFC Bank are listed,As expected: IDFC First Bank and HDFC Bank are listed,PASS,,,,,,,2026-10-16T11:08:31.637+05:30,2026-10-16T11:08:49.752+05:30,18.11,chromium 145.0.7632.6,UAT,Office,local,2,0,0,0,False,tests/test_add_bank.py::test_working_banks_listed[chromium]
+BANK-002,Bank search filters the list,Add Bank,Select bank,Functional,Activated merchant is logged in,,"1. Open Add Bank
+2. Search bank 'HDFC'",Searching 'HDFC' shows HDFC Bank and hides IDFC,As expected: Searching 'HDFC' shows HDFC Bank and hides IDFC,PASS,,,,,,,2026-10-16T11:08:49.759+05:30,2026-10-16T11:08:51.200+05:30,1.44,chromium 145.0.7632.6,UAT,Office,local,1,0,0,0,False,tests/test_add_bank.py::test_bank_search[chromium]
+BANK-003,Service types are offered,Add Bank,Choose services,Functional,Activated merchant is logged in,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'","Payout, UPI Collection, VID Collection, All Services","Not as expected: assert [] == ['Payout', 'U...All Services'] Right contains 4 more items, first extra item: 'Payout' Use -v to get more diff",FAIL,"assert [] == ['Payout', 'U...All Services'] Right contains 4 more items, first extra item: 'Payout' Use -v to get more diff",Assertion Failure,"bank = <pages.add_bank_page.AddBankPage object at 0x00000176F8FA1D10>
+
+    @tc(""BANK-003"", ""Service types are offered"", module=MODULE, feature=""Choose services"",
+        types=[""Functional""], preconditions=[LOGGED_IN], expected=""Payout, UPI Collection, VID Collection, All Services"")
+    def test_service_cards(bank):
+        bank.select_bank(IDFC)
+>       assert bank.service_cards() == SERVICE_CARDS
+E       AssertionError: assert [] == ['Payout', 'U...All Services']
+E         
+E         Right contains 4 more items, first extra item: 'Payout'
+E         Use -v to get more diff
+
+tests\test_add_bank.py:82: AssertionError",screenshots/110852_BANK-003_a1_1.png,,,2026-10-16T11:08:51.206+05:30,2026-10-16T11:08:52.734+05:30,1.53,chromium 145.0.7632.6,UAT,Office,local,2,0,0,0,False,tests/test_add_bank.py::test_service_cards[chromium]
+BANK-004,Continue needs at least one service,Add Bank,Choose services,"Negative, Validation",Activated merchant is logged in,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'",Continue stays disabled,As expected: Continue stays disabled,PASS,,,,,,,2026-10-16T11:08:52.737+05:30,2026-10-16T11:08:53.273+05:30,0.54,chromium 145.0.7632.6,UAT,Office,local,1,0,0,0,False,tests/test_add_bank.py::test_continue_disabled_without_service[chromium]
+BANK-005,HDFC: Payout can be chosen,Add Bank,Choose services,Functional,"Activated merchant is logged in
+On UAT only Payout works for HDFC",,"1. Open Add Bank
+2. Select bank 'HDFC Bank'
+3. Choose services {services}
+4. Continue to Fill Details",Selecting Payout enables Continue and opens Fill Details,As expected: Selecting Payout enables Continue and opens Fill Details,PASS,,,,,,,2026-10-16T11:08:53.298+05:30,2026-10-16T11:08:54.737+05:30,1.44,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_hdfc_payout[chromium]
+BANK-006,Profile details are prefilled,Add Bank,Fill details,Functional,Add Bank > IDFC First Bank > Payout > Fill Details is open,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details","Organisation name, registered mobile and email come from the merchant profile","As expected: Organisation name, registered mobile and email come from the merchant profile",PASS,,,,,,,2026-10-16T11:08:54.766+05:30,2026-10-16T11:08:56.338+05:30,1.57,chromium 145.0.7632.6,UAT,Office,local,2,0,0,0,False,tests/test_add_bank.py::test_prefilled[chromium]
+BANK-007[Organisation Name],Mandatory field cannot be empty [Organisation Name],Add Bank,Mandatory fields,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,label = Organisation Name,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Clear 'Organisation Name'
+6. Click Submit",'Field is required' under the field,As expected: 'Field is required' under the field,PASS,,,,,,,2026-10-16T11:08:56.359+05:30,2026-10-16T11:08:58.011+05:30,1.65,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_mandatory[chromium-Organisation Name]
+BANK-008,GST number is optional,Add Bank,Mandatory fields,Validation,Add Bank > IDFC First Bank > Payout > Fill Details is open,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Clear 'GST Number'
+6. Click Submit",No error under GST Number when it is empty,As expected: No error under GST Number when it is empty,PASS,,,,,,,2026-10-16T11:08:58.027+05:30,2026-10-16T11:09:00.158+05:30,2.13,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_gst_optional[chromium]
+BANK-009[org-blank-space],Invalid value shows its error [org-blank-space],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Organisation Name
+value =  
+message = Min 3 characters is required","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:09:00.187+05:30,2026-10-16T11:09:02.868+05:30,2.68,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-org-blank-space]
+BANK-010[acc-max-18],Field length limit and upper-casing [acc-max-18],Add Bank,Field validation,"Validation, Boundary",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Bank Account Number
+typed = 1234567890123456789012
+kept = 123456789012345678","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}",Field keeps the trimmed / upper-cased value,As expected: Field keeps the trimmed / upper-cased value,PASS,,,,,,,2026-10-16T11:09:02.899+05:30,2026-10-16T11:09:05.489+05:30,2.59,chromium 145.0.7632.6,UAT,Office,local,2,0,0,0,False,tests/test_add_bank.py::test_input_transform[chromium-acc-max-18]
+BANK-011,GST number must contain the PAN,Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",Correct PAN number should exist in your GST number.,Not as expected: assert 'Correct PAN number should exist in your GST number.' in '' + where '' = field_error('GST Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F90057C0>.field_error,FAIL,assert 'Correct PAN number should exist in your GST number.' in '' + where '' = field_error('GST Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F90057C0>.field_error,Assertion Failure,"form = <pages.add_bank_page.AddBankPage object at 0x00000176F90057C0>
+
+    @pytest.mark.negative
+    @tc(""BANK-011"", ""GST number must contain the PAN"", module=MODULE, feature=""Field validation"",
+        types=[""Negative"", ""Validation""], preconditions=[ON_FORM], expected=GST_PAN_MISMATCH)
+    def test_gst_must_contain_pan(form):
+        form.fill_details({""PAN Number"": valid_pan(), ""GST Number"": gst_for(valid_pan())}).submit()
+>       assert GST_PAN_MISMATCH in form.field_error(""GST Number"")
+E       AssertionError: assert 'Correct PAN number should exist in your GST number.' in ''
+E        +  where '' = field_error('GST Number')
+E        +    where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F90057C0>.field_error
+
+tests\test_add_bank.py:155: AssertionError",screenshots/110907_BANK-011_a1_1.png,,,2026-10-16T11:09:05.570+05:30,2026-10-16T11:09:08.138+05:30,2.57,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_gst_must_contain_pan[chromium]
+BANK-012,Account number rejects letters,Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",An error under Bank Account Number (UAT 2026-10-16: 'abcdefghij' was accepted),Not as expected: Letters accepted as an account number assert '' + where '' = field_error('Bank Account Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F9134410>.field_error,FAIL,Letters accepted as an account number assert '' + where '' = field_error('Bank Account Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F9134410>.field_error,Assertion Failure,"form = <pages.add_bank_page.AddBankPage object at 0x00000176F9134410>
+
+    @pytest.mark.negative
+    @tc(""BANK-012"", ""Account number rejects letters"", module=MODULE, feature=""Field validation"",
+        types=[""Negative"", ""Validation""], preconditions=[ON_FORM],
+        expected=""An error under Bank Account Number (UAT 2026-10-16: 'abcdefghij' was accepted)"")
+    def test_account_number_letters(form):
+        form.fill_details({""Bank Account Number"": ""abcdefghij""}).submit()
+>       assert form.field_error(""Bank Account Number""), ""Letters accepted as an account number""
+E       AssertionError: Letters accepted as an account number
+E       assert ''
+E        +  where '' = field_error('Bank Account Number')
+E        +    where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F9134410>.field_error
+
+tests\test_add_bank.py:164: AssertionError",screenshots/110911_BANK-012_a1_1.png,,,2026-10-16T11:09:08.142+05:30,2026-10-16T11:09:11.730+05:30,3.59,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_account_number_letters[chromium]
+BANK-013,Organisation name rejects symbols only,Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",An error under Organisation Name (UAT 2026-10-16: '@@##' was accepted),Not as expected: '@@##' accepted as organisation name assert '' + where '' = field_error('Organisation Name') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F9196190>.field_error,FAIL,'@@##' accepted as organisation name assert '' + where '' = field_error('Organisation Name') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F9196190>.field_error,Assertion Failure,"form = <pages.add_bank_page.AddBankPage object at 0x00000176F9196190>
+
+    @pytest.mark.negative
+    @tc(""BANK-013"", ""Organisation name rejects symbols only"", module=MODULE, feature=""Field validation"",
+        types=[""Negative"", ""Validation""], preconditions=[ON_FORM],
+        expected=""An error under Organisation Name (UAT 2026-10-16: '@@##' was accepted)"")
+    def test_organisation_symbols(form):
+        form.fill_details({""Organisation Name"": ""@@##""}).submit()
+>       assert form.field_error(""Organisation Name""), ""'@@##' accepted as organisation name""
+E       AssertionError: '@@##' accepted as organisation name
+E       assert ''
+E        +  where '' = field_error('Organisation Name')
+E        +    where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F9196190>.field_error
+
+tests\test_add_bank.py:173: AssertionError",screenshots/110913_BANK-013_a1_1.png,,,2026-10-16T11:09:11.735+05:30,2026-10-16T11:09:13.640+05:30,1.91,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_organisation_symbols[chromium]
+BANK-014,Reset clears the form,Add Bank,Fill details,Functional,Add Bank > IDFC First Bank > Payout > Fill Details is open,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Reset",Every field is empty after Reset,As expected: Every field is empty after Reset,PASS,,,,,,,2026-10-16T11:09:13.648+05:30,2026-10-16T11:09:17.764+05:30,4.12,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_reset[chromium]
+BANK-015,Back returns to service selection,Add Bank,Fill details,Functional,Add Bank > IDFC First Bank > Payout > Fill Details is open,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details",Choose Service Types is shown again,As expected: Choose Service Types is shown again,PASS,,,,,,,2026-10-16T11:09:17.785+05:30,2026-10-16T11:09:19.473+05:30,1.69,chromium 145.0.7632.6,UAT,Office,local,2,0,0,0,False,tests/test_add_bank.py::test_back[chromium]
+API-001,API Access Control opens from Profile & Settings,API Access,API keys,Functional,Activated merchant is logged in,,"1. Open the login page
+2. Log in as 'qa.auto+1792068835260190@gmail.com'
+3.   Click Sign In (skipped when the button stays disabled)
+4. Finish login (OTP / Proceed if asked)
+5. Open Profile & Settings > API Access Control","API Credentials, Authorized IPs and the webhook / 2FA tabs are shown","As expected: API Credentials, Authorized IPs and the webhook / 2FA tabs are shown",PASS,,,,,,,2026-10-16T11:09:19.478+05:30,2026-10-16T11:09:36.784+05:30,17.3,chromium 145.0.7632.6,UAT,Office,local,8,1,0,0,False,tests/test_api_access.py::test_api_access_tabs[chromium]
+API-002,Merchant has an active API key,API Access,API keys,"Functional, Smoke","Activated merchant is logged in
+API key OTP is 1234 on UAT",,"1. Open the login page
+2. Log in as 'qa.auto+1792068835260190@gmail.com'
+3.   Click Sign In (skipped when the button stays disabled)
+4. Finish login (OTP / Proceed if asked)",An Active key is listed (generated with the OTP if there was none),Not executed (blocked): Merchant qa.auto+1792068835260190@gmail.com could not reach the dashboard (url: https://uat.sprintnxt.in/NexGenV4Front/#/auth/login),BLOCKED,Merchant qa.auto+1792068835260190@gmail.com could not reach the dashboard (url: https://uat.sprintnxt.in/NexGenV4Front/#/auth/login),Precondition Not Met,,,videos/api-002_a1_2.webm,traces/api-002_a1_1.zip,2026-10-16T11:09:36.790+05:30,2026-10-16T11:10:34.541+05:30,57.75,chromium 145.0.7632.6,UAT,Office,local,2,1,0,0,False,tests/test_api_access.py::test_api_key_active[chromium]
+BANK-007[Bank Account Number],Mandatory field cannot be empty [Bank Account Number],Add Bank,Mandatory fields,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,label = Bank Account Number,"1. Open the login page
+2. Log in as 'qa.auto+1792068835260190@gmail.com'
+3.   Click Sign In (skipped when the button stays disabled)
+4. Finish login (OTP / Proceed if asked)
+5. Open Add Bank
+6. Select bank 'IDFC First Bank'
+7. Choose services {services}
+8. Continue to Fill Details
+9. Clear 'Bank Account Number'
+10. Click Submit",'Field is required' under the field,As expected: 'Field is required' under the field,PASS,,,,,,,2026-10-16T11:10:34.566+05:30,2026-10-16T11:10:48.495+05:30,13.93,chromium 145.0.7632.6,UAT,Office,local,5,0,0,0,False,tests/test_add_bank.py::test_mandatory[chromium-Bank Account Number]
+BANK-009[acc-too-short],Invalid value shows its error [acc-too-short],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Bank Account Number
+value = 123
+message = Min 9 characters is required","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:10:48.520+05:30,2026-10-16T11:10:50.522+05:30,2.0,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-acc-too-short]
+BANK-010[ifsc-uppercased],Field length limit and upper-casing [ifsc-uppercased],Add Bank,Field validation,"Validation, Boundary",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = IFSC Code
+typed = idfb0040101
+kept = IDFB0040101","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}",Field keeps the trimmed / upper-cased value,As expected: Field keeps the trimmed / upper-cased value,PASS,,,,,,,2026-10-16T11:10:50.552+05:30,2026-10-16T11:10:52.870+05:30,2.32,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_input_transform[chromium-ifsc-uppercased]
+BANK-007[Confirm Account No],Mandatory field cannot be empty [Confirm Account No],Add Bank,Mandatory fields,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,label = Confirm Account No,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Clear 'Confirm Account No'
+6. Click Submit",'Field is required' under the field,As expected: 'Field is required' under the field,PASS,,,,,,,2026-10-16T11:10:52.880+05:30,2026-10-16T11:10:55.189+05:30,2.31,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_mandatory[chromium-Confirm Account No]
+BANK-009[confirm-acc-mismatch],Invalid value shows its error [confirm-acc-mismatch],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Confirm Account No
+value = 999999999
+message = Confirm Account No does not match.","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Fill bank details {data}
+7. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:10:55.199+05:30,2026-10-16T11:10:58.488+05:30,3.29,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-confirm-acc-mismatch]
+BANK-010[pan-uppercased],Field length limit and upper-casing [pan-uppercased],Add Bank,Field validation,"Validation, Boundary",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = PAN Number
+typed = abcpe1234f
+kept = ABCPE1234F","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}",Field keeps the trimmed / upper-cased value,As expected: Field keeps the trimmed / upper-cased value,PASS,,,,,,,2026-10-16T11:10:58.503+05:30,2026-10-16T11:11:00.251+05:30,1.75,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_input_transform[chromium-pan-uppercased]
+BANK-007[IFSC Code],Mandatory field cannot be empty [IFSC Code],Add Bank,Mandatory fields,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,label = IFSC Code,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Clear 'IFSC Code'
+6. Click Submit",'Field is required' under the field,As expected: 'Field is required' under the field,PASS,,,,,,,2026-10-16T11:11:00.256+05:30,2026-10-16T11:11:02.309+05:30,2.05,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_mandatory[chromium-IFSC Code]
+BANK-009[ifsc-too-short],Invalid value shows its error [ifsc-too-short],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = IFSC Code
+value = IDFB1234
+message = Min 11 characters is required","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:02.337+05:30,2026-10-16T11:11:04.951+05:30,2.61,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-ifsc-too-short]
+BANK-010[mobile-max-10],Field length limit and upper-casing [mobile-max-10],Add Bank,Field validation,"Validation, Boundary",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Registered Mobile Number
+typed = 98765432109
+kept = 9876543210","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}",Field keeps the trimmed / upper-cased value,As expected: Field keeps the trimmed / upper-cased value,PASS,,,,,,,2026-10-16T11:11:04.981+05:30,2026-10-16T11:11:07.384+05:30,2.4,chromium 145.0.7632.6,UAT,Office,local,2,0,0,0,False,tests/test_add_bank.py::test_input_transform[chromium-mobile-max-10]
+BANK-007[Registered Mobile Number],Mandatory field cannot be empty [Registered Mobile Number],Add Bank,Mandatory fields,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,label = Registered Mobile Number,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Clear 'Registered Mobile Number'
+6. Click Submit",'Field is required' under the field,Not as expected: Registered Mobile Number: got '' assert 'Field is required' in '' + where '' = field_error('Registered Mobile Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F916A040>.field_error,FAIL,Registered Mobile Number: got '' assert 'Field is required' in '' + where '' = field_error('Registered Mobile Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F916A040>.field_error,Assertion Failure,"form = <pages.add_bank_page.AddBankPage object at 0x00000176F916A040>
+label = 'Registered Mobile Number'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""label"", MANDATORY_FIELDS)
+    @tc(""BANK-007"", ""Mandatory field cannot be empty"", module=MODULE, feature=""Mandatory fields"",
+        types=[""Negative"", ""Validation""], preconditions=[ON_FORM], expected=f""'{MSG_REQUIRED}' under the field"")
+    def test_mandatory(form, label):
+        form.clear(label).submit()
+>       assert MSG_REQUIRED in form.field_error(label), f""{label}: got '{form.field_error(label)}'""
+E       AssertionError: Registered Mobile Number: got ''
+E       assert 'Field is required' in ''
+E        +  where '' = field_error('Registered Mobile Number')
+E        +    where field_error = <pages.add_bank_page.AddBankPage object at 0x00000176F916A040>.field_error
+
+tests\test_add_bank.py:119: AssertionError",screenshots/111111_BANK-007_Registered_Mobile_Number_a1_1.png,,,2026-10-16T11:11:07.412+05:30,2026-10-16T11:11:11.465+05:30,4.05,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_mandatory[chromium-Registered Mobile Number]
+BANK-009[ifsc-5th-char-not-0],Invalid value shows its error [ifsc-5th-char-not-0],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = IFSC Code
+value = IDFB1X40101
+message = Invalid IFSC Code","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:11.473+05:30,2026-10-16T11:11:14.258+05:30,2.79,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-ifsc-5th-char-not-0]
+BANK-007[Registered Email ID],Mandatory field cannot be empty [Registered Email ID],Add Bank,Mandatory fields,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,label = Registered Email ID,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Clear 'Registered Email ID'
+6. Click Submit",'Field is required' under the field,As expected: 'Field is required' under the field,PASS,,,,,,,2026-10-16T11:11:14.266+05:30,2026-10-16T11:11:16.819+05:30,2.55,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_mandatory[chromium-Registered Email ID]
+BANK-009[mobile-too-short],Invalid value shows its error [mobile-too-short],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Registered Mobile Number
+value = 12345
+message = Min 10 characters is required","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:16.850+05:30,2026-10-16T11:11:19.777+05:30,2.93,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-mobile-too-short]
+BANK-007[PAN Number],Mandatory field cannot be empty [PAN Number],Add Bank,Mandatory fields,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,label = PAN Number,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Clear 'PAN Number'
+6. Click Submit",'Field is required' under the field,As expected: 'Field is required' under the field,PASS,,,,,,,2026-10-16T11:11:19.804+05:30,2026-10-16T11:11:22.386+05:30,2.58,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_mandatory[chromium-PAN Number]
+BANK-009[mobile-bad-start-digit],Invalid value shows its error [mobile-bad-start-digit],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Registered Mobile Number
+value = 1234567890
+message = Invalid Registered Mobile Number","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:22.416+05:30,2026-10-16T11:11:25.053+05:30,2.64,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-mobile-bad-start-digit]
+BANK-009[mobile-letters],Invalid value shows its error [mobile-letters],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Registered Mobile Number
+value = abcdefghij
+message = Invalid Registered Mobile Number","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:25.086+05:30,2026-10-16T11:11:28.213+05:30,3.13,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-mobile-letters]
+BANK-009[email-no-at],Invalid value shows its error [email-no-at],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Registered Email ID
+value = bad.email
+message = Invalid Registered Email ID","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:28.219+05:30,2026-10-16T11:11:31.201+05:30,2.98,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-email-no-at]
+BANK-009[pan-too-short],Invalid value shows its error [pan-too-short],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = PAN Number
+value = ABCDE1234
+message = Min 10 characters is required","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:31.213+05:30,2026-10-16T11:11:34.016+05:30,2.8,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-pan-too-short]
+BANK-009[pan-wrong-pattern],Invalid value shows its error [pan-wrong-pattern],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = PAN Number
+value = 12345ABCDE
+message = Invalid PAN Number","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:34.026+05:30,2026-10-16T11:11:37.050+05:30,3.02,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-pan-wrong-pattern]
+BANK-009[pan-4th-char-not-holder-type],Invalid value shows its error [pan-4th-char-not-holder-type],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = PAN Number
+value = ABCDE1234F
+message = Invalid PAN Number","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:37.062+05:30,2026-10-16T11:11:39.550+05:30,2.49,chromium 145.0.7632.6,UAT,Office,local,2,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-pan-4th-char-not-holder-type]
+BANK-009[gst-too-short],Invalid value shows its error [gst-too-short],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = GST Number
+value = 22AAAAA0000
+message = Min 15 characters is required","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:39.578+05:30,2026-10-16T11:11:43.196+05:30,3.62,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-gst-too-short]
+BANK-009[gst-wrong-pattern],Invalid value shows its error [gst-wrong-pattern],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = GST Number
+value = ZZZZZZZZZZZZZZZ
+message = Invalid GST Number","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T11:11:43.228+05:30,2026-10-16T11:11:48.511+05:30,5.28,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-gst-wrong-pattern]

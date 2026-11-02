@@ -1,0 +1,7 @@
+2026-10-16 11:28:30,891 INFO    [reporting] Run 2026-10-16_11-28-30_api-access started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_11-28-30_api-access)
+2026-10-16 11:28:30,940 INFO    [reporting] START   API-001  tests/test_api_access.py::test_api_access_tabs[chromium]
+2026-10-16 11:28:44,046 INFO    [reporting] FINISH  API-001  PASS  tests/test_api_access.py::test_api_access_tabs[chromium]  13.10s
+2026-10-16 11:28:44,050 INFO    [reporting] START   API-002  tests/test_api_access.py::test_api_key_active[chromium]
+2026-10-16 11:29:18,407 INFO    [reporting] FINISH  API-002  PASS  tests/test_api_access.py::test_api_key_active[chromium]  34.35s
+2026-10-16 11:29:25,296 INFO    [reporting] Deleted old screenshots/videos: 2026-10-16_11-14-46_add-bank-fix-check
+2026-10-16 11:29:25,297 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_11-28-30_api-access\html\index.html

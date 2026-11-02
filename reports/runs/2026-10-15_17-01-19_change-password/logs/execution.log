@@ -1,0 +1,25 @@
+2026-10-15 17:01:19,842 INFO    [reporting] Run 2026-10-15_17-01-19_change-password started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-01-19_change-password)
+2026-10-15 17:01:20,448 INFO    [reporting] START   CPW-F1F80  tests/test_change_password.py::test_change_password_valid_roundtrip[chromium]
+2026-10-15 17:01:27,202 INFO    [reporting] FINISH  CPW-F1F80  BLOCKED  tests/test_change_password.py::test_change_password_valid_roundtrip[chromium]  6.74s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:27,207 INFO    [reporting] START   CPW-8E7F5  tests/test_change_password.py::test_wrong_current_password[chromium]
+2026-10-15 17:01:28,557 INFO    [reporting] FINISH  CPW-8E7F5  BLOCKED  tests/test_change_password.py::test_wrong_current_password[chromium]  1.34s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:28,560 INFO    [reporting] START   CPW-5EF02[length-10-below-min]  tests/test_change_password.py::test_invalid_new_password[chromium-length-10-below-min]
+2026-10-15 17:01:29,846 INFO    [reporting] FINISH  CPW-5EF02[length-10-below-min]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-length-10-below-min]  1.28s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:29,850 INFO    [reporting] START   CPW-33BAC  tests/test_change_password.py::test_new_confirm_mismatch[chromium]
+2026-10-15 17:01:31,185 INFO    [reporting] FINISH  CPW-33BAC  BLOCKED  tests/test_change_password.py::test_new_confirm_mismatch[chromium]  1.33s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:31,188 INFO    [reporting] START   CPW-5EF02[length-16-above-max]  tests/test_change_password.py::test_invalid_new_password[chromium-length-16-above-max]
+2026-10-15 17:01:32,523 INFO    [reporting] FINISH  CPW-5EF02[length-16-above-max]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-length-16-above-max]  1.32s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:32,526 INFO    [reporting] START   CPW-5EF02[no-uppercase]  tests/test_change_password.py::test_invalid_new_password[chromium-no-uppercase]
+2026-10-15 17:01:33,791 INFO    [reporting] FINISH  CPW-5EF02[no-uppercase]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-no-uppercase]  1.26s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:33,794 INFO    [reporting] START   CPW-5EF02[no-lowercase]  tests/test_change_password.py::test_invalid_new_password[chromium-no-lowercase]
+2026-10-15 17:01:35,175 INFO    [reporting] FINISH  CPW-5EF02[no-lowercase]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-no-lowercase]  1.37s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:35,180 INFO    [reporting] START   CPW-5EF02[no-digit]  tests/test_change_password.py::test_invalid_new_password[chromium-no-digit]
+2026-10-15 17:01:36,560 INFO    [reporting] FINISH  CPW-5EF02[no-digit]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-no-digit]  1.37s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:36,563 INFO    [reporting] START   CPW-5EF02[no-special]  tests/test_change_password.py::test_invalid_new_password[chromium-no-special]
+2026-10-15 17:01:37,960 INFO    [reporting] FINISH  CPW-5EF02[no-special]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-no-special]  1.39s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:37,964 INFO    [reporting] START   CPW-5EF02[far-too-short]  tests/test_change_password.py::test_invalid_new_password[chromium-far-too-short]
+2026-10-15 17:01:39,274 INFO    [reporting] FINISH  CPW-5EF02[far-too-short]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-far-too-short]  1.30s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:39,278 INFO    [reporting] START   CPW-5EF02[empty]  tests/test_change_password.py::test_invalid_new_password[chromium-empty]
+2026-10-15 17:01:41,163 INFO    [reporting] FINISH  CPW-5EF02[empty]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-empty]  1.88s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 17:01:48,406 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_16-57-09_forgot-password
+2026-10-15 17:01:48,407 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-01-19_change-password\html\index.html

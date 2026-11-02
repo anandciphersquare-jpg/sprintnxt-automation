@@ -1,0 +1,4 @@
+===== API-001  tests/test_api_access.py::test_api_access_tabs[chromium]  [PASS]
+  +  9708ms console.warning: NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912
+===== API-002  tests/test_api_access.py::test_api_key_active[chromium]  [BLOCKED]
+  +  4856ms console.warning: NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912

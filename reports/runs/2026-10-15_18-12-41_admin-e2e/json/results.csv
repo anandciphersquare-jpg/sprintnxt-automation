@@ -1,0 +1,83 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+ADM-001,Super admin logs in to the admin portal,Admin,Admin login,"Functional, Smoke",Admin credentials in .env,,"1. Open the admin login
+2. Log in to the admin panel",Admin lands on the dashboard,As expected: Admin lands on the dashboard,PASS,,,,,,,2026-10-15T18:12:42.152+05:30,2026-10-15T18:12:55.660+05:30,13.51,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_admin_activation.py::test_admin_login[chromium]
+ADM-002,Register Partner list opens and searches,Admin,Partner activation,Functional,Admin logged in,,"1. Open the admin login
+2. Log in to the admin panel
+3. Open Register Partner",Register Partner grid opens with a search box,As expected: Register Partner grid opens with a search box,PASS,,,,,,,2026-10-15T18:12:55.665+05:30,2026-10-15T18:13:05.637+05:30,9.97,chromium 145.0.7632.6,UAT,Office,local,11,0,0,0,False,tests/test_admin_activation.py::test_register_partner_list[chromium]
+ADM-003,Activate a configured merchant,Admin,Partner activation,Functional,SNXT_MERCHANT_EMAIL is an Inactive partner,,"1. Open the admin login
+2. Log in to the admin panel",Partner status becomes Active,Not executed (blocked): Set SNXT_MERCHANT_EMAIL to the merchant you want to activate (E2E-001 covers a fresh one),BLOCKED,Set SNXT_MERCHANT_EMAIL to the merchant you want to activate (E2E-001 covers a fresh one),Precondition Not Met,,,,,2026-10-15T18:13:05.641+05:30,2026-10-15T18:13:12.824+05:30,7.18,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_admin_activation.py::test_activate_merchant[chromium]
+E2E-001,Register -> admin activates -> merchant logs in,End-to-End,Merchant onboarding,"End-to-End, Functional","Signup and admin portals reachable
+UAT OTP is 123456
+Admin credentials in .env","merchant email = qa.auto+1792068194223713@gmail.com
+merchant mobile = 9614103046
+activation remarks = Activated by QA automation","1. Open the signup page
+2. Register merchant 'qa.auto+1792068194223713@gmail.com' / '9614103046'
+3.   Enter name 'Ekanta Jhaveri' and business 'Parikh Group'
+4.   Enter email 'qa.auto+1792068194223713@gmail.com'
+5.   Verify email with OTP
+6.   Enter mobile '9614103046'
+7.   Verify mobile with OTP
+8.   Enter password and confirm password
+9.   Click Sign Up (skipped when the button stays disabled)
+10. Check for the 'Registration Successful' page","Merchant registers, admin activates it from Register Partner with remarks, and the merchant then logs in to the dashboard","Not as expected: TargetClosedError: Page.bring_to_front: Target page, context or browser has been closed",FAIL,"TargetClosedError: Page.bring_to_front: Target page, context or browser has been closed",Script / Unexpected Error,"page = <Page url='https://uat.sprintnxt.in/NexGenV4Front/#/auth/info-register-successfully'>
+admin_page = <Page url='about:blank'>
+config = <config.Config object at 0x0000017EAF7CE210>
+
+    @pytest.mark.positive
+    @tc(""E2E-001"", ""Register -> admin activates -> merchant logs in"", feature=""Merchant onboarding"",
+        types=[""End-to-End"", ""Functional""],
+        preconditions=[""Signup and admin portals reachable"", ""UAT OTP is 123456"", ""Admin credentials in .env""],
+        expected=""Merchant registers, admin activates it from Register Partner with remarks, ""
+                 ""and the merchant then logs in to the dashboard"")
+    def test_full_merchant_journey(page, admin_page, config):
+        person = valid_person()
+        email, mobile, password = unique_email(), valid_mobile(), valid_password()
+        report.data(""merchant email"", email)
+        report.data(""merchant mobile"", mobile)
+        report.data(""activation remarks"", ACTIVATION_REMARKS)
+    
+        # 1) Merchant registers (merchant window)
+        reg = RegistrationPage(page, config).open()
+        reg.register(person[""first_name""], person[""last_name""], person[""business_name""],
+                     email, mobile, password)
+        assert reg.is_registration_success(), ""Registration did not reach the success page""
+        report.screenshot(""Merchant: registration successful"", page)
+    
+        # 2) Admin activates the new partner (admin window)
+>       admin_page.bring_to_front()
+
+tests\test_e2e_merchant_journey.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:9455: in bring_to_front
+    return mapping.from_maybe_impl(self._sync(self._impl_obj.bring_to_front()))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_page.py:660: in bring_to_front
+    await self._channel.send(""bringToFront"", None)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x0000017EAF75E7B0>
+cb = <function Channel.send.<locals>.<lambda> at 0x0000017EB00BFE20>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TargetClosedError: Page.bring_to_front: Target page, context or browser has been closed
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TargetClosedError","screenshots/181327_E2E-001_a1_1.png
+screenshots/181329_E2E-001_a1_2.png",videos/e2e-001_a1_2.webm,traces/e2e-001_a1_1.zip,2026-10-15T18:13:12.828+05:30,2026-10-15T18:13:36.698+05:30,23.87,chromium 145.0.7632.6,UAT,Office,local,6,1,0,0,False,tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]

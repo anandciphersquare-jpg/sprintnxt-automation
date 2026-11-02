@@ -1,0 +1,144 @@
+- generic [ref=e1]:
+  - generic [ref=e72]:
+    - complementary [ref=e73]:
+      - link [ref=e75] [cursor=pointer]:
+        - /url: "#/dashboard"
+      - list [ref=e78]:
+        - listitem [ref=e79]:
+          - link " Dashboard" [ref=e80] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e81]: 
+            - generic [ref=e82]: Dashboard
+        - listitem [ref=e83]:
+          - link " Manage" [ref=e84] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e85]: 
+            - generic [ref=e86]: Manage
+    - navigation [ref=e89]:
+      - generic [ref=e90]:
+        - heading "Go back API Credentials" [level=5] [ref=e586]:
+          - button "Go back" [ref=e201] [cursor=pointer]
+          - generic [ref=e204]: API Credentials
+        - list [ref=e96]:
+          - listitem [ref=e97]:
+            - button "Switch to dark theme" [ref=e98] [cursor=pointer]
+          - listitem [ref=e101]:
+            - link "Notifications, 1 unread" [ref=e102] [cursor=pointer]:
+              - /url: "#/notification"
+              - generic [ref=e106]: "1"
+          - listitem [aria-hidden] [ref=e107]
+          - listitem [ref=e108]:
+            - button "CL Chauhan LLC NXT337426" [ref=e109] [cursor=pointer]:
+              - generic [ref=e110]: CL
+              - generic [ref=e111]:
+                - generic [ref=e112]: Chauhan LLC
+                - generic [ref=e113]: NXT337426
+          - text: 
+    - generic [ref=e494]:
+      - complementary [ref=e495]:
+        - generic [ref=e496]:
+          - heading "Account Settings" [level=2] [ref=e497]
+          - paragraph [ref=e498]: Manage your profile, security and API access
+        - tablist [ref=e499]:
+          - listitem [ref=e500]:
+            - link " Profile Personal & contact details" [ref=e501] [cursor=pointer]:
+              - /url: "#/account-settings/Edit_Profile"
+              - generic [ref=e502]: 
+              - generic [ref=e504]:
+                - generic [ref=e505]: Profile
+                - generic [ref=e506]: Personal & contact details
+          - listitem [ref=e507]:
+            - link " Change Password Keep your account secure" [ref=e508] [cursor=pointer]:
+              - /url: "#/account-settings/Update_Password"
+              - generic [ref=e509]: 
+              - generic [ref=e511]:
+                - generic [ref=e512]: Change Password
+                - generic [ref=e513]: Keep your account secure
+          - listitem [ref=e514]:
+            - link " API Access Control Keys, IPs, webhooks & 2FA" [ref=e515] [cursor=pointer]:
+              - /url: "#/account-settings/credentials"
+              - generic [ref=e516]: 
+              - generic [ref=e518]:
+                - generic [ref=e519]: API Access Control
+                - generic [ref=e520]: Keys, IPs, webhooks & 2FA
+          - listitem [ref=e521]:
+            - link " API Token Settings Token validity & sessions" [ref=e522] [cursor=pointer]:
+              - /url: "#/account-settings/token-credential"
+              - generic [ref=e523]: 
+              - generic [ref=e525]:
+                - generic [ref=e526]: API Token Settings
+                - generic [ref=e527]: Token validity & sessions
+          - listitem [ref=e528]:
+            - link " KYC Verification Verified" [ref=e529] [cursor=pointer]:
+              - /url: "#/account-settings/KYC_Verification"
+              - generic [ref=e530]: 
+              - generic [ref=e532]:
+                - generic [ref=e533]: KYC Verification
+                - generic [ref=e534]: Verified
+      - generic [ref=e587]:
+        - generic [ref=e589]:
+          - heading "API Access Control" [level=1] [ref=e590]
+          - paragraph [ref=e591]: Manage API keys, allowed IPs, webhook endpoints and payout 2FA for your integration.
+        - navigation [ref=e592]:
+          - tablist [ref=e593]:
+            - listitem [ref=e594]:
+              - tab "API Credentials" [ref=e595] [cursor=pointer]
+            - listitem [ref=e596]:
+              - tab "Authorized IPs" [ref=e597] [cursor=pointer]
+            - listitem [ref=e598]:
+              - tab "PayIn Webhook Endpoint" [ref=e599] [cursor=pointer]
+            - listitem [ref=e600]:
+              - tab "PayOut Webhook Endpoint" [ref=e601] [cursor=pointer]
+            - listitem [ref=e602]:
+              - tab "Payout 2FA Endpoint" [ref=e603] [cursor=pointer]
+        - generic [ref=e604]:
+          - generic [ref=e605]:
+            - generic [ref=e606]:
+              - generic [ref=e611]:
+                - heading "API Keys" [level=3] [ref=e612]
+                - paragraph [ref=e613]: Keys your server uses to call our APIs. Keep them secret and never put them in client-side code.
+              - button "+ Generate API Key" [ref=e614] [cursor=pointer]
+            - generic [ref=e620]:
+              - text: Use the
+              - strong [ref=e621]: ⋮
+              - text: menu on a key to email it to your registered address (OTP required), update its public key or certificate, or delete it. Deleting a key deactivates every service that uses it.
+          - generic [ref=e624]:
+            - generic [ref=e625]:
+              - generic [ref=e626]:
+                - generic [ref=e627]:
+                  - generic: 
+                  - textbox "Search by Mobile No. or Transaction ID" [ref=e628]
+                - button "Refresh" [ref=e629] [cursor=pointer]:
+                  - generic [ref=e630]: 
+              - button "Toggle columns" [ref=e634] [cursor=pointer]:
+                - generic [ref=e640]: View Columns
+            - generic [ref=e641]: "Total records: 0"
+            - grid "Data table" [ref=e644]:
+              - rowgroup [ref=e645]:
+                - row [ref=e646]:
+                  - columnheader "Key ID" [ref=e647]
+                  - columnheader "Created At" [ref=e650]
+                  - columnheader "Partner Key" [ref=e653]
+                  - columnheader "Expiry" [ref=e656]
+                  - columnheader "Status" [ref=e659]
+                  - columnheader "Actions" [ref=e662]
+              - rowgroup [ref=e663]:
+                - row [ref=e664]:
+                  - gridcell "No records found" [ref=e665]
+  - generic [ref=e674]:
+    - button "" [ref=e675] [cursor=pointer]
+    - generic [ref=e681]:
+      - heading "Enter OTP" [level=3] [ref=e682]
+      - paragraph [ref=e683]: We have sent you OTP to your registered phone number/email id for verification
+    - generic [ref=e685]:
+      - textbox [active] [ref=e686]
+      - textbox [ref=e687]
+      - textbox [ref=e688]
+      - textbox [ref=e689]
+    - paragraph [ref=e690]:
+      - paragraph [ref=e692]:
+        - text: Didn’t receive the code?
+        - link "Resend? " [ref=e693] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - text: Resend?
+          - generic [ref=e694]: 

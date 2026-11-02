@@ -1,0 +1,5 @@
+2026-10-15 18:15:45,249 INFO    [reporting] Run 2026-10-15_18-15-45_e2e started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_18-15-45_e2e)
+2026-10-15 18:15:45,742 INFO    [reporting] START   E2E-001  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]
+2026-10-15 18:16:37,469 INFO    [reporting] FINISH  E2E-001  FAIL  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]  51.58s  -> TimeoutError: Locator.wait_for: Timeout 20000ms exceeded.
+2026-10-15 18:16:45,741 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_18-12-41_admin-e2e
+2026-10-15 18:16:45,742 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_18-15-45_e2e\html\index.html

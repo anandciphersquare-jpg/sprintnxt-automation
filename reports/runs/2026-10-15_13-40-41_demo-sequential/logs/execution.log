@@ -1,0 +1,28 @@
+2026-10-15 13:40:41,509 INFO    [reporting] Run 2026-10-15_13-40-41_demo-sequential started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_13-40-41_demo-sequential)
+2026-10-15 13:40:41,556 INFO    [reporting] START   DEMO-001  examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]
+2026-10-15 13:40:46,265 INFO    [reporting] FINISH  DEMO-001  PASS  examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]  4.71s
+2026-10-15 13:40:46,269 INFO    [reporting] START   DEMO-002[no-at]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]
+2026-10-15 13:40:47,053 INFO    [reporting] FINISH  DEMO-002[no-at]  PASS  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]  0.78s
+2026-10-15 13:40:47,057 INFO    [reporting] START   DEMO-003  examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]
+2026-10-15 13:40:48,305 INFO    [reporting] FINISH  DEMO-003  FAIL  examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]  1.24s  -> Expected a lockout warning, got: 'Invalid email or password' assert 'attempts remaining' in 'invalid email or password' + where 'invalid email or password' = <b
+2026-10-15 13:40:48,315 INFO    [reporting] START   DEMO-004  examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]
+2026-10-15 13:40:52,265 INFO    [reporting] FINISH  DEMO-004  FAIL  examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]  3.94s  -> TimeoutError: Locator.wait_for: Timeout 2500ms exceeded.
+2026-10-15 13:40:52,268 INFO    [reporting] START   DEMO-005  examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]
+2026-10-15 13:40:56,027 INFO    [reporting] FINISH  DEMO-005  FAIL  examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]  3.75s  -> Locator expected to be visible Actual value: None Error: element(s) not found
+2026-10-15 13:40:56,030 INFO    [reporting] START   DEMO-006  examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]
+2026-10-15 13:40:56,663 INFO    [reporting] FINISH  DEMO-006  BLOCKED  examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]  0.63s  -> Admin URL/credentials not provided (SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS)
+2026-10-15 13:40:56,667 INFO    [reporting] START   DEMO-007  examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]
+2026-10-15 13:40:57,283 INFO    [reporting] FINISH  DEMO-007  SKIPPED  examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]  0.61s  -> Bulk import is not part of release 4.2
+2026-10-15 13:40:57,287 INFO    [reporting] START   DEMO-008  examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]
+2026-10-15 13:40:58,014 INFO    [reporting] FINISH  DEMO-008  BLOCKED  examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]  0.72s  -> ConnectionError: Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED
+2026-10-15 13:40:58,018 INFO    [reporting] START   DEMO-009  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]
+2026-10-15 13:40:59,015 INFO    [reporting] FINISH  DEMO-009  FAIL  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]  0.99s  -> Banner did not render in time (simulated race condition) assert 1 >= 2
+2026-10-15 13:40:59,016 INFO    [reporting] START   DEMO-009  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium] (attempt 2)
+2026-10-15 13:40:59,997 INFO    [reporting] FINISH  DEMO-009  PASS  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]  0.98s
+2026-10-15 13:41:00,002 INFO    [reporting] START   DEMO-010  examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]
+2026-10-15 13:41:00,760 INFO    [reporting] FINISH  DEMO-010  SKIPPED  examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]  0.76s  -> Expected failure (xfail): BUG-1432: password field accepts 16 characters
+2026-10-15 13:41:00,763 INFO    [reporting] START   DEMO-002[missing-domain]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]
+2026-10-15 13:41:02,172 INFO    [reporting] FINISH  DEMO-002[missing-domain]  PASS  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]  1.41s
+2026-10-15 13:41:02,175 INFO    [reporting] START   DEMO-002[empty]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]
+2026-10-15 13:41:03,205 INFO    [reporting] FINISH  DEMO-002[empty]  PASS  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]  1.03s
+2026-10-15 13:41:07,892 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_13-40-41_demo-sequential\html\index.html

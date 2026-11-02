@@ -1,0 +1,165 @@
+2026-10-15 15:04:03,637 INFO    [reporting] Run 2026-10-15_15-04-03_full-suite started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_15-04-03_full-suite)
+2026-10-15 15:04:04,225 INFO    [reporting] START   ADM-3D60C  tests/test_admin_activation.py::test_admin_login[chromium]
+2026-10-15 15:04:08,071 INFO    [reporting] FINISH  ADM-3D60C  BLOCKED  tests/test_admin_activation.py::test_admin_login[chromium]  3.83s  -> Admin URL/credentials not provided. Set SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS in .env. (Admin login details were not part of the shared screenshots
+2026-10-15 15:04:08,076 INFO    [reporting] START   ADM-A92CF  tests/test_admin_activation.py::test_activate_merchant[chromium]
+2026-10-15 15:04:08,558 INFO    [reporting] FINISH  ADM-A92CF  BLOCKED  tests/test_admin_activation.py::test_activate_merchant[chromium]  0.47s  -> Admin URL/credentials not provided. Set SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS in .env. (Admin login details were not part of the shared screenshots
+2026-10-15 15:04:08,561 INFO    [reporting] START   CPW-F1F80  tests/test_change_password.py::test_change_password_valid_roundtrip[chromium]
+2026-10-15 15:04:09,126 INFO    [reporting] FINISH  CPW-F1F80  BLOCKED  tests/test_change_password.py::test_change_password_valid_roundtrip[chromium]  0.56s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:04:09,130 INFO    [reporting] START   CPW-8E7F5  tests/test_change_password.py::test_wrong_current_password[chromium]
+2026-10-15 15:04:09,614 INFO    [reporting] FINISH  CPW-8E7F5  BLOCKED  tests/test_change_password.py::test_wrong_current_password[chromium]  0.48s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:04:09,619 INFO    [reporting] START   CPW-5EF02[length-10-below-min]  tests/test_change_password.py::test_invalid_new_password[chromium-length-10-below-min]
+2026-10-15 15:04:10,174 INFO    [reporting] FINISH  CPW-5EF02[length-10-below-min]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-length-10-below-min]  0.55s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:04:10,178 INFO    [reporting] START   CPW-33BAC  tests/test_change_password.py::test_new_confirm_mismatch[chromium]
+2026-10-15 15:04:10,684 INFO    [reporting] FINISH  CPW-33BAC  BLOCKED  tests/test_change_password.py::test_new_confirm_mismatch[chromium]  0.50s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:04:10,687 INFO    [reporting] START   E2E-06F59  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]
+2026-10-15 15:04:24,050 INFO    [reporting] FINISH  E2E-06F59  SKIPPED  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]  13.36s  -> Registered successfully. Admin credentials not configured, so activation and the post-activation login/change-password steps are skipped. Provide SNXT_ADMIN_* (
+2026-10-15 15:04:24,055 INFO    [reporting] START   FPW-FD211  tests/test_forgot_password.py::test_forgot_valid_email[chromium]
+2026-10-15 15:04:32,055 INFO    [reporting] FINISH  FPW-FD211  FAIL  tests/test_forgot_password.py::test_forgot_valid_email[chromium]  7.99s  -> assert 'error' not in 'error\nthe ...s not valid!' 'error' is contained here: error the provided information is not valid!
+2026-10-15 15:04:32,059 INFO    [reporting] START   FPW-7AA29[no-at-or-domain]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]
+2026-10-15 15:04:53,275 INFO    [reporting] FINISH  FPW-7AA29[no-at-or-domain]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]  21.20s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:04:53,278 INFO    [reporting] START   FPW-46640  tests/test_forgot_password.py::test_forgot_empty[chromium]
+2026-10-15 15:05:11,100 INFO    [reporting] FINISH  FPW-46640  FAIL  tests/test_forgot_password.py::test_forgot_empty[chromium]  17.81s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:05:11,104 INFO    [reporting] START   FPW-0182C  tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]
+2026-10-15 15:05:13,893 INFO    [reporting] FINISH  FPW-0182C  PASS  tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]  2.79s
+2026-10-15 15:05:13,898 INFO    [reporting] START   LOGIN-001  tests/test_login.py::test_login_valid[chromium]
+2026-10-15 15:05:18,571 INFO    [reporting] FINISH  LOGIN-001  BLOCKED  tests/test_login.py::test_login_valid[chromium]  4.67s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS for the positive login test
+2026-10-15 15:05:18,575 INFO    [reporting] START   LOGIN-002  tests/test_login.py::test_login_wrong_password[chromium]
+2026-10-15 15:05:41,660 INFO    [reporting] FINISH  LOGIN-002  FAIL  tests/test_login.py::test_login_wrong_password[chromium]  23.07s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:05:41,664 INFO    [reporting] START   LOGIN-003  tests/test_login.py::test_login_unregistered_email[chromium]
+2026-10-15 15:06:00,013 INFO    [reporting] FINISH  LOGIN-003  FAIL  tests/test_login.py::test_login_unregistered_email[chromium]  18.34s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:06:00,017 INFO    [reporting] START   LOGIN-004[no-at-or-domain]  tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]
+2026-10-15 15:06:21,563 INFO    [reporting] FINISH  LOGIN-004[no-at-or-domain]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]  21.54s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:06:21,566 INFO    [reporting] START   LOGIN-005  tests/test_login.py::test_login_empty[chromium]
+2026-10-15 15:06:40,144 INFO    [reporting] FINISH  LOGIN-005  FAIL  tests/test_login.py::test_login_empty[chromium]  18.57s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:06:40,148 INFO    [reporting] START   REG-001  tests/test_registration.py::test_register_happy_path[chromium]
+2026-10-15 15:07:06,436 INFO    [reporting] FINISH  REG-001  FAIL  tests/test_registration.py::test_register_happy_path[chromium]  26.28s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:07:06,439 INFO    [reporting] START   REG-002  tests/test_registration.py::test_required_fields_block_submit[chromium]
+2026-10-15 15:07:28,495 INFO    [reporting] FINISH  REG-002  FAIL  tests/test_registration.py::test_required_fields_block_submit[chromium]  22.04s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:07:28,500 INFO    [reporting] START   REG-003[no-at-or-domain]  tests/test_registration.py::test_invalid_email_rejected[chromium-no-at-or-domain]
+2026-10-15 15:07:48,467 INFO    [reporting] FINISH  REG-003[no-at-or-domain]  FAIL  tests/test_registration.py::test_invalid_email_rejected[chromium-no-at-or-domain]  19.95s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:07:48,482 INFO    [reporting] START   REG-004[too-short]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-short]
+2026-10-15 15:08:07,727 INFO    [reporting] FINISH  REG-004[too-short]  FAIL  tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-short]  19.24s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:08:07,730 INFO    [reporting] START   REG-005[length-10-below-min]  tests/test_registration.py::test_invalid_password_rejected[chromium-length-10-below-min]
+2026-10-15 15:08:31,835 INFO    [reporting] FINISH  REG-005[length-10-below-min]  FAIL  tests/test_registration.py::test_invalid_password_rejected[chromium-length-10-below-min]  24.09s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:08:31,839 INFO    [reporting] START   REG-006  tests/test_registration.py::test_password_mismatch[chromium]
+2026-10-15 15:08:50,912 INFO    [reporting] FINISH  REG-006  FAIL  tests/test_registration.py::test_password_mismatch[chromium]  19.06s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:08:50,915 INFO    [reporting] START   REG-007  tests/test_registration.py::test_wrong_email_otp_does_not_verify[chromium]
+2026-10-15 15:08:54,462 INFO    [reporting] FINISH  REG-007  PASS  tests/test_registration.py::test_wrong_email_otp_does_not_verify[chromium]  3.54s
+2026-10-15 15:08:54,465 INFO    [reporting] START   REG-008  tests/test_registration.py::test_duplicate_email[chromium]
+2026-10-15 15:09:07,924 INFO    [reporting] FINISH  REG-008  FAIL  tests/test_registration.py::test_duplicate_email[chromium]  13.45s  -> assert False + where False = is_registration_success() + where is_registration_success = <pages.registration_page.RegistrationPage object at 0x000001963BDBAF50>
+2026-10-15 15:09:07,928 INFO    [reporting] START   REG-D66B9[' OR '1'='1]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR '1'='1]
+2026-10-15 15:09:29,211 INFO    [reporting] FINISH  REG-D66B9[' OR '1'='1]  FAIL  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR '1'='1]  21.27s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:09:29,214 INFO    [reporting] START   REG-F0CE1[<script>alert('xss')</script>]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<script>alert('xss')</script>]
+2026-10-15 15:09:55,123 INFO    [reporting] FINISH  REG-F0CE1[<script>alert('xss')</script>]  FAIL  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<script>alert('xss')</script>]  25.89s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:09:55,132 INFO    [reporting] START   CPW-5EF02[length-16-above-max]  tests/test_change_password.py::test_invalid_new_password[chromium-length-16-above-max]
+2026-10-15 15:10:00,574 INFO    [reporting] FINISH  CPW-5EF02[length-16-above-max]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-length-16-above-max]  5.43s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:10:00,578 INFO    [reporting] START   FPW-7AA29[missing-at]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]
+2026-10-15 15:10:21,687 INFO    [reporting] FINISH  FPW-7AA29[missing-at]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]  21.10s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:10:21,692 INFO    [reporting] START   LOGIN-004[missing-at]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]
+2026-10-15 15:10:41,708 INFO    [reporting] FINISH  LOGIN-004[missing-at]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]  20.01s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:10:41,712 INFO    [reporting] START   REG-003[missing-at]  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-at]
+2026-10-15 15:11:02,768 INFO    [reporting] FINISH  REG-003[missing-at]  FAIL  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-at]  21.04s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:11:02,773 INFO    [reporting] START   REG-004[too-long]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-long]
+2026-10-15 15:11:23,839 INFO    [reporting] FINISH  REG-004[too-long]  FAIL  tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-long]  21.06s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:11:23,843 INFO    [reporting] START   REG-005[length-16-above-max]  tests/test_registration.py::test_invalid_password_rejected[chromium-length-16-above-max]
+2026-10-15 15:11:48,361 INFO    [reporting] FINISH  REG-005[length-16-above-max]  FAIL  tests/test_registration.py::test_invalid_password_rejected[chromium-length-16-above-max]  24.51s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:11:48,365 INFO    [reporting] START   REG-D66B9['; DROP TABLE users;--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-'; DROP TABLE users;--]
+2026-10-15 15:12:08,511 INFO    [reporting] FINISH  REG-D66B9['; DROP TABLE users;--]  FAIL  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-'; DROP TABLE users;--]  20.14s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:12:08,514 INFO    [reporting] START   REG-F0CE1[<img src=x onerror=alert('xss')>]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<img src=x onerror=alert('xss')>]
+2026-10-15 15:12:27,348 INFO    [reporting] FINISH  REG-F0CE1[<img src=x onerror=alert('xss')>]  FAIL  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<img src=x onerror=alert('xss')>]  18.82s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:12:27,352 INFO    [reporting] START   CPW-5EF02[no-uppercase]  tests/test_change_password.py::test_invalid_new_password[chromium-no-uppercase]
+2026-10-15 15:12:27,888 INFO    [reporting] FINISH  CPW-5EF02[no-uppercase]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-no-uppercase]  0.53s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:12:27,894 INFO    [reporting] START   FPW-7AA29[missing-domain]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]
+2026-10-15 15:12:46,133 INFO    [reporting] FINISH  FPW-7AA29[missing-domain]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]  18.23s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:12:46,138 INFO    [reporting] START   LOGIN-004[missing-domain]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]
+2026-10-15 15:13:06,493 INFO    [reporting] FINISH  LOGIN-004[missing-domain]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]  20.34s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:13:06,497 INFO    [reporting] START   REG-003[missing-domain]  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-domain]
+2026-10-15 15:13:37,554 INFO    [reporting] FINISH  REG-003[missing-domain]  FAIL  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-domain]  31.05s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:13:37,559 INFO    [reporting] START   REG-004[non-numeric]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-non-numeric]
+2026-10-15 15:14:08,606 INFO    [reporting] FINISH  REG-004[non-numeric]  FAIL  tests/test_registration.py::test_invalid_mobile_rejected[chromium-non-numeric]  31.04s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:14:08,609 INFO    [reporting] START   REG-005[no-uppercase]  tests/test_registration.py::test_invalid_password_rejected[chromium-no-uppercase]
+2026-10-15 15:14:28,010 INFO    [reporting] FINISH  REG-005[no-uppercase]  FAIL  tests/test_registration.py::test_invalid_password_rejected[chromium-no-uppercase]  19.39s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:14:28,013 INFO    [reporting] START   REG-D66B9[' OR 1=1--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR 1=1--]
+2026-10-15 15:14:49,223 INFO    [reporting] FINISH  REG-D66B9[' OR 1=1--]  FAIL  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR 1=1--]  20.82s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:14:49,226 INFO    [reporting] START   REG-F0CE1[<svg/onload=alert('xss')>]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<svg/onload=alert('xss')>]
+2026-10-15 15:15:09,258 INFO    [reporting] FINISH  REG-F0CE1[<svg/onload=alert('xss')>]  FAIL  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<svg/onload=alert('xss')>]  20.02s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:15:09,262 INFO    [reporting] START   CPW-5EF02[no-lowercase]  tests/test_change_password.py::test_invalid_new_password[chromium-no-lowercase]
+2026-10-15 15:15:09,745 INFO    [reporting] FINISH  CPW-5EF02[no-lowercase]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-no-lowercase]  0.47s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:15:09,748 INFO    [reporting] START   FPW-7AA29[missing-tld]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]
+2026-10-15 15:15:27,898 INFO    [reporting] FINISH  FPW-7AA29[missing-tld]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]  18.14s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:15:27,901 INFO    [reporting] START   LOGIN-004[missing-tld]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]
+2026-10-15 15:15:50,684 INFO    [reporting] FINISH  LOGIN-004[missing-tld]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]  22.77s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:15:50,687 INFO    [reporting] START   REG-003[missing-tld]  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-tld]
+2026-10-15 15:16:09,671 INFO    [reporting] FINISH  REG-003[missing-tld]  FAIL  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-tld]  18.93s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:16:09,674 INFO    [reporting] START   REG-004[invalid-start-digit]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-invalid-start-digit]
+2026-10-15 15:16:28,901 INFO    [reporting] FINISH  REG-004[invalid-start-digit]  FAIL  tests/test_registration.py::test_invalid_mobile_rejected[chromium-invalid-start-digit]  19.22s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:16:28,905 INFO    [reporting] START   REG-005[no-lowercase]  tests/test_registration.py::test_invalid_password_rejected[chromium-no-lowercase]
+2026-10-15 15:16:48,460 INFO    [reporting] FINISH  REG-005[no-lowercase]  FAIL  tests/test_registration.py::test_invalid_password_rejected[chromium-no-lowercase]  19.55s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:16:48,463 INFO    [reporting] START   REG-D66B9[admin'--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-admin'--]
+2026-10-15 15:17:11,389 INFO    [reporting] FINISH  REG-D66B9[admin'--]  FAIL  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-admin'--]  22.91s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:17:11,393 INFO    [reporting] START   REG-F0CE1["><script>alert(1)</script>]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-"><script>alert(1)</script>]
+2026-10-15 15:17:31,274 INFO    [reporting] FINISH  REG-F0CE1["><script>alert(1)</script>]  FAIL  tests/test_registration_security.py::test_xss_in_name_fields[chromium-"><script>alert(1)</script>]  19.84s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:17:31,278 INFO    [reporting] START   CPW-5EF02[no-digit]  tests/test_change_password.py::test_invalid_new_password[chromium-no-digit]
+2026-10-15 15:17:31,786 INFO    [reporting] FINISH  CPW-5EF02[no-digit]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-no-digit]  0.50s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:17:31,789 INFO    [reporting] START   FPW-7AA29[double-at]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]
+2026-10-15 15:17:50,290 INFO    [reporting] FINISH  FPW-7AA29[double-at]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]  18.49s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:17:50,293 INFO    [reporting] START   LOGIN-004[double-at]  tests/test_login.py::test_login_invalid_email_format[chromium-double-at]
+2026-10-15 15:18:08,815 INFO    [reporting] FINISH  LOGIN-004[double-at]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-double-at]  18.52s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:18:08,818 INFO    [reporting] START   REG-003[double-at]  tests/test_registration.py::test_invalid_email_rejected[chromium-double-at]
+2026-10-15 15:18:31,736 INFO    [reporting] FINISH  REG-003[double-at]  FAIL  tests/test_registration.py::test_invalid_email_rejected[chromium-double-at]  22.91s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:18:31,740 INFO    [reporting] START   REG-004[contains-space]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-space]
+2026-10-15 15:18:50,441 INFO    [reporting] FINISH  REG-004[contains-space]  FAIL  tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-space]  18.69s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:18:50,445 INFO    [reporting] START   REG-005[no-digit]  tests/test_registration.py::test_invalid_password_rejected[chromium-no-digit]
+2026-10-15 15:19:08,670 INFO    [reporting] FINISH  REG-005[no-digit]  FAIL  tests/test_registration.py::test_invalid_password_rejected[chromium-no-digit]  18.21s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:19:08,675 INFO    [reporting] START   REG-D66B9[' UNION SELECT NULL--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' UNION SELECT NULL--]
+2026-10-15 15:19:29,274 INFO    [reporting] FINISH  REG-D66B9[' UNION SELECT NULL--]  FAIL  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' UNION SELECT NULL--]  20.59s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:19:29,278 INFO    [reporting] START   REG-F0CE1[javascript:alert('xss')]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-javascript:alert('xss')]
+2026-10-15 15:19:48,590 INFO    [reporting] FINISH  REG-F0CE1[javascript:alert('xss')]  FAIL  tests/test_registration_security.py::test_xss_in_name_fields[chromium-javascript:alert('xss')]  19.30s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:19:48,594 INFO    [reporting] START   CPW-5EF02[no-special]  tests/test_change_password.py::test_invalid_new_password[chromium-no-special]
+2026-10-15 15:19:49,617 INFO    [reporting] FINISH  CPW-5EF02[no-special]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-no-special]  1.01s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:19:49,621 INFO    [reporting] START   FPW-7AA29[space-in-local]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]
+2026-10-15 15:20:09,407 INFO    [reporting] FINISH  FPW-7AA29[space-in-local]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]  19.78s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:20:09,410 INFO    [reporting] START   LOGIN-004[space-in-local]  tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]
+2026-10-15 15:20:31,595 INFO    [reporting] FINISH  LOGIN-004[space-in-local]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]  22.17s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:20:31,599 INFO    [reporting] START   REG-003[space-in-local]  tests/test_registration.py::test_invalid_email_rejected[chromium-space-in-local]
+2026-10-15 15:20:49,992 INFO    [reporting] FINISH  REG-003[space-in-local]  FAIL  tests/test_registration.py::test_invalid_email_rejected[chromium-space-in-local]  18.37s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:20:49,997 INFO    [reporting] START   REG-004[contains-symbols]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-symbols]
+2026-10-15 15:21:07,967 INFO    [reporting] FINISH  REG-004[contains-symbols]  FAIL  tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-symbols]  17.96s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:21:07,971 INFO    [reporting] START   REG-005[no-special]  tests/test_registration.py::test_invalid_password_rejected[chromium-no-special]
+2026-10-15 15:21:26,002 INFO    [reporting] FINISH  REG-005[no-special]  FAIL  tests/test_registration.py::test_invalid_password_rejected[chromium-no-special]  18.02s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:21:26,005 INFO    [reporting] START   REG-D66B9[1' AND SLEEP(5)--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-1' AND SLEEP(5)--]
+2026-10-15 15:21:49,764 INFO    [reporting] FINISH  REG-D66B9[1' AND SLEEP(5)--]  FAIL  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-1' AND SLEEP(5)--]  23.75s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:21:49,768 INFO    [reporting] START   CPW-5EF02[far-too-short]  tests/test_change_password.py::test_invalid_new_password[chromium-far-too-short]
+2026-10-15 15:21:50,404 INFO    [reporting] FINISH  CPW-5EF02[far-too-short]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-far-too-short]  0.63s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:21:50,407 INFO    [reporting] START   FPW-7AA29[illegal-chars]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]
+2026-10-15 15:22:08,363 INFO    [reporting] FINISH  FPW-7AA29[illegal-chars]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]  17.95s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:22:08,366 INFO    [reporting] START   LOGIN-004[illegal-chars]  tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]
+2026-10-15 15:22:27,535 INFO    [reporting] FINISH  LOGIN-004[illegal-chars]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]  19.15s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:22:27,598 INFO    [reporting] START   REG-003[illegal-chars]  tests/test_registration.py::test_invalid_email_rejected[chromium-illegal-chars]
+2026-10-15 15:22:47,733 INFO    [reporting] FINISH  REG-003[illegal-chars]  FAIL  tests/test_registration.py::test_invalid_email_rejected[chromium-illegal-chars]  20.12s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:22:47,737 INFO    [reporting] START   REG-004[all-zeros]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-all-zeros]
+2026-10-15 15:23:08,378 INFO    [reporting] FINISH  REG-004[all-zeros]  FAIL  tests/test_registration.py::test_invalid_mobile_rejected[chromium-all-zeros]  20.63s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:23:08,381 INFO    [reporting] START   REG-005[far-too-short]  tests/test_registration.py::test_invalid_password_rejected[chromium-far-too-short]
+2026-10-15 15:23:28,684 INFO    [reporting] FINISH  REG-005[far-too-short]  FAIL  tests/test_registration.py::test_invalid_password_rejected[chromium-far-too-short]  20.29s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:23:28,687 INFO    [reporting] START   REG-D66B9[" OR ""="]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-" OR ""="]
+2026-10-15 15:23:51,023 INFO    [reporting] FINISH  REG-D66B9[" OR ""="]  FAIL  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-" OR ""="]  22.32s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:23:51,027 INFO    [reporting] START   CPW-5EF02[empty]  tests/test_change_password.py::test_invalid_new_password[chromium-empty]
+2026-10-15 15:23:51,581 INFO    [reporting] FINISH  CPW-5EF02[empty]  BLOCKED  tests/test_change_password.py::test_invalid_new_password[chromium-empty]  0.55s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS in .env for authenticated tests
+2026-10-15 15:23:51,585 INFO    [reporting] START   FPW-7AA29[missing-local]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]
+2026-10-15 15:24:12,469 INFO    [reporting] FINISH  FPW-7AA29[missing-local]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]  20.87s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:24:12,474 INFO    [reporting] START   LOGIN-004[missing-local]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]
+2026-10-15 15:24:31,184 INFO    [reporting] FINISH  LOGIN-004[missing-local]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]  18.69s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:24:31,279 INFO    [reporting] START   REG-003[missing-local]  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-local]
+2026-10-15 15:24:49,612 INFO    [reporting] FINISH  REG-003[missing-local]  FAIL  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-local]  18.32s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:24:49,615 INFO    [reporting] START   REG-004[empty]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-empty]
+2026-10-15 15:25:10,732 INFO    [reporting] FINISH  REG-004[empty]  FAIL  tests/test_registration.py::test_invalid_mobile_rejected[chromium-empty]  21.10s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:25:10,735 INFO    [reporting] START   REG-005[empty]  tests/test_registration.py::test_invalid_password_rejected[chromium-empty]
+2026-10-15 15:25:29,091 INFO    [reporting] FINISH  REG-005[empty]  FAIL  tests/test_registration.py::test_invalid_password_rejected[chromium-empty]  18.35s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:25:29,094 INFO    [reporting] START   FPW-7AA29[empty]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]
+2026-10-15 15:25:50,614 INFO    [reporting] FINISH  FPW-7AA29[empty]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]  21.51s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:25:50,619 INFO    [reporting] START   LOGIN-004[empty]  tests/test_login.py::test_login_invalid_email_format[chromium-empty]
+2026-10-15 15:26:08,297 INFO    [reporting] FINISH  LOGIN-004[empty]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-empty]  17.67s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 15:26:08,300 INFO    [reporting] START   REG-003[empty]  tests/test_registration.py::test_invalid_email_rejected[chromium-empty]
+2026-10-15 15:26:31,400 INFO    [reporting] FINISH  REG-003[empty]  FAIL  tests/test_registration.py::test_invalid_email_rejected[chromium-empty]  23.08s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 15:27:58,439 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_15-04-03_full-suite\html\index.html
+2026-10-15 15:28:07,646 WARNING [reporting] Could not refresh C:\Users\Office\Downloads\sprintnxt-automation\reports\latest: [WinError 5] Access is denied: 'C:\\Users\\Office\\Downloads\\sprintnxt-automation\\reports\\latest.__staging' -> 'C:\\Users\\Office\\Downloads\\sprintnxt-automation\\reports\\latest'

@@ -1,0 +1,10 @@
+pytest>=7.4
+playwright>=1.40
+pytest-playwright>=0.4
+python-dotenv>=1.0
+faker>=20.0
+# reporting extras: retries (--reruns) and parallel runs (-n auto) - both optional, both supported by the report
+pytest-rerunfailures>=14
+pytest-xdist>=3.5
+# optional: shrinks screenshots in summary.pdf (without it the PDF embeds the original PNGs)
+pillow>=10

@@ -1,0 +1,11 @@
+2026-10-15 18:12:41,589 INFO    [reporting] Run 2026-10-15_18-12-41_admin-e2e started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_18-12-41_admin-e2e)
+2026-10-15 18:12:42,152 INFO    [reporting] START   ADM-001  tests/test_admin_activation.py::test_admin_login[chromium]
+2026-10-15 18:12:55,661 INFO    [reporting] FINISH  ADM-001  PASS  tests/test_admin_activation.py::test_admin_login[chromium]  13.51s
+2026-10-15 18:12:55,665 INFO    [reporting] START   ADM-002  tests/test_admin_activation.py::test_register_partner_list[chromium]
+2026-10-15 18:13:05,638 INFO    [reporting] FINISH  ADM-002  PASS  tests/test_admin_activation.py::test_register_partner_list[chromium]  9.97s
+2026-10-15 18:13:05,641 INFO    [reporting] START   ADM-003  tests/test_admin_activation.py::test_activate_merchant[chromium]
+2026-10-15 18:13:12,825 INFO    [reporting] FINISH  ADM-003  BLOCKED  tests/test_admin_activation.py::test_activate_merchant[chromium]  7.18s  -> Set SNXT_MERCHANT_EMAIL to the merchant you want to activate (E2E-001 covers a fresh one)
+2026-10-15 18:13:12,828 INFO    [reporting] START   E2E-001  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]
+2026-10-15 18:13:36,713 INFO    [reporting] FINISH  E2E-001  FAIL  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]  23.87s  -> TargetClosedError: Page.bring_to_front: Target page, context or browser has been closed
+2026-10-15 18:13:45,724 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_18-08-14_admin
+2026-10-15 18:13:45,725 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_18-12-41_admin-e2e\html\index.html

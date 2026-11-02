@@ -1,0 +1,6 @@
+[    8793ms] [LOG] Angular is running in development mode. @ https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:15745
+[    9174ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://uat.sprintnxt.in/NexGenV4Front/#/auth/login:0
+[   10927ms] [WARNING] NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912 @ https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705
+[   59383ms] [LOG] /dashboard @ https://uat.sprintnxt.in/NexGenV4Front/chunk-RBFGDBNL.js:769
+[  806131ms] [LOG] /account-settings/credentials/api-credential @ https://uat.sprintnxt.in/NexGenV4Front/chunk-RBFGDBNL.js:769
+[ 1361819ms] [LOG] /dashboard @ https://uat.sprintnxt.in/NexGenV4Front/chunk-RBFGDBNL.js:769

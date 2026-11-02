@@ -1,0 +1,10 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+E2E-001,Register -> admin activates -> merchant logs in,End-to-End,Merchant onboarding,"End-to-End, Functional","Signup and admin portals reachable
+UAT OTP is 123456
+Admin credentials in .env","merchant email = qa.auto+1792069835075663@gmail.com
+merchant mobile = 7118632954
+activation remarks = Activated by QA automation","1. Open the signup page
+2. Register merchant 'qa.auto+1792069835075663@gmail.com' / '7118632954' [FAILED]
+3.   Enter name 'Viraj Sagar' and business 'Baral and Sons'
+4.   Enter email 'qa.auto+1792069835075663@gmail.com'
+5.   Verify email with OTP [FAILED]","Merchant registers, admin activates it from Register Partner with remarks, and the merchant then logs in to the dashboard","Not executed (blocked): UAT rate-limited send-otp (HTTP 429, 'Too many attempts from this network'). Re-run OTP tests after the block expires.",BLOCKED,"UAT rate-limited send-otp (HTTP 429, 'Too many attempts from this network'). Re-run OTP tests after the block expires.",Precondition Not Met,,,,,2026-10-15T18:40:22.686+05:30,2026-10-15T18:40:56.054+05:30,33.37,chromium 145.0.7632.6,UAT,Office,local,2,2,1,0,False,tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]

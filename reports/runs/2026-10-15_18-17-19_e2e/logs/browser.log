@@ -1,0 +1,2 @@
+===== E2E-001  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]  [FAIL]
+  + 15712ms console.warning: NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912

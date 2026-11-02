@@ -1,0 +1,29 @@
+2026-10-15 16:52:16,336 INFO    [reporting] Run 2026-10-15_16-52-16_login started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_16-52-16_login)
+2026-10-15 16:52:16,808 INFO    [reporting] START   LOGIN-001  tests/test_login.py::test_login_valid[chromium]
+2026-10-15 16:52:29,514 INFO    [reporting] FINISH  LOGIN-001  BLOCKED  tests/test_login.py::test_login_valid[chromium]  12.70s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS for the positive login test
+2026-10-15 16:52:29,519 INFO    [reporting] START   LOGIN-002  tests/test_login.py::test_login_wrong_password[chromium]
+2026-10-15 16:52:49,818 INFO    [reporting] FINISH  LOGIN-002  FAIL  tests/test_login.py::test_login_wrong_password[chromium]  20.29s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:52:49,823 INFO    [reporting] START   LOGIN-003  tests/test_login.py::test_login_unregistered_email[chromium]
+2026-10-15 16:53:11,879 INFO    [reporting] FINISH  LOGIN-003  FAIL  tests/test_login.py::test_login_unregistered_email[chromium]  22.05s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:53:11,885 INFO    [reporting] START   LOGIN-004[no-at-or-domain]  tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]
+2026-10-15 16:53:31,950 INFO    [reporting] FINISH  LOGIN-004[no-at-or-domain]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]  20.06s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:53:31,954 INFO    [reporting] START   LOGIN-005  tests/test_login.py::test_login_empty[chromium]
+2026-10-15 16:53:54,645 INFO    [reporting] FINISH  LOGIN-005  FAIL  tests/test_login.py::test_login_empty[chromium]  22.68s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 16:53:54,649 INFO    [reporting] START   LOGIN-004[missing-at]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]
+2026-10-15 16:54:14,482 INFO    [reporting] FINISH  LOGIN-004[missing-at]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]  19.82s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:54:14,485 INFO    [reporting] START   LOGIN-004[missing-domain]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]
+2026-10-15 16:54:38,897 INFO    [reporting] FINISH  LOGIN-004[missing-domain]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]  24.40s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:54:38,901 INFO    [reporting] START   LOGIN-004[missing-tld]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]
+2026-10-15 16:55:00,087 INFO    [reporting] FINISH  LOGIN-004[missing-tld]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]  21.18s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:55:00,091 INFO    [reporting] START   LOGIN-004[double-at]  tests/test_login.py::test_login_invalid_email_format[chromium-double-at]
+2026-10-15 16:55:20,376 INFO    [reporting] FINISH  LOGIN-004[double-at]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-double-at]  20.28s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:55:20,379 INFO    [reporting] START   LOGIN-004[space-in-local]  tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]
+2026-10-15 16:55:41,429 INFO    [reporting] FINISH  LOGIN-004[space-in-local]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]  21.04s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:55:41,433 INFO    [reporting] START   LOGIN-004[illegal-chars]  tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]
+2026-10-15 16:56:04,818 INFO    [reporting] FINISH  LOGIN-004[illegal-chars]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]  23.37s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:56:04,822 INFO    [reporting] START   LOGIN-004[missing-local]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]
+2026-10-15 16:56:24,882 INFO    [reporting] FINISH  LOGIN-004[missing-local]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]  20.05s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:56:24,886 INFO    [reporting] START   LOGIN-004[empty]  tests/test_login.py::test_login_invalid_email_format[chromium-empty]
+2026-10-15 16:56:46,591 INFO    [reporting] FINISH  LOGIN-004[empty]  FAIL  tests/test_login.py::test_login_invalid_email_format[chromium-empty]  21.70s  -> TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+2026-10-15 16:57:01,738 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_16-51-11_registration-reg-001-rerun
+2026-10-15 16:57:01,738 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_16-52-16_login\html\index.html

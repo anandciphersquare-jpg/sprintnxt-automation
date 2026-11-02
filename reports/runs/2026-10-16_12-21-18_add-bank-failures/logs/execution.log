@@ -1,0 +1,3 @@
+2026-10-16 12:21:19,006 INFO    [reporting] Run 2026-10-16_12-21-18_add-bank-failures started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_12-21-18_add-bank-failures)
+2026-10-16 12:21:19,272 INFO    [reporting] Deleted old screenshots/videos: 2026-10-16_12-19-06_demo-embed-b
+2026-10-16 12:21:19,272 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_12-21-18_add-bank-failures\html\index.html

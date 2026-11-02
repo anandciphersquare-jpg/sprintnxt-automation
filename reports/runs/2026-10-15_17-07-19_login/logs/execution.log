@@ -1,0 +1,29 @@
+2026-10-15 17:07:19,492 INFO    [reporting] Run 2026-10-15_17-07-19_login started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-07-19_login)
+2026-10-15 17:07:20,139 INFO    [reporting] START   LOGIN-001  tests/test_login.py::test_login_valid[chromium]
+2026-10-15 17:07:30,470 INFO    [reporting] FINISH  LOGIN-001  BLOCKED  tests/test_login.py::test_login_valid[chromium]  10.33s  -> Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS for the positive login test
+2026-10-15 17:07:30,476 INFO    [reporting] START   LOGIN-002  tests/test_login.py::test_login_wrong_password[chromium]
+2026-10-15 17:07:35,312 INFO    [reporting] FINISH  LOGIN-002  PASS  tests/test_login.py::test_login_wrong_password[chromium]  4.84s
+2026-10-15 17:07:35,315 INFO    [reporting] START   LOGIN-003  tests/test_login.py::test_login_unregistered_email[chromium]
+2026-10-15 17:07:39,604 INFO    [reporting] FINISH  LOGIN-003  PASS  tests/test_login.py::test_login_unregistered_email[chromium]  4.29s
+2026-10-15 17:07:39,609 INFO    [reporting] START   LOGIN-004[no-at-or-domain]  tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]
+2026-10-15 17:07:49,043 INFO    [reporting] FINISH  LOGIN-004[no-at-or-domain]  PASS  tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]  9.43s
+2026-10-15 17:07:49,047 INFO    [reporting] START   LOGIN-005  tests/test_login.py::test_login_empty[chromium]
+2026-10-15 17:07:55,326 INFO    [reporting] FINISH  LOGIN-005  PASS  tests/test_login.py::test_login_empty[chromium]  6.28s
+2026-10-15 17:07:55,329 INFO    [reporting] START   LOGIN-004[missing-at]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]
+2026-10-15 17:08:02,273 INFO    [reporting] FINISH  LOGIN-004[missing-at]  PASS  tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]  6.94s
+2026-10-15 17:08:02,276 INFO    [reporting] START   LOGIN-004[missing-domain]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]
+2026-10-15 17:08:09,442 INFO    [reporting] FINISH  LOGIN-004[missing-domain]  PASS  tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]  7.16s
+2026-10-15 17:08:09,446 INFO    [reporting] START   LOGIN-004[missing-tld]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]
+2026-10-15 17:08:16,358 INFO    [reporting] FINISH  LOGIN-004[missing-tld]  PASS  tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]  6.91s
+2026-10-15 17:08:16,361 INFO    [reporting] START   LOGIN-004[double-at]  tests/test_login.py::test_login_invalid_email_format[chromium-double-at]
+2026-10-15 17:08:23,321 INFO    [reporting] FINISH  LOGIN-004[double-at]  PASS  tests/test_login.py::test_login_invalid_email_format[chromium-double-at]  6.96s
+2026-10-15 17:08:23,325 INFO    [reporting] START   LOGIN-004[space-in-local]  tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]
+2026-10-15 17:08:29,770 INFO    [reporting] FINISH  LOGIN-004[space-in-local]  PASS  tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]  6.44s
+2026-10-15 17:08:29,773 INFO    [reporting] START   LOGIN-004[illegal-chars]  tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]
+2026-10-15 17:08:38,898 INFO    [reporting] FINISH  LOGIN-004[illegal-chars]  PASS  tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]  9.12s
+2026-10-15 17:08:38,903 INFO    [reporting] START   LOGIN-004[missing-local]  tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]
+2026-10-15 17:08:47,039 INFO    [reporting] FINISH  LOGIN-004[missing-local]  PASS  tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]  8.13s
+2026-10-15 17:08:47,042 INFO    [reporting] START   LOGIN-004[empty]  tests/test_login.py::test_login_invalid_email_format[chromium-empty]
+2026-10-15 17:08:54,244 INFO    [reporting] FINISH  LOGIN-004[empty]  PASS  tests/test_login.py::test_login_invalid_email_format[chromium-empty]  7.20s
+2026-10-15 17:09:09,829 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_17-02-17_e2e
+2026-10-15 17:09:09,829 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-07-19_login\html\index.html

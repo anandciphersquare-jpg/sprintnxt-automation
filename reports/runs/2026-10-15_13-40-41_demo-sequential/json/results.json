@@ -1,0 +1,1887 @@
+{
+  "schema": 1,
+  "run": {
+    "id": "2026-10-15_13-40-41_demo-sequential",
+    "name": "Demo - sequential",
+    "project": "SprintNXT",
+    "start": "2026-10-15T13:40:41.471+05:30",
+    "end": "2026-10-15T13:41:03.207+05:30",
+    "duration_ms": 21736,
+    "environment": "UAT",
+    "base_url": "https://uat.sprintnxt.in/NexGenV4Front",
+    "build": "local",
+    "executed_by": "Office",
+    "browser": "chromium 145.0.7632.6",
+    "platform": "Windows 10 (AMD64)",
+    "python": "3.13.3",
+    "pytest": "9.0.2",
+    "playwright": "1.58.0",
+    "command": "pytest examples/reporting_demo --report-name Demo - sequential -p no:cacheprovider -q",
+    "markexpr": "",
+    "ci": {},
+    "workers": 1,
+    "exit_status": 1,
+    "hostname": "DESKTOP-0EGM1TC",
+    "pdf": true,
+    "generated": "2026-10-15T13:41:03.212+05:30",
+    "dir": "reports/runs/2026-10-15_13-40-41_demo-sequential"
+  },
+  "summary": {
+    "total": 12,
+    "passed": 5,
+    "failed": 3,
+    "blocked": 2,
+    "skipped": 2,
+    "executed": 10,
+    "pass_rate": 50.0,
+    "flaky": 1,
+    "retried": 1,
+    "test_time_ms": 20544,
+    "modules": [
+      {
+        "module": "Admin",
+        "total": 1,
+        "duration_ms": 631,
+        "PASS": 0,
+        "FAIL": 0,
+        "BLOCKED": 1,
+        "SKIPPED": 0
+      },
+      {
+        "module": "Login",
+        "total": 7,
+        "duration_ms": 14077,
+        "PASS": 5,
+        "FAIL": 2,
+        "BLOCKED": 0,
+        "SKIPPED": 0
+      },
+      {
+        "module": "Registration",
+        "total": 4,
+        "duration_ms": 5836,
+        "PASS": 0,
+        "FAIL": 1,
+        "BLOCKED": 1,
+        "SKIPPED": 2
+      }
+    ],
+    "categories": {
+      "Assertion Failure": 1,
+      "Element Not Found / Not Actionable": 1,
+      "Rate Limited (HTTP 429)": 1,
+      "Precondition Not Met": 1,
+      "Setup / Precondition": 1
+    }
+  },
+  "tests": [
+    {
+      "id": "DEMO-001",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]",
+      "title": "Merchant logs in with valid credentials",
+      "module": "Login",
+      "feature": "Merchant login",
+      "types": [
+        "Functional",
+        "Smoke"
+      ],
+      "preconditions": [
+        "Merchant account is active",
+        "Login page is open"
+      ],
+      "expected": "Dashboard opens and greets the merchant by name",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 100,
+      "markers": [
+        "login",
+        "smoke"
+      ],
+      "status": "PASS",
+      "actual": "Dashboard opened with 'Welcome, QA Merchant'",
+      "failure_reason": "",
+      "failure_category": "",
+      "error": "",
+      "test_data": {
+        "email": "qa.merchant@sprintnxt.in"
+      },
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 3889,
+          "duration_ms": 139,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 3953,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as qa.merchant@sprintnxt.in",
+          "depth": 0,
+          "start_ms": 4030,
+          "duration_ms": 281,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.merchant@sprintnxt.in",
+            "password": "Correct@12345"
+          },
+          "error": ""
+        },
+        {
+          "title": "Verify the dashboard greeting",
+          "depth": 0,
+          "start_ms": 4311,
+          "duration_ms": 54,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "status": 200,
+          "duration_ms": 15.5,
+          "at_ms": 4355,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "content-type": "application/json",
+            "origin": "https://demo.sprintnxt.local",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "{\n  \"email\": \"qa.merchant@sprintnxt.in\",\n  \"password\": \"Correct@12345\"\n}",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "111"
+          },
+          "response_body": "{\n  \"access_token\": \"••••••\",\n  \"user\": {\n    \"name\": \"QA Merchant\",\n    \"email\": \"qa.merchant@sprintnxt.in\"\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/api/profile",
+          "status": 500,
+          "duration_ms": 40.9,
+          "at_ms": 4437,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "57"
+          },
+          "response_body": "{\n  \"message\": \"Internal server error\",\n  \"traceId\": \"a1b2c3\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 4007,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        },
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+          "at_ms": 4382,
+          "location": "https://demo.sprintnxt.local/api/profile:0"
+        },
+        {
+          "level": "error",
+          "text": "Profile widget failed: HTTP 500",
+          "at_ms": 4382,
+          "location": "https://demo.sprintnxt.local/login:16"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 4006,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        },
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/api/profile",
+          "at_ms": 4381,
+          "status": 500,
+          "failure": "",
+          "resource_type": "fetch"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-001  examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]",
+      "start": "2026-10-15T13:40:41.556+05:30",
+      "end": "2026-10-15T13:40:46.262+05:30",
+      "duration_ms": 4706,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "duration_ms": 4706,
+          "failure_reason": "",
+          "failure_category": ""
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-002[no-at]",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]",
+      "title": "Login rejects a malformed email [no-at]",
+      "module": "Login",
+      "feature": "Merchant login",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "An error message is shown and no dashboard opens",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 113,
+      "markers": [
+        "login",
+        "negative"
+      ],
+      "status": "PASS",
+      "actual": "As expected: An error message is shown and no dashboard opens",
+      "failure_reason": "",
+      "failure_category": "",
+      "error": "",
+      "test_data": {
+        "email": "plainaddress",
+        "reason": "no-at"
+      },
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 234,
+          "duration_ms": 82,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 264,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as plainaddress",
+          "depth": 0,
+          "start_ms": 317,
+          "duration_ms": 170,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "plainaddress",
+            "password": "Whatever@123"
+          },
+          "error": ""
+        },
+        {
+          "title": "Read the error message",
+          "depth": 0,
+          "start_ms": 487,
+          "duration_ms": 59,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "status": 401,
+          "duration_ms": 10.1,
+          "at_ms": 511,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "content-type": "application/json",
+            "origin": "https://demo.sprintnxt.local",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "{\n  \"email\": \"plainaddress\",\n  \"password\": \"Whatever@123\"\n}",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "40"
+          },
+          "response_body": "{\n  \"message\": \"Invalid email or password\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 309,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        },
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "at_ms": 502,
+          "location": "https://demo.sprintnxt.local/api/auth/login:0"
+        },
+        {
+          "level": "error",
+          "text": "Login failed: 401 Invalid email or password",
+          "at_ms": 510,
+          "location": "https://demo.sprintnxt.local/login:17"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 308,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        },
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "at_ms": 502,
+          "status": 401,
+          "failure": "",
+          "resource_type": "fetch"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-002[no-at]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]",
+      "start": "2026-10-15T13:40:46.269+05:30",
+      "end": "2026-10-15T13:40:47.051+05:30",
+      "duration_ms": 781,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "duration_ms": 781,
+          "failure_reason": "",
+          "failure_category": ""
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-003",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]",
+      "title": "Wrong password shows a lockout warning",
+      "module": "Login",
+      "feature": "Merchant login",
+      "types": [
+        "Negative",
+        "Security"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "Message warns about remaining attempts before lockout",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 125,
+      "markers": [
+        "login"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: Expected a lockout warning, got: 'Invalid email or password' assert 'attempts remaining' in 'invalid email or password' + where 'invalid email or password' = <built-in method lower of str object at 0x000001CCCF9AD980>() + where <built-in method lower of str object at 0x000001CCCF9AD980> = 'Invalid email or password'.lower",
+      "failure_reason": "Expected a lockout warning, got: 'Invalid email or password' assert 'attempts remaining' in 'invalid email or password' + where 'invalid email or password' = <built-in method lower of str object at 0x000001CCCF9AD980>() + where <built-in method lower of str object at 0x000001CCCF9AD980> = 'Invalid email or password'.lower",
+      "failure_category": "Assertion Failure",
+      "error": "demo = <test_reporting_demo.DemoLoginPage object at 0x000001CCCF986C10>\n\n    @pytest.mark.login\n    @tc(\"DEMO-003\", \"Wrong password shows a lockout warning\", feature=\"Merchant login\",\n        types=[\"Negative\", \"Security\"], expected=\"Message warns about remaining attempts before lockout\")\n    def test_wrong_password_warns_about_lockout(demo):\n        demo.login(\"qa.merchant@sprintnxt.in\", \"Wrong@123456\")\n        message = demo.error()\n>       assert \"attempts remaining\" in message.lower(), f\"Expected a lockout warning, got: {message!r}\"\nE       AssertionError: Expected a lockout warning, got: 'Invalid email or password'\nE       assert 'attempts remaining' in 'invalid email or password'\nE        +  where 'invalid email or password' = <built-in method lower of str object at 0x000001CCCF9AD980>()\nE        +    where <built-in method lower of str object at 0x000001CCCF9AD980> = 'Invalid email or password'.lower\n\nexamples\\reporting_demo\\test_reporting_demo.py:131: AssertionError",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 282,
+          "duration_ms": 83,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 311,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as qa.merchant@sprintnxt.in",
+          "depth": 0,
+          "start_ms": 366,
+          "duration_ms": 144,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.merchant@sprintnxt.in",
+            "password": "Wrong@123456"
+          },
+          "error": ""
+        },
+        {
+          "title": "Read the error message",
+          "depth": 0,
+          "start_ms": 510,
+          "duration_ms": 53,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/134047_DEMO-003_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/demo-003_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/demo-003_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "status": 401,
+          "duration_ms": 13.3,
+          "at_ms": 535,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "content-type": "application/json",
+            "origin": "https://demo.sprintnxt.local",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "{\n  \"email\": \"qa.merchant@sprintnxt.in\",\n  \"password\": \"Wrong@123456\"\n}",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "40"
+          },
+          "response_body": "{\n  \"message\": \"Invalid email or password\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 358,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        },
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "at_ms": 526,
+          "location": "https://demo.sprintnxt.local/api/auth/login:0"
+        },
+        {
+          "level": "error",
+          "text": "Login failed: 401 Invalid email or password",
+          "at_ms": 535,
+          "location": "https://demo.sprintnxt.local/login:17"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 357,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        },
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "at_ms": 526,
+          "status": 401,
+          "failure": "",
+          "resource_type": "fetch"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-003  examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]",
+      "start": "2026-10-15T13:40:47.057+05:30",
+      "end": "2026-10-15T13:40:48.294+05:30",
+      "duration_ms": 1237,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 1237,
+          "failure_reason": "Expected a lockout warning, got: 'Invalid email or password' assert 'attempts remaining' in 'invalid email or password' + where 'invalid email or password' = <built-in method lower of str object at 0x000001CCCF9AD980>() + where <built-in method lower of str object at 0x000001CCCF9AD980> = 'Invalid email or password'.lower",
+          "failure_category": "Assertion Failure"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-004",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]",
+      "title": "Dashboard shows the merchant profile widget",
+      "module": "Login",
+      "feature": "Dashboard",
+      "types": [
+        "Functional",
+        "UI/UX"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "Profile widget shows the merchant's business name",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 135,
+      "markers": [
+        "login"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.wait_for: Timeout 2500ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.wait_for: Timeout 2500ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "demo = <test_reporting_demo.DemoLoginPage object at 0x000001CCCF913A80>\n\n    @pytest.mark.login\n    @tc(\"DEMO-004\", \"Dashboard shows the merchant profile widget\", feature=\"Dashboard\",\n        types=[\"Functional\", \"UI/UX\"], expected=\"Profile widget shows the merchant's business name\")\n    def test_dashboard_profile_widget(demo):\n        demo.login(\"qa.merchant@sprintnxt.in\", \"Correct@12345\")\n        with step(\"Wait for the profile widget\"):\n>           demo.page.locator(\"#profile .business-name\").wait_for(timeout=2500)\n\nexamples\\reporting_demo\\test_reporting_demo.py:141: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:18074: in wait_for\n    self._sync(self._impl_obj.wait_for(timeout=timeout, state=state))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:710: in wait_for\n    await self._frame.wait_for_selector(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:369: in wait_for_selector\n    await self._channel.send(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x000001CCCF5D8EC0>\ncb = <function Channel.send.<locals>.<lambda> at 0x000001CCCF9FE340>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 2500ms exceeded.\nE           Call log:\nE             - waiting for locator(\"#profile .business-name\") to be visible\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 253,
+          "duration_ms": 94,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 290,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as qa.merchant@sprintnxt.in",
+          "depth": 0,
+          "start_ms": 348,
+          "duration_ms": 292,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.merchant@sprintnxt.in",
+            "password": "Correct@12345"
+          },
+          "error": ""
+        },
+        {
+          "title": "Wait for the profile widget",
+          "depth": 0,
+          "start_ms": 640,
+          "duration_ms": 2544,
+          "status": "failed",
+          "kind": "step",
+          "params": {},
+          "error": "TimeoutError: Locator.wait_for: Timeout 2500ms exceeded."
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/134051_DEMO-004_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/demo-004_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/demo-004_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "status": 200,
+          "duration_ms": 15.1,
+          "at_ms": 685,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "content-type": "application/json",
+            "origin": "https://demo.sprintnxt.local",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "{\n  \"email\": \"qa.merchant@sprintnxt.in\",\n  \"password\": \"Correct@12345\"\n}",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "111"
+          },
+          "response_body": "{\n  \"access_token\": \"••••••\",\n  \"user\": {\n    \"name\": \"QA Merchant\",\n    \"email\": \"qa.merchant@sprintnxt.in\"\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/api/profile",
+          "status": 500,
+          "duration_ms": 42.2,
+          "at_ms": 752,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "57"
+          },
+          "response_body": "{\n  \"message\": \"Internal server error\",\n  \"traceId\": \"a1b2c3\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 340,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        },
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+          "at_ms": 698,
+          "location": "https://demo.sprintnxt.local/api/profile:0"
+        },
+        {
+          "level": "error",
+          "text": "Profile widget failed: HTTP 500",
+          "at_ms": 698,
+          "location": "https://demo.sprintnxt.local/login:16"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 339,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        },
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/api/profile",
+          "at_ms": 697,
+          "status": 500,
+          "failure": "",
+          "resource_type": "fetch"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-004  examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]",
+      "start": "2026-10-15T13:40:48.314+05:30",
+      "end": "2026-10-15T13:40:52.257+05:30",
+      "duration_ms": 3942,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 3942,
+          "failure_reason": "TimeoutError: Locator.wait_for: Timeout 2500ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-005",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]",
+      "title": "Send OTP for email verification",
+      "module": "Registration",
+      "feature": "Email OTP",
+      "types": [
+        "Functional",
+        "API"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "OTP is sent and the OTP dialog opens",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 145,
+      "markers": [
+        "registration"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: Locator expected to be visible Actual value: None Error: element(s) not found",
+      "failure_reason": "Locator expected to be visible Actual value: None Error: element(s) not found",
+      "failure_category": "Rate Limited (HTTP 429)",
+      "error": "demo = <test_reporting_demo.DemoLoginPage object at 0x000001CCCFA44B00>\n\n    @pytest.mark.registration\n    @tc(\"DEMO-005\", \"Send OTP for email verification\", module=\"Registration\", feature=\"Email OTP\",\n        types=[\"Functional\", \"API\"], expected=\"OTP is sent and the OTP dialog opens\")\n    def test_send_otp_rate_limited(demo):\n        demo.login(\"ratelimit.user@sprintnxt.in\", \"Correct@12345\")\n>       expect(demo.page.locator(\"#welcome\")).to_be_visible(timeout=2500)\nE       AssertionError: Locator expected to be visible\nE       Actual value: None\nE       Error: element(s) not found \nE       Call log:\nE         - Expect \"to_be_visible\" with timeout 2500ms\nE         - waiting for locator(\"#welcome\")\n\nexamples\\reporting_demo\\test_reporting_demo.py:150: AssertionError",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 261,
+          "duration_ms": 84,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 292,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as ratelimit.user@sprintnxt.in",
+          "depth": 0,
+          "start_ms": 346,
+          "duration_ms": 202,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "ratelimit.user@sprintnxt.in",
+            "password": "Correct@12345"
+          },
+          "error": ""
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/134055_DEMO-005_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/demo-005_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/demo-005_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "status": 429,
+          "duration_ms": 12.1,
+          "at_ms": 574,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "content-type": "application/json",
+            "origin": "https://demo.sprintnxt.local",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "{\n  \"email\": \"ratelimit.user@sprintnxt.in\",\n  \"password\": \"Correct@12345\"\n}",
+          "response_headers": {
+            "content-type": "application/json",
+            "retry-after": "2640",
+            "content-length": "83"
+          },
+          "response_body": "{\n  \"message\": \"Too many attempts from this network. Please try again in 44 minutes.\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 305,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        },
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+          "at_ms": 565,
+          "location": "https://demo.sprintnxt.local/api/auth/login:0"
+        },
+        {
+          "level": "error",
+          "text": "Login failed: 429 Too many attempts from this network. Please try again in 44 minutes.",
+          "at_ms": 574,
+          "location": "https://demo.sprintnxt.local/login:17"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 305,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        },
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "at_ms": 565,
+          "status": 429,
+          "failure": "",
+          "resource_type": "fetch"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-005  examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]",
+      "start": "2026-10-15T13:40:52.268+05:30",
+      "end": "2026-10-15T13:40:56.018+05:30",
+      "duration_ms": 3749,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 3749,
+          "failure_reason": "Locator expected to be visible Actual value: None Error: element(s) not found",
+          "failure_category": "Rate Limited (HTTP 429)"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-006",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]",
+      "title": "Admin activates a newly registered merchant",
+      "module": "Admin",
+      "feature": "Merchant activation",
+      "types": [
+        "Functional",
+        "Integration"
+      ],
+      "preconditions": [
+        "Admin credentials configured"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 154,
+      "markers": [
+        "admin"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): Admin URL/credentials not provided (SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS)",
+      "failure_reason": "Admin URL/credentials not provided (SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS)",
+      "failure_category": "Precondition Not Met",
+      "error": "",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 262,
+          "duration_ms": 85,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 295,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [],
+      "api_logs": [],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 339,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 339,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-006  examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]",
+      "start": "2026-10-15T13:40:56.030+05:30",
+      "end": "2026-10-15T13:40:56.662+05:30",
+      "duration_ms": 631,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 631,
+          "failure_reason": "Admin URL/credentials not provided (SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS)",
+          "failure_category": "Precondition Not Met"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-007",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]",
+      "title": "Bulk-import merchants from CSV",
+      "module": "Registration",
+      "feature": "Bulk import",
+      "types": [
+        "Functional",
+        "Regression"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 161,
+      "markers": [
+        "registration"
+      ],
+      "status": "SKIPPED",
+      "actual": "Not executed (skipped): Bulk import is not part of release 4.2",
+      "failure_reason": "Bulk import is not part of release 4.2",
+      "failure_category": "",
+      "error": "",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 296,
+          "duration_ms": 87,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 332,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [],
+      "api_logs": [],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 376,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 376,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-007  examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]",
+      "start": "2026-10-15T13:40:56.666+05:30",
+      "end": "2026-10-15T13:40:57.281+05:30",
+      "duration_ms": 614,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "SKIPPED",
+          "duration_ms": 614,
+          "failure_reason": "Bulk import is not part of release 4.2",
+          "failure_category": ""
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-008",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]",
+      "title": "Seeded merchant data is available",
+      "module": "Registration",
+      "feature": "Test data seeding",
+      "types": [
+        "Integration"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 168,
+      "markers": [
+        "registration"
+      ],
+      "status": "BLOCKED",
+      "actual": "Not executed (blocked): ConnectionError: Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED",
+      "failure_reason": "ConnectionError: Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED",
+      "failure_category": "Setup / Precondition",
+      "error": "page = <Page url='about:blank'>\n\n    @pytest.fixture\n    def broken_backend(page: Page):\n>       raise ConnectionError(\"Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED\")\nE       ConnectionError: Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED\n\nexamples\\reporting_demo\\test_reporting_demo.py:96: ConnectionError",
+      "test_data": {},
+      "steps": [],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Setup failure screenshot",
+          "path": "screenshots/134057_DEMO-008_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/demo-008_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/demo-008_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-008  examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]",
+      "start": "2026-10-15T13:40:57.287+05:30",
+      "end": "2026-10-15T13:40:58.005+05:30",
+      "duration_ms": 718,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "BLOCKED",
+          "duration_ms": 718,
+          "failure_reason": "ConnectionError: Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED",
+          "failure_category": "Setup / Precondition"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-009",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]",
+      "title": "Session banner appears after login",
+      "module": "Login",
+      "feature": "Session",
+      "types": [
+        "UI/UX",
+        "Regression"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "Banner is visible within 2s",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 179,
+      "markers": [
+        "login"
+      ],
+      "status": "PASS",
+      "actual": "As expected: Banner is visible within 2s",
+      "failure_reason": "",
+      "failure_category": "",
+      "error": "",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 303,
+          "duration_ms": 100,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 338,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as qa.merchant@sprintnxt.in",
+          "depth": 0,
+          "start_ms": 404,
+          "duration_ms": 172,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.merchant@sprintnxt.in",
+            "password": "Correct@12345"
+          },
+          "error": ""
+        },
+        {
+          "title": "Attempt 2 of the banner check",
+          "depth": 0,
+          "start_ms": 576,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "note",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/134058_DEMO-009_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/demo-009_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/demo-009_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "status": 200,
+          "duration_ms": 12.5,
+          "at_ms": 610,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "content-type": "application/json",
+            "origin": "https://demo.sprintnxt.local",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "{\n  \"email\": \"qa.merchant@sprintnxt.in\",\n  \"password\": \"Correct@12345\"\n}",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "111"
+          },
+          "response_body": "{\n  \"access_token\": \"••••••\",\n  \"user\": {\n    \"name\": \"QA Merchant\",\n    \"email\": \"qa.merchant@sprintnxt.in\"\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/api/profile",
+          "status": 500,
+          "duration_ms": 31.4,
+          "at_ms": 700,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "57"
+          },
+          "response_body": "{\n  \"message\": \"Internal server error\",\n  \"traceId\": \"a1b2c3\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 354,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        },
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+          "at_ms": 619,
+          "location": "https://demo.sprintnxt.local/api/profile:0"
+        },
+        {
+          "level": "error",
+          "text": "Profile widget failed: HTTP 500",
+          "at_ms": 620,
+          "location": "https://demo.sprintnxt.local/login:16"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 353,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        },
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/api/profile",
+          "at_ms": 619,
+          "status": 500,
+          "failure": "",
+          "resource_type": "fetch"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-009  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]\n\n----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-009  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium] (attempt 2)",
+      "start": "2026-10-15T13:40:58.017+05:30",
+      "end": "2026-10-15T13:40:59.994+05:30",
+      "duration_ms": 978,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 988,
+          "failure_reason": "Banner did not render in time (simulated race condition) assert 1 >= 2",
+          "failure_category": "Assertion Failure"
+        },
+        {
+          "attempt": 2,
+          "status": "PASS",
+          "duration_ms": 978,
+          "failure_reason": "",
+          "failure_category": ""
+        }
+      ],
+      "retries": 1,
+      "flaky": true,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-010",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]",
+      "title": "Password longer than 15 characters is rejected",
+      "module": "Registration",
+      "feature": "Password policy",
+      "types": [
+        "Boundary",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 191,
+      "markers": [
+        "registration",
+        "xfail"
+      ],
+      "status": "SKIPPED",
+      "actual": "Not executed (skipped): Expected failure (xfail): BUG-1432: password field accepts 16 characters",
+      "failure_reason": "Expected failure (xfail): BUG-1432: password field accepts 16 characters",
+      "failure_category": "",
+      "error": "",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 321,
+          "duration_ms": 118,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 377,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [],
+      "api_logs": [],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 430,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 430,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-010  examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]",
+      "start": "2026-10-15T13:41:00.002+05:30",
+      "end": "2026-10-15T13:41:00.757+05:30",
+      "duration_ms": 755,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "SKIPPED",
+          "duration_ms": 755,
+          "failure_reason": "Expected failure (xfail): BUG-1432: password field accepts 16 characters",
+          "failure_category": ""
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-002[missing-domain]",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]",
+      "title": "Login rejects a malformed email [missing-domain]",
+      "module": "Login",
+      "feature": "Merchant login",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "An error message is shown and no dashboard opens",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 113,
+      "markers": [
+        "login",
+        "negative"
+      ],
+      "status": "PASS",
+      "actual": "As expected: An error message is shown and no dashboard opens",
+      "failure_reason": "",
+      "failure_category": "",
+      "error": "",
+      "test_data": {
+        "email": "user@",
+        "reason": "missing-domain"
+      },
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 332,
+          "duration_ms": 97,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 370,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as user@",
+          "depth": 0,
+          "start_ms": 431,
+          "duration_ms": 229,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "user@",
+            "password": "Whatever@123"
+          },
+          "error": ""
+        },
+        {
+          "title": "Read the error message",
+          "depth": 0,
+          "start_ms": 660,
+          "duration_ms": 63,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "status": 401,
+          "duration_ms": 16.8,
+          "at_ms": 689,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "content-type": "application/json",
+            "origin": "https://demo.sprintnxt.local",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "{\n  \"email\": \"user@\",\n  \"password\": \"Whatever@123\"\n}",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "40"
+          },
+          "response_body": "{\n  \"message\": \"Invalid email or password\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 386,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        },
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "at_ms": 679,
+          "location": "https://demo.sprintnxt.local/api/auth/login:0"
+        },
+        {
+          "level": "error",
+          "text": "Login failed: 401 Invalid email or password",
+          "at_ms": 688,
+          "location": "https://demo.sprintnxt.local/login:17"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 386,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        },
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "at_ms": 679,
+          "status": 401,
+          "failure": "",
+          "resource_type": "fetch"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-002[missing-domain]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]",
+      "start": "2026-10-15T13:41:00.762+05:30",
+      "end": "2026-10-15T13:41:02.169+05:30",
+      "duration_ms": 1406,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "duration_ms": 1406,
+          "failure_reason": "",
+          "failure_category": ""
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "DEMO-002[empty]",
+      "nodeid": "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]",
+      "title": "Login rejects a malformed email [empty]",
+      "module": "Login",
+      "feature": "Merchant login",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)"
+      ],
+      "expected": "An error message is shown and no dashboard opens",
+      "description": "",
+      "file": "examples\\reporting_demo\\test_reporting_demo.py",
+      "line": 113,
+      "markers": [
+        "login",
+        "negative"
+      ],
+      "status": "PASS",
+      "actual": "As expected: An error message is shown and no dashboard opens",
+      "failure_reason": "",
+      "failure_category": "",
+      "error": "",
+      "test_data": {
+        "email": "",
+        "reason": "empty"
+      },
+      "steps": [
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 268,
+          "duration_ms": 110,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://demo.sprintnxt.local/login",
+          "depth": 1,
+          "start_ms": 319,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as ",
+          "depth": 0,
+          "start_ms": 379,
+          "duration_ms": 188,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "",
+            "password": "Whatever@123"
+          },
+          "error": ""
+        },
+        {
+          "title": "Read the error message",
+          "depth": 0,
+          "start_ms": 567,
+          "duration_ms": 62,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "status": 401,
+          "duration_ms": 12.7,
+          "at_ms": 594,
+          "resource_type": "fetch",
+          "request_headers": {
+            "accept": "*/*",
+            "content-type": "application/json",
+            "origin": "https://demo.sprintnxt.local",
+            "referer": "https://demo.sprintnxt.local/login",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "request_body": "{\n  \"email\": \"\",\n  \"password\": \"Whatever@123\"\n}",
+          "response_headers": {
+            "content-type": "application/json",
+            "content-length": "40"
+          },
+          "response_body": "{\n  \"message\": \"Invalid email or password\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "at_ms": 369,
+          "location": "https://demo.sprintnxt.local/static/analytics.js:0"
+        },
+        {
+          "level": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "at_ms": 584,
+          "location": "https://demo.sprintnxt.local/api/auth/login:0"
+        },
+        {
+          "level": "error",
+          "text": "Login failed: 401 Invalid email or password",
+          "at_ms": 593,
+          "location": "https://demo.sprintnxt.local/login:17"
+        }
+      ],
+      "network_failures": [
+        {
+          "method": "GET",
+          "url": "https://demo.sprintnxt.local/static/analytics.js",
+          "at_ms": 368,
+          "status": 404,
+          "failure": "",
+          "resource_type": "script"
+        },
+        {
+          "method": "POST",
+          "url": "https://demo.sprintnxt.local/api/auth/login",
+          "at_ms": 583,
+          "status": 401,
+          "failure": "",
+          "resource_type": "fetch"
+        }
+      ],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:209 START   DEMO-002[empty]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]",
+      "start": "2026-10-15T13:41:02.175+05:30",
+      "end": "2026-10-15T13:41:03.203+05:30",
+      "duration_ms": 1027,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "duration_ms": 1027,
+          "failure_reason": "",
+          "failure_category": ""
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    }
+  ],
+  "history": [
+    {
+      "run_id": "2026-10-15_13-40-41_demo-sequential",
+      "name": "Demo - sequential",
+      "start": "2026-10-15T13:40:41.471+05:30",
+      "duration_ms": 21736,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_13-40-41_demo-sequential/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    }
+  ],
+  "test_history": {
+    "examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]": [
+      "PASS"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]": [
+      "PASS"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]": [
+      "FAIL"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]": [
+      "FAIL"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]": [
+      "FAIL"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]": [
+      "BLOCKED"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]": [
+      "SKIPPED"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]": [
+      "BLOCKED"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]": [
+      "PASS"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]": [
+      "SKIPPED"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]": [
+      "PASS"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]": [
+      "PASS"
+    ]
+  }
+}

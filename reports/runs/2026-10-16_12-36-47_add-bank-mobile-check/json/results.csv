@@ -1,0 +1,11 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+BANK-016[Registered Mobile Number],Registered mobile cannot be left empty [Registered Mobile Number],Add Bank,Mandatory fields,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Registered Mobile Number
+value after clearing = 8829314130","1. Open the login page
+2. Log in as 'qa.auto+1792068835260190@gmail.com'
+3. Finish login (OTP / Proceed if asked)
+4. Open Add Bank
+5. Select bank 'IDFC First Bank'
+6. Choose services {services}
+7. Continue to Fill Details
+8. Clear 'Registered Mobile Number'
+9. Click Submit","The profile value comes back, or 'Field is required' is shown","As expected: The profile value comes back, or 'Field is required' is shown",PASS,,,,,,,2026-10-16T12:36:47.666+05:30,2026-10-16T12:37:07.678+05:30,20.01,chromium 145.0.7632.6,UAT,Office,local,4,0,0,0,False,tests/test_add_bank.py::test_mandatory_self_restoring[chromium-Registered Mobile Number]

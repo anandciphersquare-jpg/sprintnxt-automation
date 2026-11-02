@@ -1,0 +1,51 @@
+# Example GitHub Actions workflow - copy to .github/workflows/ui-tests.yml
+# One job per module (matrix) -> one report per module, all uploaded as artifacts.
+name: UI tests
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * 1-5"    # 08:00 IST on weekdays
+
+jobs:
+  ui-tests:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        module: [registration, login, forgot_password, change_password, admin, e2e]
+    env:
+      SNXT_ENV: UAT
+      SNXT_BUILD_VERSION: ${{ github.ref_name }}-${{ github.run_number }}
+      SNXT_BASE_URL: ${{ vars.SNXT_BASE_URL }}
+      SNXT_MERCHANT_EMAIL: ${{ secrets.SNXT_MERCHANT_EMAIL }}
+      SNXT_MERCHANT_PASS: ${{ secrets.SNXT_MERCHANT_PASS }}    # masked in every report automatically
+      SNXT_ADMIN_URL: ${{ vars.SNXT_ADMIN_URL }}
+      SNXT_ADMIN_USER: ${{ secrets.SNXT_ADMIN_USER }}
+      SNXT_ADMIN_PASS: ${{ secrets.SNXT_ADMIN_PASS }}
+      SNXT_REPORT_EMBED_SCREENSHOTS: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install --with-deps chromium
+
+      # Restore earlier history so the trend chart spans CI runs (optional).
+      - uses: actions/cache@v4
+        with:
+          path: reports/history
+          key: report-history-${{ matrix.module }}-${{ github.run_id }}
+          restore-keys: report-history-${{ matrix.module }}-
+
+      - name: Run module
+        run: python -m pytest -m ${{ matrix.module }} --report-name ${{ matrix.module }} --reruns 1
+
+      - name: Upload report
+        if: always()                   # failures are exactly when you want the report
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ matrix.module }}
+          path: reports/latest
+          retention-days: 30

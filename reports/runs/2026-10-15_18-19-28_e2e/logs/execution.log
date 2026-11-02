@@ -1,0 +1,5 @@
+2026-10-15 18:19:28,355 INFO    [reporting] Run 2026-10-15_18-19-28_e2e started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_18-19-28_e2e)
+2026-10-15 18:19:29,558 INFO    [reporting] START   E2E-001  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]
+2026-10-15 18:21:16,595 INFO    [reporting] FINISH  E2E-001  FAIL  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]  107.01s  -> Merchant did not reach the dashboard (url: https://uat.sprintnxt.in/NexGenV4Front/#/auth/change-password) assert False + where False = complete_login() + where 
+2026-10-15 18:21:32,339 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_18-17-19_e2e
+2026-10-15 18:21:32,340 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_18-19-28_e2e\html\index.html

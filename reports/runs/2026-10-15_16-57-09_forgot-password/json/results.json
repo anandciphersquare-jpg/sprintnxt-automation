@@ -1,0 +1,2997 @@
+{
+  "schema": 1,
+  "run": {
+    "id": "2026-10-15_16-57-09_forgot-password",
+    "name": "Forgot Password",
+    "project": "SprintNXT",
+    "start": "2026-10-15T16:57:09.803+05:30",
+    "end": "2026-10-15T17:00:57.626+05:30",
+    "duration_ms": 227823,
+    "environment": "UAT",
+    "base_url": "https://uat.sprintnxt.in/NexGenV4Front",
+    "build": "local",
+    "executed_by": "Office",
+    "browser": "chromium 145.0.7632.6",
+    "platform": "Windows 10 (AMD64)",
+    "python": "3.13.3",
+    "pytest": "9.0.2",
+    "playwright": "1.58.0",
+    "command": "pytest -m forgot_password --report-name Forgot Password --headed -p no:cacheprovider",
+    "markexpr": "forgot_password",
+    "ci": {},
+    "workers": 1,
+    "exit_status": 1,
+    "hostname": "DESKTOP-0EGM1TC",
+    "pdf": true,
+    "generated": "2026-10-15T17:00:57.636+05:30",
+    "dir": "reports/runs/2026-10-15_16-57-09_forgot-password"
+  },
+  "summary": {
+    "total": 12,
+    "passed": 1,
+    "failed": 11,
+    "blocked": 0,
+    "skipped": 0,
+    "executed": 12,
+    "pass_rate": 8.3,
+    "flaky": 0,
+    "retried": 0,
+    "test_time_ms": 226914,
+    "modules": [
+      {
+        "module": "Forgot Password",
+        "total": 12,
+        "duration_ms": 226914,
+        "PASS": 1,
+        "FAIL": 11,
+        "BLOCKED": 0,
+        "SKIPPED": 0
+      }
+    ],
+    "categories": {
+      "Element Not Found / Not Actionable": 10,
+      "Assertion Failure": 1
+    }
+  },
+  "tests": [
+    {
+      "id": "FPW-FD211",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_valid_email[chromium]",
+      "title": "Forgot valid email",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Functional"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 14,
+      "markers": [
+        "forgot_password",
+        "positive"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: assert 'error' not in 'error\\nthe ...s not valid!' 'error' is contained here: error the provided information is not valid!",
+      "failure_reason": "assert 'error' not in 'error\\nthe ...s not valid!' 'error' is contained here: error the provided information is not valid!",
+      "failure_category": "Assertion Failure",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BC2DDFD0>\nconfig = <config.Config object at 0x00000283BC1BA850>\n\n    @pytest.mark.positive\n    def test_forgot_valid_email(fp, config):\n        email = config.merchant_email or unique_email()\n        fp.request_reset(email)\n        # expect a success / under-review message, not an error (tune to the real toast text)\n>       assert \"error\" not in fp.result().lower()\nE       AssertionError: assert 'error' not in 'error\\nthe ...s not valid!'\nE         \nE         'error' is contained here:\nE           error\nE           the provided information is not valid!\n\ntests\\test_forgot_password.py:19: AssertionError",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 5481,
+          "duration_ms": 1112,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 5731,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for 'qa.auto+1792063637141739@gmail.com'",
+          "depth": 0,
+          "start_ms": 6594,
+          "duration_ms": 549,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.auto+1792063637141739@gmail.com"
+          },
+          "error": ""
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/165719_FPW-FD211_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-fd211_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-fd211_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 87.8,
+          "at_ms": 6700,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/sendOtp",
+          "status": 201,
+          "duration_ms": 1149.6,
+          "at_ms": 8308,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"email\": \"qa.auto+1792063637141739@gmail.com\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 201,\n  \"responsecode\": 3,\n  \"status\": false,\n  \"message\": \"The provided information is not Valid!\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-FD211  tests/test_forgot_password.py::test_forgot_valid_email[chromium]",
+      "start": "2026-10-15T16:57:10.546+05:30",
+      "end": "2026-10-15T16:57:21.241+05:30",
+      "duration_ms": 10694,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 10694,
+          "failure_reason": "assert 'error' not in 'error\\nthe ...s not valid!' 'error' is contained here: error the provided information is not valid!",
+          "failure_category": "Assertion Failure"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-7AA29[no-at-or-domain]",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]",
+      "title": "Forgot invalid email format [no-at-or-domain]",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 22,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BC579D10>\nemail = 'plainaddress', reason = 'no-at-or-domain'\n\n    @pytest.mark.negative\n    @pytest.mark.parametrize(\"email,reason\", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])\n    def test_forgot_invalid_email_format(fp, email, reason):\n>       fp.request_reset(email)\n\ntests\\test_forgot_password.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nreporting\\collector.py:235: in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\npages\\forgot_password_page.py:21: in request_reset\n    self._submit().click()\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BC97ACA0>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               27 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {
+        "email": "plainaddress",
+        "reason": "no-at-or-domain"
+      },
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 805,
+          "duration_ms": 1073,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 994,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for 'plainaddress'",
+          "depth": 0,
+          "start_ms": 1880,
+          "duration_ms": 15450,
+          "status": "failed",
+          "kind": "step",
+          "params": {
+            "email": "plainaddress"
+          },
+          "error": "TimeoutError: Locator.click: Timeout 15000ms exceeded."
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/165739_FPW-7AA29_no-at-or-domain_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-7aa29-no-at-or-domain_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-7aa29-no-at-or-domain_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 78.3,
+          "at_ms": 1968,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 2878,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-7AA29[no-at-or-domain]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]",
+      "start": "2026-10-15T16:57:21.258+05:30",
+      "end": "2026-10-15T16:57:41.358+05:30",
+      "duration_ms": 20099,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 20099,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-46640",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_empty[chromium]",
+      "title": "Forgot empty",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 30,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BC5782D0>\n\n    @pytest.mark.negative\n    def test_forgot_empty(fp):\n>       fp._submit().click()\n\ntests\\test_forgot_password.py:32: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BC6587C0>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               28 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 602,
+          "duration_ms": 1074,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 756,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/165758_FPW-46640_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-46640_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-46640_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 67.0,
+          "at_ms": 1755,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 2750,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-46640  tests/test_forgot_password.py::test_forgot_empty[chromium]",
+      "start": "2026-10-15T16:57:41.372+05:30",
+      "end": "2026-10-15T16:58:01.241+05:30",
+      "duration_ms": 19869,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 19869,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-0182C",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]",
+      "title": "Reset for an unregistered email must not reveal that the account does not exist",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Security"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "Reset for an unregistered email must not reveal that the account does not exist.",
+      "file": "tests\\test_forgot_password.py",
+      "line": 36,
+      "markers": [
+        "forgot_password",
+        "security"
+      ],
+      "status": "PASS",
+      "actual": "As expected: all checks passed.",
+      "failure_reason": "",
+      "failure_category": "",
+      "error": "",
+      "test_data": {},
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 650,
+          "duration_ms": 4886,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 850,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for 'qa.auto+1792063686794346@gmail.com'",
+          "depth": 0,
+          "start_ms": 5537,
+          "duration_ms": 2078,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.auto+1792063686794346@gmail.com"
+          },
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 5773,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 97.3,
+          "at_ms": 5651,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/sendOtp",
+          "status": 201,
+          "duration_ms": 149.8,
+          "at_ms": 7535,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"email\": \"qa.auto+1792063686794346@gmail.com\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 201,\n  \"responsecode\": 3,\n  \"status\": false,\n  \"message\": \"The provided information is not Valid!\"\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 6717,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-0182C  tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]",
+      "start": "2026-10-15T16:58:01.257+05:30",
+      "end": "2026-10-15T16:58:12.184+05:30",
+      "duration_ms": 10926,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "duration_ms": 10926,
+          "failure_reason": "",
+          "failure_category": ""
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-7AA29[missing-at]",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]",
+      "title": "Forgot invalid email format [missing-at]",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 22,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BC7F8050>\nemail = 'missingatsign.com', reason = 'missing-at'\n\n    @pytest.mark.negative\n    @pytest.mark.parametrize(\"email,reason\", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])\n    def test_forgot_invalid_email_format(fp, email, reason):\n>       fp.request_reset(email)\n\ntests\\test_forgot_password.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nreporting\\collector.py:235: in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\npages\\forgot_password_page.py:21: in request_reset\n    self._submit().click()\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BCD139C0>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               27 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {
+        "email": "missingatsign.com",
+        "reason": "missing-at"
+      },
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 570,
+          "duration_ms": 1065,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 768,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for 'missingatsign.com'",
+          "depth": 0,
+          "start_ms": 1636,
+          "duration_ms": 17471,
+          "status": "failed",
+          "kind": "step",
+          "params": {
+            "email": "missingatsign.com"
+          },
+          "error": "TimeoutError: Locator.click: Timeout 15000ms exceeded."
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 3838,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/165831_FPW-7AA29_missing-at_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-7aa29-missing-at_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-7aa29-missing-at_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 713.3,
+          "at_ms": 2355,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 4957,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-7AA29[missing-at]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]",
+      "start": "2026-10-15T16:58:12.188+05:30",
+      "end": "2026-10-15T16:58:34.583+05:30",
+      "duration_ms": 22394,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 22394,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-7AA29[missing-domain]",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]",
+      "title": "Forgot invalid email format [missing-domain]",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 22,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BC86A0F0>\nemail = 'user@', reason = 'missing-domain'\n\n    @pytest.mark.negative\n    @pytest.mark.parametrize(\"email,reason\", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])\n    def test_forgot_invalid_email_format(fp, email, reason):\n>       fp.request_reset(email)\n\ntests\\test_forgot_password.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nreporting\\collector.py:235: in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\npages\\forgot_password_page.py:21: in request_reset\n    self._submit().click()\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BC679440>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               28 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {
+        "email": "user@",
+        "reason": "missing-domain"
+      },
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 654,
+          "duration_ms": 1303,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 869,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for 'user@'",
+          "depth": 0,
+          "start_ms": 1959,
+          "duration_ms": 15368,
+          "status": "failed",
+          "kind": "step",
+          "params": {
+            "email": "user@"
+          },
+          "error": "TimeoutError: Locator.click: Timeout 15000ms exceeded."
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/165852_FPW-7AA29_missing-domain_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-7aa29-missing-domain_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-7aa29-missing-domain_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 80.0,
+          "at_ms": 2045,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 3079,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-7AA29[missing-domain]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]",
+      "start": "2026-10-15T16:58:34.595+05:30",
+      "end": "2026-10-15T16:58:54.404+05:30",
+      "duration_ms": 19809,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 19809,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-7AA29[missing-tld]",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]",
+      "title": "Forgot invalid email format [missing-tld]",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 22,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BCA5CE20>\nemail = 'user@domain', reason = 'missing-tld'\n\n    @pytest.mark.negative\n    @pytest.mark.parametrize(\"email,reason\", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])\n    def test_forgot_invalid_email_format(fp, email, reason):\n>       fp.request_reset(email)\n\ntests\\test_forgot_password.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nreporting\\collector.py:235: in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\npages\\forgot_password_page.py:21: in request_reset\n    self._submit().click()\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BCA0BF60>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               28 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {
+        "email": "user@domain",
+        "reason": "missing-tld"
+      },
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 623,
+          "duration_ms": 1070,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 795,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for 'user@domain'",
+          "depth": 0,
+          "start_ms": 1695,
+          "duration_ms": 15475,
+          "status": "failed",
+          "kind": "step",
+          "params": {
+            "email": "user@domain"
+          },
+          "error": "TimeoutError: Locator.click: Timeout 15000ms exceeded."
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/165912_FPW-7AA29_missing-tld_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-7aa29-missing-tld_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-7aa29-missing-tld_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 80.2,
+          "at_ms": 1779,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 2739,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-7AA29[missing-tld]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]",
+      "start": "2026-10-15T16:58:54.418+05:30",
+      "end": "2026-10-15T16:59:13.874+05:30",
+      "duration_ms": 19456,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 19456,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-7AA29[double-at]",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]",
+      "title": "Forgot invalid email format [double-at]",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 22,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BE1E7570>\nemail = 'user@@domain.com', reason = 'double-at'\n\n    @pytest.mark.negative\n    @pytest.mark.parametrize(\"email,reason\", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])\n    def test_forgot_invalid_email_format(fp, email, reason):\n>       fp.request_reset(email)\n\ntests\\test_forgot_password.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nreporting\\collector.py:235: in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\npages\\forgot_password_page.py:21: in request_reset\n    self._submit().click()\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BC9787C0>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               28 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {
+        "email": "user@@domain.com",
+        "reason": "double-at"
+      },
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 588,
+          "duration_ms": 1161,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 779,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for 'user@@domain.com'",
+          "depth": 0,
+          "start_ms": 1750,
+          "duration_ms": 15481,
+          "status": "failed",
+          "kind": "step",
+          "params": {
+            "email": "user@@domain.com"
+          },
+          "error": "TimeoutError: Locator.click: Timeout 15000ms exceeded."
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/165931_FPW-7AA29_double-at_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-7aa29-double-at_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-7aa29-double-at_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 81.5,
+          "at_ms": 1839,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 2850,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-7AA29[double-at]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]",
+      "start": "2026-10-15T16:59:13.886+05:30",
+      "end": "2026-10-15T16:59:33.323+05:30",
+      "duration_ms": 19436,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 19436,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-7AA29[space-in-local]",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]",
+      "title": "Forgot invalid email format [space-in-local]",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 22,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BEE31750>\nemail = 'user name@domain.com', reason = 'space-in-local'\n\n    @pytest.mark.negative\n    @pytest.mark.parametrize(\"email,reason\", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])\n    def test_forgot_invalid_email_format(fp, email, reason):\n>       fp.request_reset(email)\n\ntests\\test_forgot_password.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nreporting\\collector.py:235: in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\npages\\forgot_password_page.py:21: in request_reset\n    self._submit().click()\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BE2C8540>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               28 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {
+        "email": "user name@domain.com",
+        "reason": "space-in-local"
+      },
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 615,
+          "duration_ms": 3025,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 792,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for 'user name@domain.com'",
+          "depth": 0,
+          "start_ms": 3642,
+          "duration_ms": 15429,
+          "status": "failed",
+          "kind": "step",
+          "params": {
+            "email": "user name@domain.com"
+          },
+          "error": "TimeoutError: Locator.click: Timeout 15000ms exceeded."
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 3751,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/165952_FPW-7AA29_space-in-local_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-7aa29-space-in-local_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-7aa29-space-in-local_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 79.0,
+          "at_ms": 3719,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 4869,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-7AA29[space-in-local]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]",
+      "start": "2026-10-15T16:59:33.334+05:30",
+      "end": "2026-10-15T16:59:54.785+05:30",
+      "duration_ms": 21450,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 21450,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-7AA29[illegal-chars]",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]",
+      "title": "Forgot invalid email format [illegal-chars]",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 22,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BEE33350>\nemail = 'user!#@domain.com', reason = 'illegal-chars'\n\n    @pytest.mark.negative\n    @pytest.mark.parametrize(\"email,reason\", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])\n    def test_forgot_invalid_email_format(fp, email, reason):\n>       fp.request_reset(email)\n\ntests\\test_forgot_password.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nreporting\\collector.py:235: in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\npages\\forgot_password_page.py:21: in request_reset\n    self._submit().click()\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BF2E25C0>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               28 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {
+        "email": "user!#@domain.com",
+        "reason": "illegal-chars"
+      },
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 657,
+          "duration_ms": 1612,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 850,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for 'user!#@domain.com'",
+          "depth": 0,
+          "start_ms": 2271,
+          "duration_ms": 15392,
+          "status": "failed",
+          "kind": "step",
+          "params": {
+            "email": "user!#@domain.com"
+          },
+          "error": "TimeoutError: Locator.click: Timeout 15000ms exceeded."
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/170012_FPW-7AA29_illegal-chars_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-7aa29-illegal-chars_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-7aa29-illegal-chars_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 86.0,
+          "at_ms": 2363,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 3327,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-7AA29[illegal-chars]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]",
+      "start": "2026-10-15T16:59:54.801+05:30",
+      "end": "2026-10-15T17:00:14.899+05:30",
+      "duration_ms": 20097,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 20097,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-7AA29[missing-local]",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]",
+      "title": "Forgot invalid email format [missing-local]",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 22,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BECAD5E0>\nemail = '@nouser.com', reason = 'missing-local'\n\n    @pytest.mark.negative\n    @pytest.mark.parametrize(\"email,reason\", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])\n    def test_forgot_invalid_email_format(fp, email, reason):\n>       fp.request_reset(email)\n\ntests\\test_forgot_password.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nreporting\\collector.py:235: in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\npages\\forgot_password_page.py:21: in request_reset\n    self._submit().click()\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BF6DF1A0>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               27 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {
+        "email": "@nouser.com",
+        "reason": "missing-local"
+      },
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 594,
+          "duration_ms": 3897,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 772,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for '@nouser.com'",
+          "depth": 0,
+          "start_ms": 4492,
+          "duration_ms": 15420,
+          "status": "failed",
+          "kind": "step",
+          "params": {
+            "email": "@nouser.com"
+          },
+          "error": "TimeoutError: Locator.click: Timeout 15000ms exceeded."
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 4578,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/170035_FPW-7AA29_missing-local_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-7aa29-missing-local_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-7aa29-missing-local_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 74.8,
+          "at_ms": 4555,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 5436,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-7AA29[missing-local]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]",
+      "start": "2026-10-15T17:00:14.911+05:30",
+      "end": "2026-10-15T17:00:37.097+05:30",
+      "duration_ms": 22185,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 22185,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    },
+    {
+      "id": "FPW-7AA29[empty]",
+      "nodeid": "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]",
+      "title": "Forgot invalid email format [empty]",
+      "module": "Forgot Password",
+      "feature": "Forgot password",
+      "types": [
+        "Negative",
+        "Validation"
+      ],
+      "preconditions": [
+        "Browser launched with a fresh context (geolocation granted)",
+        "Forgot-password page is open"
+      ],
+      "expected": "All assertions in the test pass",
+      "description": "",
+      "file": "tests\\test_forgot_password.py",
+      "line": 22,
+      "markers": [
+        "forgot_password",
+        "negative"
+      ],
+      "status": "FAIL",
+      "actual": "Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+      "failure_category": "Element Not Found / Not Actionable",
+      "error": "fp = <pages.forgot_password_page.ForgotPasswordPage object at 0x00000283BE7F66C0>\nemail = '', reason = 'empty'\n\n    @pytest.mark.negative\n    @pytest.mark.parametrize(\"email,reason\", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])\n    def test_forgot_invalid_email_format(fp, email, reason):\n>       fp.request_reset(email)\n\ntests\\test_forgot_password.py:25: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nreporting\\collector.py:235: in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\npages\\forgot_password_page.py:21: in request_reset\n    self._submit().click()\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\sync_api\\_generated.py:15631: in click\n    self._sync(\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_locator.py:162: in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_frame.py:566: in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:69: in send\n    return await self._connection.wrap_api_call(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <playwright._impl._connection.Connection object at 0x00000283BC182900>\ncb = <function Channel.send.<locals>.<lambda> at 0x00000283BF487880>\nis_internal = False, title = None\n\n    async def wrap_api_call(\n        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None\n    ) -> Any:\n        if self._api_zone.get():\n            return await cb()\n        task = asyncio.current_task(self._loop)\n        st: List[inspect.FrameInfo] = getattr(\n            task, \"__pw_stack__\", None\n        ) or inspect.stack(0)\n    \n        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)\n        self._api_zone.set(parsed_st)\n        try:\n            return await cb()\n        except Exception as error:\n>           raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nE           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nE           Call log:\nE             - waiting for get_by_role(\"button\", name=re.compile(r\"reset\\s*password\", re.IGNORECASE))\nE               - locator resolved to <button disabled type=\"submit\" class=\"btn btn-primary w-100 mt-5\"> Reset Password </button>\nE             - attempting click action\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE               - waiting 20ms\nE               2 × waiting for element to be visible, enabled and stable\nE                 - element is not enabled\nE               - retrying click action\nE                 - waiting 100ms\nE               28 × waiting for element to be visible, enabled and stable\nE                  - element is not enabled\nE                - retrying click action\nE                  - waiting 500ms\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\playwright\\_impl\\_connection.py:559: TimeoutError",
+      "test_data": {
+        "email": "",
+        "reason": "empty"
+      },
+      "steps": [
+        {
+          "title": "Open Forgot Password",
+          "depth": 0,
+          "start_ms": 705,
+          "duration_ms": 1068,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/forget-password",
+          "depth": 1,
+          "start_ms": 882,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Request a reset link for ''",
+          "depth": 0,
+          "start_ms": 1775,
+          "duration_ms": 15388,
+          "status": "failed",
+          "kind": "step",
+          "params": {
+            "email": ""
+          },
+          "error": "TimeoutError: Locator.click: Timeout 15000ms exceeded."
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Failure screenshot",
+          "path": "screenshots/170054_FPW-7AA29_empty_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "trace",
+          "title": "Playwright trace",
+          "path": "traces/fpw-7aa29-empty_a1_1.zip",
+          "mime": "application/zip",
+          "attempt": 1
+        },
+        {
+          "kind": "video",
+          "title": "Video recording",
+          "path": "videos/fpw-7aa29-empty_a1_2.webm",
+          "mime": "video/webm",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 97.1,
+          "at_ms": 1875,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 2836,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   FPW-7AA29[empty]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]",
+      "start": "2026-10-15T17:00:37.108+05:30",
+      "end": "2026-10-15T17:00:57.607+05:30",
+      "duration_ms": 20499,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "FAIL",
+          "duration_ms": 20499,
+          "failure_reason": "TimeoutError: Locator.click: Timeout 15000ms exceeded.",
+          "failure_category": "Element Not Found / Not Actionable"
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    }
+  ],
+  "history": [
+    {
+      "run_id": "2026-10-15_13-40-41_demo-sequential",
+      "name": "Demo - sequential",
+      "start": "2026-10-15T13:40:41.471+05:30",
+      "duration_ms": 21736,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_13-40-41_demo-sequential/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_13-41-13_demo-parallel",
+      "name": "Demo - parallel",
+      "start": "2026-10-15T13:41:13.351+05:30",
+      "duration_ms": 35688,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_13-41-13_demo-parallel/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_14-23-42_demo-log-order-check",
+      "name": "Demo - log order check",
+      "start": "2026-10-15T14:23:42.217+05:30",
+      "duration_ms": 26069,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_14-23-42_demo-log-order-check/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_15-04-03_full-suite",
+      "name": "Full suite",
+      "start": "2026-10-15T15:04:03.605+05:30",
+      "duration_ms": 1347807,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_15-04-03_full-suite/html/index.html",
+      "total": 81,
+      "passed": 2,
+      "failed": 64,
+      "blocked": 14,
+      "skipped": 1,
+      "pass_rate": 2.5,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-01-08_demo-media-check",
+      "name": "Demo - media check",
+      "start": "2026-10-15T16:01:08.705+05:30",
+      "duration_ms": 34211,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-01-08_demo-media-check/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_16-40-58_registration-headed",
+      "name": "Registration (headed)",
+      "start": "2026-10-15T16:40:58.097+05:30",
+      "duration_ms": 402964,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-40-58_registration-headed/html/index.html",
+      "total": 42,
+      "passed": 41,
+      "failed": 1,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 97.6,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-51-11_registration-reg-001-rerun",
+      "name": "Registration REG-001 rerun",
+      "start": "2026-10-15T16:51:11.344+05:30",
+      "duration_ms": 21129,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-51-11_registration-reg-001-rerun/html/index.html",
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 100.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-52-16_login",
+      "name": "Login",
+      "start": "2026-10-15T16:52:16.301+05:30",
+      "duration_ms": 270293,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-52-16_login/html/index.html",
+      "total": 13,
+      "passed": 0,
+      "failed": 12,
+      "blocked": 1,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-57-09_forgot-password",
+      "name": "Forgot Password",
+      "start": "2026-10-15T16:57:09.803+05:30",
+      "duration_ms": 227823,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-57-09_forgot-password/html/index.html",
+      "total": 12,
+      "passed": 1,
+      "failed": 11,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 8.3,
+      "flaky": 0
+    }
+  ],
+  "test_history": {
+    "examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]": [
+      "SKIPPED",
+      "SKIPPED",
+      "SKIPPED",
+      "-",
+      "SKIPPED",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]": [
+      "SKIPPED",
+      "SKIPPED",
+      "SKIPPED",
+      "-",
+      "SKIPPED",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_admin_activation.py::test_admin_login[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_admin_activation.py::test_activate_merchant[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_change_password_valid_roundtrip[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_wrong_current_password[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-length-10-below-min]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_new_confirm_mismatch[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]": [
+      "-",
+      "-",
+      "-",
+      "SKIPPED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_valid_email[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_forgot_password.py::test_forgot_empty[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]": [
+      "-",
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "PASS"
+    ],
+    "tests/test_login.py::test_login_valid[chromium]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-"
+    ],
+    "tests/test_login.py::test_login_wrong_password[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_unregistered_email[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_login.py::test_login_empty[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_registration.py::test_register_happy_path[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "FAIL",
+      "PASS",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_required_fields_block_submit[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-short]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-length-10-below-min]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_password_mismatch[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_wrong_email_otp_does_not_verify[chromium]": [
+      "-",
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_duplicate_email[chromium]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR '1'='1]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-<script>alert('xss')</script>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-length-16-above-max]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-long]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-length-16-above-max]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-'; DROP TABLE users;--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-<img src=x onerror=alert('xss')>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-uppercase]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-domain]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-non-numeric]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-uppercase]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR 1=1--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-<svg/onload=alert('xss')>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-lowercase]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-tld]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-invalid-start-digit]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-lowercase]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-admin'--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-\"><script>alert(1)</script>]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-digit]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-double-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-double-at]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-space]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-digit]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' UNION SELECT NULL--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_xss_in_name_fields[chromium-javascript:alert('xss')]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-no-special]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-space-in-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-symbols]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-no-special]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-1' AND SLEEP(5)--]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-far-too-short]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-all-zeros]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-far-too-short]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration_security.py::test_sqli_in_name_fields[chromium-\" OR \"\"=\"]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_change_password.py::test_invalid_new_password[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-missing-local]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_mobile_rejected[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_password_rejected[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "-",
+      "FAIL"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-"
+    ],
+    "tests/test_registration.py::test_invalid_email_rejected[chromium-empty]": [
+      "-",
+      "-",
+      "-",
+      "FAIL",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-"
+    ]
+  }
+}

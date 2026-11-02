@@ -1,0 +1,71 @@
+- generic [ref=e1]:
+  - generic [ref=e6]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: NXT Admin Console
+        - heading [level=1] [ref=e12]: UPI, Payouts & Connected Banking — one control room.
+        - paragraph [ref=e13]: Manage UPI collections, process instant payouts, and oversee connected banking operations in real time — all from a single admin console.
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - generic [ref=e17]: Total Payout Volume · Today
+            - generic [ref=e18]:
+              - generic [ref=e19]: 
+              - text: 18.4%
+          - generic [ref=e20]: ₹ 24,86,540
+        - generic [ref=e29]:
+          - generic [ref=e30]: 
+          - generic [ref=e32]:
+            - strong [ref=e33]: UPI collection received
+            - generic [ref=e34]: UPI · ₹ 1,499 · just now
+        - generic [ref=e35]:
+          - generic [ref=e36]: 
+          - generic [ref=e38]:
+            - strong [ref=e39]: Payout processed
+            - generic [ref=e40]: Connected Banking · ₹ 3,20,000
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]: 99.9%
+          - generic [ref=e44]: Uptime
+        - generic [ref=e46]:
+          - generic [ref=e47]: 500+
+          - generic [ref=e48]: Partners
+        - generic [ref=e50]:
+          - generic [ref=e51]: 10M+
+          - generic [ref=e52]: Transactions
+    - generic [ref=e54]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: SprintNXT
+        - generic [ref=e59]: Nex-Gen Admin Console
+      - form [ref=e60]:
+        - generic [ref=e61]:
+          - heading [level=2] [ref=e62]: Welcome back
+          - paragraph [ref=e63]: Sign in to your partner account to continue
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e66]: Email Address
+            - generic [ref=e67]:
+              - generic [ref=e68]: 
+              - textbox [ref=e69]:
+                - /placeholder: you@company.com
+                - text: superadmin@gmail.com
+          - generic [ref=e70]:
+            - generic [ref=e71]: Password
+            - generic [ref=e72]:
+              - generic [ref=e73]: 
+              - textbox [ref=e74]:
+                - /placeholder: Enter your password
+                - text: Raman@321
+              - button [ref=e75] [cursor=pointer]:
+                - generic [ref=e76]: 
+          - link [ref=e78] [cursor=pointer]:
+            - /url: "#/auth/forget-password"
+            - text: Forgot Password?
+          - button [ref=e79] [cursor=pointer]:
+            - generic [ref=e80]: Sign In
+            - generic [ref=e81]: 
+      - paragraph [ref=e83]:  Protected by enterprise-grade security
+  - dialog [ref=e85]:
+    - heading "Please allow the Location access! and You May Not Connected To Internet" [level=2] [ref=e90]
+    - text: "!"
+    - button "Okay" [active] [ref=e92] [cursor=pointer]

@@ -1,0 +1,63 @@
+===== DEMO-001  examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]  [PASS]
+  +  6694ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +  7180ms console.error: Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+  +  7181ms console.error: Profile widget failed: HTTP 500
+  +  6693ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +  7178ms network GET https://demo.sprintnxt.local/api/profile -> 500
+===== DEMO-002[no-at]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]  [PASS]
+  +  2319ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +  2678ms console.error: Failed to load resource: the server responded with a status of 401 (Unauthorized)
+  +  2685ms console.error: Login failed: 401 Invalid email or password
+  +  2319ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +  2677ms network POST https://demo.sprintnxt.local/api/auth/login -> 401
+===== DEMO-003  examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]  [FAIL]
+  +   369ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   645ms console.error: Failed to load resource: the server responded with a status of 401 (Unauthorized)
+  +   661ms console.error: Login failed: 401 Invalid email or password
+  +   369ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +   645ms network POST https://demo.sprintnxt.local/api/auth/login -> 401
+===== DEMO-004  examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]  [FAIL]
+  +   370ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   644ms console.error: Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+  +   645ms console.error: Profile widget failed: HTTP 500
+  +   370ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +   644ms network GET https://demo.sprintnxt.local/api/profile -> 500
+===== DEMO-005  examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]  [FAIL]
+  +   345ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   551ms console.error: Failed to load resource: the server responded with a status of 429 (Too Many Requests)
+  +   563ms console.error: Login failed: 429 Too many attempts from this network. Please try again in 44 minutes.
+  +   343ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +   551ms network POST https://demo.sprintnxt.local/api/auth/login -> 429
+===== DEMO-006  examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]  [BLOCKED]
+  +   360ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   360ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+===== DEMO-007  examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]  [SKIPPED]
+  +   362ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   361ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+===== DEMO-009  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]  [FAIL]
+  +   457ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   799ms console.error: Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+  +   799ms console.error: Profile widget failed: HTTP 500
+  +   456ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +   798ms network GET https://demo.sprintnxt.local/api/profile -> 500
+===== DEMO-009  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]  [PASS]
+  +   380ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   712ms console.error: Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+  +   713ms console.error: Profile widget failed: HTTP 500
+  +   380ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +   712ms network GET https://demo.sprintnxt.local/api/profile -> 500
+===== DEMO-010  examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]  [SKIPPED]
+  +   337ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   337ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+===== DEMO-002[missing-domain]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]  [PASS]
+  +   330ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   536ms console.error: Failed to load resource: the server responded with a status of 401 (Unauthorized)
+  +   547ms console.error: Login failed: 401 Invalid email or password
+  +   329ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +   536ms network POST https://demo.sprintnxt.local/api/auth/login -> 401
+===== DEMO-002[empty]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]  [PASS]
+  +   336ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +   684ms console.error: Failed to load resource: the server responded with a status of 401 (Unauthorized)
+  +   696ms console.error: Login failed: 401 Invalid email or password
+  +   336ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +   683ms network POST https://demo.sprintnxt.local/api/auth/login -> 401

@@ -1,0 +1,114 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+DEMO-001,Merchant logs in with valid credentials,Login,Merchant login,"Functional, Smoke","Merchant account is active
+Login page is open",email = qa.merchant@sprintnxt.in,"1. Open the login page
+2. Log in as qa.merchant@sprintnxt.in
+3. Verify the dashboard greeting",Dashboard opens and greets the merchant by name,"Dashboard opened with 'Welcome, QA Merchant'",PASS,,,,,,,2026-10-16T12:18:11.060+05:30,2026-10-16T12:18:22.676+05:30,11.62,chromium 145.0.7632.6,UAT,Office,local,2,3,2,0,False,examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]
+DEMO-002[no-at],Login rejects a malformed email [no-at],Login,Merchant login,"Negative, Validation",Browser launched with a fresh context (geolocation granted),"email = plainaddress
+reason = no-at","1. Open the login page
+2. Log in as plainaddress
+3. Read the error message",An error message is shown and no dashboard opens,As expected: An error message is shown and no dashboard opens,PASS,,,,,,,2026-10-16T12:18:22.685+05:30,2026-10-16T12:18:24.232+05:30,1.55,chromium 145.0.7632.6,UAT,Office,local,1,3,2,0,False,examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]
+DEMO-003,Wrong password shows a lockout warning,Login,Merchant login,"Negative, Security",Browser launched with a fresh context (geolocation granted),,"1. Open the login page
+2. Log in as qa.merchant@sprintnxt.in
+3. Read the error message",Message warns about remaining attempts before lockout,"Not as expected: Expected a lockout warning, got: 'Invalid email or password' assert 'attempts remaining' in 'invalid email or password' + where 'invalid email or password' = <built-in method lower of str object at 0x000001EBC6D81F20>() + where <built-in method lower of str object at 0x000001EBC6D81F20> = 'Invalid email or password'.lower",FAIL,"Expected a lockout warning, got: 'Invalid email or password' assert 'attempts remaining' in 'invalid email or password' + where 'invalid email or password' = <built-in method lower of str object at 0x000001EBC6D81F20>() + where <built-in method lower of str object at 0x000001EBC6D81F20> = 'Invalid email or password'.lower",Assertion Failure,"demo = <test_reporting_demo.DemoLoginPage object at 0x000001EBC6922FD0>
+
+    @pytest.mark.login
+    @tc(""DEMO-003"", ""Wrong password shows a lockout warning"", feature=""Merchant login"",
+        types=[""Negative"", ""Security""], expected=""Message warns about remaining attempts before lockout"")
+    def test_wrong_password_warns_about_lockout(demo):
+        demo.login(""qa.merchant@sprintnxt.in"", ""Wrong@123456"")
+        message = demo.error()
+>       assert ""attempts remaining"" in message.lower(), f""Expected a lockout warning, got: {message!r}""
+E       AssertionError: Expected a lockout warning, got: 'Invalid email or password'
+E       assert 'attempts remaining' in 'invalid email or password'
+E        +  where 'invalid email or password' = <built-in method lower of str object at 0x000001EBC6D81F20>()
+E        +    where <built-in method lower of str object at 0x000001EBC6D81F20> = 'Invalid email or password'.lower
+
+examples\reporting_demo\test_reporting_demo.py:131: AssertionError",screenshots/121825_DEMO-003_a1_1.png,videos/demo-003_a1_2.webm,traces/demo-003_a1_1.zip,2026-10-16T12:18:24.239+05:30,2026-10-16T12:18:25.993+05:30,1.75,chromium 145.0.7632.6,UAT,Office,local,1,3,2,0,False,examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]
+DEMO-004,Dashboard shows the merchant profile widget,Login,Dashboard,"Functional, UI/UX",Browser launched with a fresh context (geolocation granted),,"1. Open the login page
+2. Log in as qa.merchant@sprintnxt.in
+3. Wait for the profile widget [FAILED]",Profile widget shows the merchant's business name,Not as expected: TimeoutError: Locator.wait_for: Timeout 2500ms exceeded.,FAIL,TimeoutError: Locator.wait_for: Timeout 2500ms exceeded.,Element Not Found / Not Actionable,"demo = <test_reporting_demo.DemoLoginPage object at 0x000001EBC6D4B100>
+
+    @pytest.mark.login
+    @tc(""DEMO-004"", ""Dashboard shows the merchant profile widget"", feature=""Dashboard"",
+        types=[""Functional"", ""UI/UX""], expected=""Profile widget shows the merchant's business name"")
+    def test_dashboard_profile_widget(demo):
+        demo.login(""qa.merchant@sprintnxt.in"", ""Correct@12345"")
+        with step(""Wait for the profile widget""):
+>           demo.page.locator(""#profile .business-name"").wait_for(timeout=2500)
+
+examples\reporting_demo\test_reporting_demo.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:18074: in wait_for
+    self._sync(self._impl_obj.wait_for(timeout=timeout, state=state))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:710: in wait_for
+    await self._frame.wait_for_selector(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:369: in wait_for_selector
+    await self._channel.send(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001EBC68C1010>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001EBC6DFF9C0>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 2500ms exceeded.
+E           Call log:
+E             - waiting for locator(""#profile .business-name"") to be visible
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/121829_DEMO-004_a1_1.png,videos/demo-004_a1_2.webm,traces/demo-004_a1_1.zip,2026-10-16T12:18:26.006+05:30,2026-10-16T12:18:30.879+05:30,4.87,chromium 145.0.7632.6,UAT,Office,local,2,3,2,0,False,examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]
+DEMO-005,Send OTP for email verification,Registration,Email OTP,"Functional, API",Browser launched with a fresh context (geolocation granted),,"1. Open the login page
+2. Log in as ratelimit.user@sprintnxt.in",OTP is sent and the OTP dialog opens,Not as expected: Locator expected to be visible Actual value: None Error: element(s) not found,FAIL,Locator expected to be visible Actual value: None Error: element(s) not found,Rate Limited (HTTP 429),"demo = <test_reporting_demo.DemoLoginPage object at 0x000001EBC6D48FC0>
+
+    @pytest.mark.registration
+    @tc(""DEMO-005"", ""Send OTP for email verification"", module=""Registration"", feature=""Email OTP"",
+        types=[""Functional"", ""API""], expected=""OTP is sent and the OTP dialog opens"")
+    def test_send_otp_rate_limited(demo):
+        demo.login(""ratelimit.user@sprintnxt.in"", ""Correct@12345"")
+>       expect(demo.page.locator(""#welcome"")).to_be_visible(timeout=2500)
+E       AssertionError: Locator expected to be visible
+E       Actual value: None
+E       Error: element(s) not found 
+E       Call log:
+E         - Expect ""to_be_visible"" with timeout 2500ms
+E         - waiting for locator(""#welcome"")
+
+examples\reporting_demo\test_reporting_demo.py:150: AssertionError",screenshots/121834_DEMO-005_a1_1.png,videos/demo-005_a1_2.webm,traces/demo-005_a1_1.zip,2026-10-16T12:18:30.891+05:30,2026-10-16T12:18:35.506+05:30,4.61,chromium 145.0.7632.6,UAT,Office,local,1,3,2,0,False,examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]
+DEMO-006,Admin activates a newly registered merchant,Admin,Merchant activation,"Functional, Integration",Admin credentials configured,,1. Open the login page,All assertions in the test pass,Not executed (blocked): Admin URL/credentials not provided (SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS),BLOCKED,Admin URL/credentials not provided (SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS),Precondition Not Met,,,,,2026-10-16T12:18:35.517+05:30,2026-10-16T12:18:36.462+05:30,0.94,chromium 145.0.7632.6,UAT,Office,local,0,1,1,0,False,examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]
+DEMO-007,Bulk-import merchants from CSV,Registration,Bulk import,"Functional, Regression",Browser launched with a fresh context (geolocation granted),,1. Open the login page,All assertions in the test pass,Not executed (skipped): Bulk import is not part of release 4.2,SKIPPED,Bulk import is not part of release 4.2,,,,,,2026-10-16T12:18:36.467+05:30,2026-10-16T12:18:37.465+05:30,1.0,chromium 145.0.7632.6,UAT,Office,local,0,1,1,0,False,examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]
+DEMO-008,Seeded merchant data is available,Registration,Test data seeding,Integration,Browser launched with a fresh context (geolocation granted),,,All assertions in the test pass,Not executed (blocked): ConnectionError: Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED,BLOCKED,ConnectionError: Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED,Setup / Precondition,"page = <Page url='about:blank'>
+
+    @pytest.fixture
+    def broken_backend(page: Page):
+>       raise ConnectionError(""Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED"")
+E       ConnectionError: Seed-data service unreachable: POST http://seed.local/merchants -> ECONNREFUSED
+
+examples\reporting_demo\test_reporting_demo.py:96: ConnectionError",screenshots/121837_DEMO-008_a1_1.png,videos/demo-008_a1_2.webm,traces/demo-008_a1_1.zip,2026-10-16T12:18:37.471+05:30,2026-10-16T12:18:38.440+05:30,0.97,chromium 145.0.7632.6,UAT,Office,local,0,0,0,0,False,examples/reporting_demo/test_reporting_demo.py::test_needs_seed_service[chromium]
+DEMO-009,Session banner appears after login,Login,Session,"UI/UX, Regression",Browser launched with a fresh context (geolocation granted),,"1. Open the login page
+2. Log in as qa.merchant@sprintnxt.in
+3. Attempt 2 of the banner check",Banner is visible within 2s,As expected: Banner is visible within 2s,PASS,,,,screenshots/121839_DEMO-009_a1_1.png,videos/demo-009_a1_2.webm,traces/demo-009_a1_1.zip,2026-10-16T12:18:38.451+05:30,2026-10-16T12:18:40.969+05:30,1.11,chromium 145.0.7632.6,UAT,Office,local,2,3,2,1,True,examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]
+DEMO-010,Password longer than 15 characters is rejected,Registration,Password policy,"Boundary, Validation",Browser launched with a fresh context (geolocation granted),,1. Open the login page,All assertions in the test pass,Not executed (skipped): Expected failure (xfail): BUG-1432: password field accepts 16 characters,SKIPPED,Expected failure (xfail): BUG-1432: password field accepts 16 characters,,,,,,2026-10-16T12:18:40.975+05:30,2026-10-16T12:18:41.930+05:30,0.95,chromium 145.0.7632.6,UAT,Office,local,0,1,1,0,False,examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]
+DEMO-002[missing-domain],Login rejects a malformed email [missing-domain],Login,Merchant login,"Negative, Validation",Browser launched with a fresh context (geolocation granted),"email = user@
+reason = missing-domain","1. Open the login page
+2. Log in as user@
+3. Read the error message",An error message is shown and no dashboard opens,As expected: An error message is shown and no dashboard opens,PASS,,,,,,,2026-10-16T12:18:41.936+05:30,2026-10-16T12:18:43.082+05:30,1.15,chromium 145.0.7632.6,UAT,Office,local,1,3,2,0,False,examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]
+DEMO-002[empty],Login rejects a malformed email [empty],Login,Merchant login,"Negative, Validation",Browser launched with a fresh context (geolocation granted),"email = 
+reason = empty","1. Open the login page
+2. Log in as 
+3. Read the error message",An error message is shown and no dashboard opens,As expected: An error message is shown and no dashboard opens,PASS,,,,,,,2026-10-16T12:18:43.088+05:30,2026-10-16T12:18:44.547+05:30,1.46,chromium 145.0.7632.6,UAT,Office,local,1,3,2,0,False,examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]

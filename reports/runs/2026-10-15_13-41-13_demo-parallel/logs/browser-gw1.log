@@ -1,0 +1,24 @@
+===== DEMO-003  examples/reporting_demo/test_reporting_demo.py::test_wrong_password_warns_about_lockout[chromium]  [FAIL]
+  +  7830ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +  8579ms console.error: Failed to load resource: the server responded with a status of 401 (Unauthorized)
+  +  8636ms console.error: Login failed: 401 Invalid email or password
+  +  7828ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +  8578ms network POST https://demo.sprintnxt.local/api/auth/login -> 401
+===== DEMO-004  examples/reporting_demo/test_reporting_demo.py::test_dashboard_profile_widget[chromium]  [FAIL]
+  +   600ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +  1019ms console.error: Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+  +  1019ms console.error: Profile widget failed: HTTP 500
+  +   599ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +  1018ms network GET https://demo.sprintnxt.local/api/profile -> 500
+===== DEMO-006  examples/reporting_demo/test_reporting_demo.py::test_admin_activation[chromium]  [BLOCKED]
+  +  1514ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +  1511ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+===== DEMO-010  examples/reporting_demo/test_reporting_demo.py::test_password_max_length[chromium]  [SKIPPED]
+  +  1661ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +  1659ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+===== DEMO-002[empty]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-empty]  [PASS]
+  +  1575ms console.error: Failed to load resource: the server responded with a status of 404 (Not Found)
+  +  2167ms console.error: Failed to load resource: the server responded with a status of 401 (Unauthorized)
+  +  2180ms console.error: Login failed: 401 Invalid email or password
+  +  1574ms network GET https://demo.sprintnxt.local/static/analytics.js -> 404
+  +  2166ms network POST https://demo.sprintnxt.local/api/auth/login -> 401

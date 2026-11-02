@@ -1,0 +1,5 @@
+2026-10-15 17:12:16,395 INFO    [reporting] Run 2026-10-15_17-12-16_e2e started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-12-16_e2e)
+2026-10-15 17:12:17,043 INFO    [reporting] START   E2E-06F59  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]
+2026-10-15 17:12:42,378 INFO    [reporting] FINISH  E2E-06F59  BLOCKED  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]  25.33s  -> UAT rate-limited send-otp (HTTP 429, 'Too many attempts from this network'). Re-run OTP tests after the block expires.
+2026-10-15 17:12:49,460 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_17-09-15_forgot-password
+2026-10-15 17:12:49,460 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-12-16_e2e\html\index.html

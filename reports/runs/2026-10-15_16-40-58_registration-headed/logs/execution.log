@@ -1,0 +1,87 @@
+2026-10-15 16:40:58,136 INFO    [reporting] Run 2026-10-15_16-40-58_registration-headed started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_16-40-58_registration-headed)
+2026-10-15 16:40:58,609 INFO    [reporting] START   REG-001  tests/test_registration.py::test_register_happy_path[chromium]
+2026-10-15 16:41:41,517 INFO    [reporting] FINISH  REG-001  FAIL  tests/test_registration.py::test_register_happy_path[chromium]  42.90s  -> Expected the 'Registration Successful' page assert False + where False = is_registration_success() + where is_registration_success = <pages.registration_page.Re
+2026-10-15 16:41:41,521 INFO    [reporting] START   REG-002  tests/test_registration.py::test_required_fields_block_submit[chromium]
+2026-10-15 16:41:53,610 INFO    [reporting] FINISH  REG-002  PASS  tests/test_registration.py::test_required_fields_block_submit[chromium]  12.09s
+2026-10-15 16:41:53,614 INFO    [reporting] START   REG-003[no-at-or-domain]  tests/test_registration.py::test_invalid_email_rejected[chromium-no-at-or-domain]
+2026-10-15 16:42:04,521 INFO    [reporting] FINISH  REG-003[no-at-or-domain]  PASS  tests/test_registration.py::test_invalid_email_rejected[chromium-no-at-or-domain]  10.90s
+2026-10-15 16:42:04,525 INFO    [reporting] START   REG-004[too-short]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-short]
+2026-10-15 16:42:16,591 INFO    [reporting] FINISH  REG-004[too-short]  PASS  tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-short]  12.06s
+2026-10-15 16:42:16,596 INFO    [reporting] START   REG-005[length-10-below-min]  tests/test_registration.py::test_invalid_password_rejected[chromium-length-10-below-min]
+2026-10-15 16:42:26,195 INFO    [reporting] FINISH  REG-005[length-10-below-min]  PASS  tests/test_registration.py::test_invalid_password_rejected[chromium-length-10-below-min]  9.60s
+2026-10-15 16:42:26,200 INFO    [reporting] START   REG-006  tests/test_registration.py::test_password_mismatch[chromium]
+2026-10-15 16:42:35,000 INFO    [reporting] FINISH  REG-006  PASS  tests/test_registration.py::test_password_mismatch[chromium]  8.80s
+2026-10-15 16:42:35,004 INFO    [reporting] START   REG-007  tests/test_registration.py::test_wrong_email_otp_does_not_verify[chromium]
+2026-10-15 16:42:47,112 INFO    [reporting] FINISH  REG-007  PASS  tests/test_registration.py::test_wrong_email_otp_does_not_verify[chromium]  12.11s
+2026-10-15 16:42:47,115 INFO    [reporting] START   REG-008  tests/test_registration.py::test_duplicate_email[chromium]
+2026-10-15 16:43:05,736 INFO    [reporting] FINISH  REG-008  PASS  tests/test_registration.py::test_duplicate_email[chromium]  18.62s
+2026-10-15 16:43:05,742 INFO    [reporting] START   REG-D66B9[' OR '1'='1]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR '1'='1]
+2026-10-15 16:43:11,367 INFO    [reporting] FINISH  REG-D66B9[' OR '1'='1]  PASS  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR '1'='1]  5.62s
+2026-10-15 16:43:11,371 INFO    [reporting] START   REG-F0CE1[<script>alert('xss')</script>]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<script>alert('xss')</script>]
+2026-10-15 16:43:17,015 INFO    [reporting] FINISH  REG-F0CE1[<script>alert('xss')</script>]  PASS  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<script>alert('xss')</script>]  5.64s
+2026-10-15 16:43:17,018 INFO    [reporting] START   REG-003[missing-at]  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-at]
+2026-10-15 16:43:25,343 INFO    [reporting] FINISH  REG-003[missing-at]  PASS  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-at]  8.32s
+2026-10-15 16:43:25,347 INFO    [reporting] START   REG-004[too-long]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-long]
+2026-10-15 16:43:32,463 INFO    [reporting] FINISH  REG-004[too-long]  PASS  tests/test_registration.py::test_invalid_mobile_rejected[chromium-too-long]  7.11s
+2026-10-15 16:43:32,466 INFO    [reporting] START   REG-005[length-16-above-max]  tests/test_registration.py::test_invalid_password_rejected[chromium-length-16-above-max]
+2026-10-15 16:43:43,942 INFO    [reporting] FINISH  REG-005[length-16-above-max]  PASS  tests/test_registration.py::test_invalid_password_rejected[chromium-length-16-above-max]  11.47s
+2026-10-15 16:43:43,946 INFO    [reporting] START   REG-D66B9['; DROP TABLE users;--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-'; DROP TABLE users;--]
+2026-10-15 16:43:48,460 INFO    [reporting] FINISH  REG-D66B9['; DROP TABLE users;--]  PASS  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-'; DROP TABLE users;--]  4.51s
+2026-10-15 16:43:48,465 INFO    [reporting] START   REG-F0CE1[<img src=x onerror=alert('xss')>]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<img src=x onerror=alert('xss')>]
+2026-10-15 16:43:53,249 INFO    [reporting] FINISH  REG-F0CE1[<img src=x onerror=alert('xss')>]  PASS  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<img src=x onerror=alert('xss')>]  4.78s
+2026-10-15 16:43:53,253 INFO    [reporting] START   REG-003[missing-domain]  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-domain]
+2026-10-15 16:44:02,651 INFO    [reporting] FINISH  REG-003[missing-domain]  PASS  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-domain]  9.39s
+2026-10-15 16:44:02,656 INFO    [reporting] START   REG-004[non-numeric]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-non-numeric]
+2026-10-15 16:44:10,242 INFO    [reporting] FINISH  REG-004[non-numeric]  PASS  tests/test_registration.py::test_invalid_mobile_rejected[chromium-non-numeric]  7.58s
+2026-10-15 16:44:10,246 INFO    [reporting] START   REG-005[no-uppercase]  tests/test_registration.py::test_invalid_password_rejected[chromium-no-uppercase]
+2026-10-15 16:44:18,901 INFO    [reporting] FINISH  REG-005[no-uppercase]  PASS  tests/test_registration.py::test_invalid_password_rejected[chromium-no-uppercase]  8.65s
+2026-10-15 16:44:18,904 INFO    [reporting] START   REG-D66B9[' OR 1=1--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR 1=1--]
+2026-10-15 16:44:22,397 INFO    [reporting] FINISH  REG-D66B9[' OR 1=1--]  PASS  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' OR 1=1--]  3.49s
+2026-10-15 16:44:22,401 INFO    [reporting] START   REG-F0CE1[<svg/onload=alert('xss')>]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<svg/onload=alert('xss')>]
+2026-10-15 16:44:30,851 INFO    [reporting] FINISH  REG-F0CE1[<svg/onload=alert('xss')>]  PASS  tests/test_registration_security.py::test_xss_in_name_fields[chromium-<svg/onload=alert('xss')>]  8.45s
+2026-10-15 16:44:30,854 INFO    [reporting] START   REG-003[missing-tld]  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-tld]
+2026-10-15 16:44:38,641 INFO    [reporting] FINISH  REG-003[missing-tld]  PASS  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-tld]  7.78s
+2026-10-15 16:44:38,645 INFO    [reporting] START   REG-004[invalid-start-digit]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-invalid-start-digit]
+2026-10-15 16:44:46,664 INFO    [reporting] FINISH  REG-004[invalid-start-digit]  PASS  tests/test_registration.py::test_invalid_mobile_rejected[chromium-invalid-start-digit]  8.02s
+2026-10-15 16:44:46,668 INFO    [reporting] START   REG-005[no-lowercase]  tests/test_registration.py::test_invalid_password_rejected[chromium-no-lowercase]
+2026-10-15 16:44:54,927 INFO    [reporting] FINISH  REG-005[no-lowercase]  PASS  tests/test_registration.py::test_invalid_password_rejected[chromium-no-lowercase]  8.26s
+2026-10-15 16:44:54,930 INFO    [reporting] START   REG-D66B9[admin'--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-admin'--]
+2026-10-15 16:44:59,546 INFO    [reporting] FINISH  REG-D66B9[admin'--]  PASS  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-admin'--]  4.61s
+2026-10-15 16:44:59,550 INFO    [reporting] START   REG-F0CE1["><script>alert(1)</script>]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-"><script>alert(1)</script>]
+2026-10-15 16:45:09,373 INFO    [reporting] FINISH  REG-F0CE1["><script>alert(1)</script>]  PASS  tests/test_registration_security.py::test_xss_in_name_fields[chromium-"><script>alert(1)</script>]  9.82s
+2026-10-15 16:45:09,377 INFO    [reporting] START   REG-003[double-at]  tests/test_registration.py::test_invalid_email_rejected[chromium-double-at]
+2026-10-15 16:45:17,774 INFO    [reporting] FINISH  REG-003[double-at]  PASS  tests/test_registration.py::test_invalid_email_rejected[chromium-double-at]  8.39s
+2026-10-15 16:45:17,777 INFO    [reporting] START   REG-004[contains-space]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-space]
+2026-10-15 16:45:26,310 INFO    [reporting] FINISH  REG-004[contains-space]  PASS  tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-space]  8.53s
+2026-10-15 16:45:26,315 INFO    [reporting] START   REG-005[no-digit]  tests/test_registration.py::test_invalid_password_rejected[chromium-no-digit]
+2026-10-15 16:45:37,052 INFO    [reporting] FINISH  REG-005[no-digit]  PASS  tests/test_registration.py::test_invalid_password_rejected[chromium-no-digit]  10.73s
+2026-10-15 16:45:37,057 INFO    [reporting] START   REG-D66B9[' UNION SELECT NULL--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' UNION SELECT NULL--]
+2026-10-15 16:45:43,163 INFO    [reporting] FINISH  REG-D66B9[' UNION SELECT NULL--]  PASS  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-' UNION SELECT NULL--]  6.10s
+2026-10-15 16:45:43,166 INFO    [reporting] START   REG-F0CE1[javascript:alert('xss')]  tests/test_registration_security.py::test_xss_in_name_fields[chromium-javascript:alert('xss')]
+2026-10-15 16:45:49,854 INFO    [reporting] FINISH  REG-F0CE1[javascript:alert('xss')]  PASS  tests/test_registration_security.py::test_xss_in_name_fields[chromium-javascript:alert('xss')]  6.68s
+2026-10-15 16:45:49,858 INFO    [reporting] START   REG-003[space-in-local]  tests/test_registration.py::test_invalid_email_rejected[chromium-space-in-local]
+2026-10-15 16:46:00,493 INFO    [reporting] FINISH  REG-003[space-in-local]  PASS  tests/test_registration.py::test_invalid_email_rejected[chromium-space-in-local]  10.63s
+2026-10-15 16:46:00,496 INFO    [reporting] START   REG-004[contains-symbols]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-symbols]
+2026-10-15 16:46:11,079 INFO    [reporting] FINISH  REG-004[contains-symbols]  PASS  tests/test_registration.py::test_invalid_mobile_rejected[chromium-contains-symbols]  10.58s
+2026-10-15 16:46:11,082 INFO    [reporting] START   REG-005[no-special]  tests/test_registration.py::test_invalid_password_rejected[chromium-no-special]
+2026-10-15 16:46:20,410 INFO    [reporting] FINISH  REG-005[no-special]  PASS  tests/test_registration.py::test_invalid_password_rejected[chromium-no-special]  9.32s
+2026-10-15 16:46:20,413 INFO    [reporting] START   REG-D66B9[1' AND SLEEP(5)--]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-1' AND SLEEP(5)--]
+2026-10-15 16:46:26,011 INFO    [reporting] FINISH  REG-D66B9[1' AND SLEEP(5)--]  PASS  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-1' AND SLEEP(5)--]  5.59s
+2026-10-15 16:46:26,015 INFO    [reporting] START   REG-003[illegal-chars]  tests/test_registration.py::test_invalid_email_rejected[chromium-illegal-chars]
+2026-10-15 16:46:34,509 INFO    [reporting] FINISH  REG-003[illegal-chars]  PASS  tests/test_registration.py::test_invalid_email_rejected[chromium-illegal-chars]  8.49s
+2026-10-15 16:46:34,513 INFO    [reporting] START   REG-004[all-zeros]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-all-zeros]
+2026-10-15 16:46:45,712 INFO    [reporting] FINISH  REG-004[all-zeros]  PASS  tests/test_registration.py::test_invalid_mobile_rejected[chromium-all-zeros]  11.20s
+2026-10-15 16:46:45,717 INFO    [reporting] START   REG-005[far-too-short]  tests/test_registration.py::test_invalid_password_rejected[chromium-far-too-short]
+2026-10-15 16:46:54,062 INFO    [reporting] FINISH  REG-005[far-too-short]  PASS  tests/test_registration.py::test_invalid_password_rejected[chromium-far-too-short]  8.34s
+2026-10-15 16:46:54,065 INFO    [reporting] START   REG-D66B9[" OR ""="]  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-" OR ""="]
+2026-10-15 16:46:57,798 INFO    [reporting] FINISH  REG-D66B9[" OR ""="]  PASS  tests/test_registration_security.py::test_sqli_in_name_fields[chromium-" OR ""="]  3.73s
+2026-10-15 16:46:57,802 INFO    [reporting] START   REG-003[missing-local]  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-local]
+2026-10-15 16:47:08,719 INFO    [reporting] FINISH  REG-003[missing-local]  PASS  tests/test_registration.py::test_invalid_email_rejected[chromium-missing-local]  10.91s
+2026-10-15 16:47:08,725 INFO    [reporting] START   REG-004[empty]  tests/test_registration.py::test_invalid_mobile_rejected[chromium-empty]
+2026-10-15 16:47:18,598 INFO    [reporting] FINISH  REG-004[empty]  PASS  tests/test_registration.py::test_invalid_mobile_rejected[chromium-empty]  9.87s
+2026-10-15 16:47:18,602 INFO    [reporting] START   REG-005[empty]  tests/test_registration.py::test_invalid_password_rejected[chromium-empty]
+2026-10-15 16:47:28,427 INFO    [reporting] FINISH  REG-005[empty]  PASS  tests/test_registration.py::test_invalid_password_rejected[chromium-empty]  9.82s
+2026-10-15 16:47:28,431 INFO    [reporting] START   REG-003[empty]  tests/test_registration.py::test_invalid_email_rejected[chromium-empty]
+2026-10-15 16:47:41,058 INFO    [reporting] FINISH  REG-003[empty]  PASS  tests/test_registration.py::test_invalid_email_rejected[chromium-empty]  12.62s
+2026-10-15 16:47:56,965 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_16-01-08_demo-media-check
+2026-10-15 16:47:56,966 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_16-40-58_registration-headed\html\index.html

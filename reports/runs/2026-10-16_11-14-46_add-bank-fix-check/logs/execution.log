@@ -1,0 +1,49 @@
+2026-10-16 11:14:46,558 INFO    [reporting] Run 2026-10-16_11-14-46_add-bank-fix-check started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_11-14-46_add-bank-fix-check)
+2026-10-16 11:14:46,852 INFO    [reporting] START   BANK-003  tests/test_add_bank.py::test_service_cards[chromium]
+2026-10-16 11:23:50,857 INFO    [reporting] FINISH  BANK-003  PASS  tests/test_add_bank.py::test_service_cards[chromium]  544.00s
+2026-10-16 11:23:50,862 INFO    [reporting] START   BANK-007[Organisation Name]  tests/test_add_bank.py::test_mandatory[chromium-Organisation Name]
+2026-10-16 11:23:52,830 INFO    [reporting] FINISH  BANK-007[Organisation Name]  PASS  tests/test_add_bank.py::test_mandatory[chromium-Organisation Name]  1.97s
+2026-10-16 11:23:52,835 INFO    [reporting] START   BANK-009[org-blank-space]  tests/test_add_bank.py::test_invalid_input[chromium-org-blank-space]
+2026-10-16 11:23:54,415 INFO    [reporting] FINISH  BANK-009[org-blank-space]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-org-blank-space]  1.58s
+2026-10-16 11:23:54,440 INFO    [reporting] START   BANK-011  tests/test_add_bank.py::test_gst_must_contain_pan[chromium]
+2026-10-16 11:23:56,337 INFO    [reporting] FINISH  BANK-011  PASS  tests/test_add_bank.py::test_gst_must_contain_pan[chromium]  1.90s
+2026-10-16 11:23:56,363 INFO    [reporting] START   BANK-007[Bank Account Number]  tests/test_add_bank.py::test_mandatory[chromium-Bank Account Number]
+2026-10-16 11:23:58,996 INFO    [reporting] FINISH  BANK-007[Bank Account Number]  PASS  tests/test_add_bank.py::test_mandatory[chromium-Bank Account Number]  2.63s
+2026-10-16 11:23:59,019 INFO    [reporting] START   BANK-009[acc-too-short]  tests/test_add_bank.py::test_invalid_input[chromium-acc-too-short]
+2026-10-16 11:24:00,844 INFO    [reporting] FINISH  BANK-009[acc-too-short]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-acc-too-short]  1.82s
+2026-10-16 11:24:00,866 INFO    [reporting] START   BANK-007[Confirm Account No]  tests/test_add_bank.py::test_mandatory[chromium-Confirm Account No]
+2026-10-16 11:24:04,557 INFO    [reporting] FINISH  BANK-007[Confirm Account No]  PASS  tests/test_add_bank.py::test_mandatory[chromium-Confirm Account No]  3.69s
+2026-10-16 11:24:04,586 INFO    [reporting] START   BANK-009[confirm-acc-mismatch]  tests/test_add_bank.py::test_invalid_input[chromium-confirm-acc-mismatch]
+2026-10-16 11:24:08,198 INFO    [reporting] FINISH  BANK-009[confirm-acc-mismatch]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-confirm-acc-mismatch]  3.61s
+2026-10-16 11:24:08,222 INFO    [reporting] START   BANK-007[IFSC Code]  tests/test_add_bank.py::test_mandatory[chromium-IFSC Code]
+2026-10-16 11:24:10,580 INFO    [reporting] FINISH  BANK-007[IFSC Code]  PASS  tests/test_add_bank.py::test_mandatory[chromium-IFSC Code]  2.36s
+2026-10-16 11:24:10,606 INFO    [reporting] START   BANK-009[ifsc-too-short]  tests/test_add_bank.py::test_invalid_input[chromium-ifsc-too-short]
+2026-10-16 11:24:14,466 INFO    [reporting] FINISH  BANK-009[ifsc-too-short]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-ifsc-too-short]  3.86s
+2026-10-16 11:24:14,501 INFO    [reporting] START   BANK-007[Registered Mobile Number]  tests/test_add_bank.py::test_mandatory[chromium-Registered Mobile Number]
+2026-10-16 11:24:17,777 INFO    [reporting] FINISH  BANK-007[Registered Mobile Number]  FAIL  tests/test_add_bank.py::test_mandatory[chromium-Registered Mobile Number]  3.27s  -> Registered Mobile Number: got '' assert 'Field is required' in '' + where '' = field_error('Registered Mobile Number') + where field_error = <pages.add_bank_pag
+2026-10-16 11:24:17,787 INFO    [reporting] START   BANK-009[ifsc-5th-char-not-0]  tests/test_add_bank.py::test_invalid_input[chromium-ifsc-5th-char-not-0]
+2026-10-16 11:24:19,614 INFO    [reporting] FINISH  BANK-009[ifsc-5th-char-not-0]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-ifsc-5th-char-not-0]  1.83s
+2026-10-16 11:24:19,621 INFO    [reporting] START   BANK-007[Registered Email ID]  tests/test_add_bank.py::test_mandatory[chromium-Registered Email ID]
+2026-10-16 11:24:21,122 INFO    [reporting] FINISH  BANK-007[Registered Email ID]  PASS  tests/test_add_bank.py::test_mandatory[chromium-Registered Email ID]  1.50s
+2026-10-16 11:24:21,128 INFO    [reporting] START   BANK-009[mobile-too-short]  tests/test_add_bank.py::test_invalid_input[chromium-mobile-too-short]
+2026-10-16 11:24:24,618 INFO    [reporting] FINISH  BANK-009[mobile-too-short]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-mobile-too-short]  3.49s
+2026-10-16 11:24:24,624 INFO    [reporting] START   BANK-007[PAN Number]  tests/test_add_bank.py::test_mandatory[chromium-PAN Number]
+2026-10-16 11:24:38,792 INFO    [reporting] FINISH  BANK-007[PAN Number]  PASS  tests/test_add_bank.py::test_mandatory[chromium-PAN Number]  14.17s
+2026-10-16 11:24:38,796 INFO    [reporting] START   BANK-009[mobile-bad-start-digit]  tests/test_add_bank.py::test_invalid_input[chromium-mobile-bad-start-digit]
+2026-10-16 11:24:43,028 INFO    [reporting] FINISH  BANK-009[mobile-bad-start-digit]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-mobile-bad-start-digit]  4.23s
+2026-10-16 11:24:43,058 INFO    [reporting] START   BANK-009[mobile-letters]  tests/test_add_bank.py::test_invalid_input[chromium-mobile-letters]
+2026-10-16 11:24:44,909 INFO    [reporting] FINISH  BANK-009[mobile-letters]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-mobile-letters]  1.85s
+2026-10-16 11:24:44,917 INFO    [reporting] START   BANK-009[email-no-at]  tests/test_add_bank.py::test_invalid_input[chromium-email-no-at]
+2026-10-16 11:24:47,662 INFO    [reporting] FINISH  BANK-009[email-no-at]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-email-no-at]  2.75s
+2026-10-16 11:24:47,666 INFO    [reporting] START   BANK-009[pan-too-short]  tests/test_add_bank.py::test_invalid_input[chromium-pan-too-short]
+2026-10-16 11:24:49,306 INFO    [reporting] FINISH  BANK-009[pan-too-short]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-pan-too-short]  1.64s
+2026-10-16 11:24:49,311 INFO    [reporting] START   BANK-009[pan-wrong-pattern]  tests/test_add_bank.py::test_invalid_input[chromium-pan-wrong-pattern]
+2026-10-16 11:24:52,364 INFO    [reporting] FINISH  BANK-009[pan-wrong-pattern]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-pan-wrong-pattern]  3.05s
+2026-10-16 11:24:52,375 INFO    [reporting] START   BANK-009[pan-4th-char-not-holder-type]  tests/test_add_bank.py::test_invalid_input[chromium-pan-4th-char-not-holder-type]
+2026-10-16 11:24:55,924 INFO    [reporting] FINISH  BANK-009[pan-4th-char-not-holder-type]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-pan-4th-char-not-holder-type]  3.55s
+2026-10-16 11:24:55,938 INFO    [reporting] START   BANK-009[gst-too-short]  tests/test_add_bank.py::test_invalid_input[chromium-gst-too-short]
+2026-10-16 11:24:58,522 INFO    [reporting] FINISH  BANK-009[gst-too-short]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-gst-too-short]  2.58s
+2026-10-16 11:24:58,531 INFO    [reporting] START   BANK-009[gst-wrong-pattern]  tests/test_add_bank.py::test_invalid_input[chromium-gst-wrong-pattern]
+2026-10-16 11:25:01,194 INFO    [reporting] FINISH  BANK-009[gst-wrong-pattern]  PASS  tests/test_add_bank.py::test_invalid_input[chromium-gst-wrong-pattern]  2.66s
+2026-10-16 11:25:16,349 INFO    [reporting] Deleted old screenshots/videos: 2026-10-16_11-08-31_add-bank-api-access
+2026-10-16 11:25:16,350 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_11-14-46_add-bank-fix-check\html\index.html

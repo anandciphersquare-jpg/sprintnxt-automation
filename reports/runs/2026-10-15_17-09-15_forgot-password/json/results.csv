@@ -1,0 +1,55 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+FPW-FD211,Forgot valid email,Forgot Password,Forgot password,Functional,"Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open",,1. Open Forgot Password,All assertions in the test pass,Not executed (blocked): Set SNXT_MERCHANT_EMAIL to a registered merchant for the positive reset test,BLOCKED,Set SNXT_MERCHANT_EMAIL to a registered merchant for the positive reset test,Precondition Not Met,,,,,2026-10-15T17:09:16.188+05:30,2026-10-15T17:09:23.972+05:30,7.78,chromium 145.0.7632.6,UAT,Office,local,1,0,0,0,False,tests/test_forgot_password.py::test_forgot_valid_email[chromium]
+FPW-7AA29[no-at-or-domain],Forgot invalid email format [no-at-or-domain],Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open","email = plainaddress
+reason = no-at-or-domain","1. Open Forgot Password
+2. Request a reset link for 'plainaddress'
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:09:23.976+05:30,2026-10-15T17:09:41.127+05:30,17.15,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]
+FPW-46640,Forgot empty,Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open",,"1. Open Forgot Password
+2. Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:09:41.136+05:30,2026-10-15T17:09:47.551+05:30,6.42,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_empty[chromium]
+FPW-0182C,Reset for an unregistered email must not reveal that the account does not exist,Forgot Password,Forgot password,Security,"Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open",,"1. Open Forgot Password
+2. Request a reset link for 'qa.auto+1792064389436377@gmail.com'
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:09:47.557+05:30,2026-10-15T17:09:53.796+05:30,6.24,chromium 145.0.7632.6,UAT,Office,local,2,1,0,0,False,tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]
+FPW-7AA29[missing-at],Forgot invalid email format [missing-at],Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open","email = missingatsign.com
+reason = missing-at","1. Open Forgot Password
+2. Request a reset link for 'missingatsign.com'
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:09:53.802+05:30,2026-10-15T17:10:09.916+05:30,16.11,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]
+FPW-7AA29[missing-domain],Forgot invalid email format [missing-domain],Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open","email = user@
+reason = missing-domain","1. Open Forgot Password
+2. Request a reset link for 'user@'
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:10:09.921+05:30,2026-10-15T17:10:25.530+05:30,15.61,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]
+FPW-7AA29[missing-tld],Forgot invalid email format [missing-tld],Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open","email = user@domain
+reason = missing-tld","1. Open Forgot Password
+2. Request a reset link for 'user@domain'
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:10:25.539+05:30,2026-10-15T17:10:40.655+05:30,15.12,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]
+FPW-7AA29[double-at],Forgot invalid email format [double-at],Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open","email = user@@domain.com
+reason = double-at","1. Open Forgot Password
+2. Request a reset link for 'user@@domain.com'
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:10:40.662+05:30,2026-10-15T17:10:55.974+05:30,15.31,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]
+FPW-7AA29[space-in-local],Forgot invalid email format [space-in-local],Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open","email = user name@domain.com
+reason = space-in-local","1. Open Forgot Password
+2. Request a reset link for 'user name@domain.com'
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:10:55.982+05:30,2026-10-15T17:11:16.418+05:30,20.44,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]
+FPW-7AA29[illegal-chars],Forgot invalid email format [illegal-chars],Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open","email = user!#@domain.com
+reason = illegal-chars","1. Open Forgot Password
+2. Request a reset link for 'user!#@domain.com'
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:11:16.425+05:30,2026-10-15T17:11:32.475+05:30,16.05,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]
+FPW-7AA29[missing-local],Forgot invalid email format [missing-local],Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open","email = @nouser.com
+reason = missing-local","1. Open Forgot Password
+2. Request a reset link for '@nouser.com'
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:11:32.526+05:30,2026-10-15T17:11:47.354+05:30,14.83,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]
+FPW-7AA29[empty],Forgot invalid email format [empty],Forgot Password,Forgot password,"Negative, Validation","Browser launched with a fresh context (geolocation granted)
+Forgot-password page is open","email = 
+reason = empty","1. Open Forgot Password
+2. Request a reset link for ''
+3.   Click Reset Password (skipped when the button stays disabled)",All assertions in the test pass,As expected: all checks passed.,PASS,,,,,,,2026-10-15T17:11:47.359+05:30,2026-10-15T17:12:03.173+05:30,15.81,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]

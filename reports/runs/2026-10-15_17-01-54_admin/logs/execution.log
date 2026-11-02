@@ -1,0 +1,7 @@
+2026-10-15 17:01:54,657 INFO    [reporting] Run 2026-10-15_17-01-54_admin started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-01-54_admin)
+2026-10-15 17:01:55,459 INFO    [reporting] START   ADM-3D60C  tests/test_admin_activation.py::test_admin_login[chromium]
+2026-10-15 17:02:01,565 INFO    [reporting] FINISH  ADM-3D60C  BLOCKED  tests/test_admin_activation.py::test_admin_login[chromium]  6.10s  -> Admin URL/credentials not provided. Set SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS in .env. (Admin login details were not part of the shared screenshots
+2026-10-15 17:02:01,570 INFO    [reporting] START   ADM-A92CF  tests/test_admin_activation.py::test_activate_merchant[chromium]
+2026-10-15 17:02:03,310 INFO    [reporting] FINISH  ADM-A92CF  BLOCKED  tests/test_admin_activation.py::test_activate_merchant[chromium]  1.71s  -> Admin URL/credentials not provided. Set SNXT_ADMIN_URL / SNXT_ADMIN_USER / SNXT_ADMIN_PASS in .env. (Admin login details were not part of the shared screenshots
+2026-10-15 17:02:11,256 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_17-01-19_change-password
+2026-10-15 17:02:11,257 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_17-01-54_admin\html\index.html

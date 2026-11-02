@@ -1,0 +1,5 @@
+2026-10-16 12:36:47,564 INFO    [reporting] Run 2026-10-16_12-36-47_add-bank-mobile-check started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_12-36-47_add-bank-mobile-check)
+2026-10-16 12:36:47,666 INFO    [reporting] START   BANK-016[Registered Mobile Number]  tests/test_add_bank.py::test_mandatory_self_restoring[chromium-Registered Mobile Number]
+2026-10-16 12:37:07,679 INFO    [reporting] FINISH  BANK-016[Registered Mobile Number]  PASS  tests/test_add_bank.py::test_mandatory_self_restoring[chromium-Registered Mobile Number]  20.01s
+2026-10-16 12:37:14,890 INFO    [reporting] Deleted old screenshots/videos: 2026-10-16_12-33-53_add-bank-failures
+2026-10-16 12:37:14,891 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-16_12-36-47_add-bank-mobile-check\html\index.html

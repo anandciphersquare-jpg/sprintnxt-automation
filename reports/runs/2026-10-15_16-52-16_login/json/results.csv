@@ -1,0 +1,686 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+LOGIN-001,Activated merchant logs in with valid credentials,Login,Merchant login,"Functional, Smoke","Login page is open
+Seeded merchant is activated",,1. Open the login page,Merchant lands on the dashboard,Not executed (blocked): Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS for the positive login test,BLOCKED,Set SNXT_MERCHANT_EMAIL and SNXT_MERCHANT_PASS for the positive login test,Precondition Not Met,,,,,2026-10-15T16:52:16.808+05:30,2026-10-15T16:52:29.511+05:30,12.7,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_valid[chromium]
+LOGIN-002,Wrong password is rejected,Login,Merchant login,"Negative, Security",Login page is open,,"1. Open the login page
+2. Log in as 'qa.auto+1792063351266903@gmail.com' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4D2F8E10>
+config = <config.Config object at 0x000001FF4CF0A850>
+
+    @pytest.mark.negative
+    @tc(""LOGIN-002"", ""Wrong password is rejected"", feature=""Merchant login"",
+        types=[""Negative"", ""Security""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_wrong_password(login, config):
+        email = config.merchant_email or unique_email()
+>       login.login(email, ""WrongPass@123"")
+
+tests\test_login.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF4D721760>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165246_LOGIN-002_a1_1.png,videos/login-002_a1_2.webm,traces/login-002_a1_1.zip,2026-10-15T16:52:29.519+05:30,2026-10-15T16:52:49.806+05:30,20.29,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_wrong_password[chromium]
+LOGIN-003,Unregistered email is rejected,Login,Merchant login,"Negative, Security",Login page is open,,"1. Open the login page
+2. Log in as 'qa.auto+1792063373652900@gmail.com' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4D2FBB10>
+
+    @pytest.mark.negative
+    @tc(""LOGIN-003"", ""Unregistered email is rejected"", feature=""Merchant login"",
+        types=[""Negative"", ""Security""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_unregistered_email(login):
+>       login.login(unique_email(), ""Whatever@123"")
+
+tests\test_login.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF4D66AF20>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165309_LOGIN-003_a1_1.png,videos/login-003_a1_2.webm,traces/login-003_a1_1.zip,2026-10-15T16:52:49.823+05:30,2026-10-15T16:53:11.868+05:30,22.05,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_unregistered_email[chromium]
+LOGIN-004[no-at-or-domain],Malformed email cannot log in [no-at-or-domain],Login,Input validation,"Negative, Validation",Login page is open,"email = plainaddress
+reason = no-at-or-domain","1. Open the login page
+2. Log in as 'plainaddress' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4CE27A80>
+email = 'plainaddress', reason = 'no-at-or-domain'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""email,reason"", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])
+    @tc(""LOGIN-004"", ""Malformed email cannot log in"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_invalid_email_format(login, email, reason):
+>       login.login(email, ""Whatever@123"")
+
+tests\test_login.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF4D62E020>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165329_LOGIN-004_no-at-or-domain_a1_1.png,videos/login-004-no-at-or-domain_a1_2.webm,traces/login-004-no-at-or-domain_a1_1.zip,2026-10-15T16:53:11.884+05:30,2026-10-15T16:53:31.942+05:30,20.06,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]
+LOGIN-005,Empty login form cannot be submitted,Login,Input validation,"Negative, Validation",Login page is open,,1. Open the login page,User stays off the dashboard,Not as expected: TimeoutError: Locator.click: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.click: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4D8548A0>
+
+    @pytest.mark.negative
+    @tc(""LOGIN-005"", ""Empty login form cannot be submitted"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_empty(login):
+>       login._login_btn().click()
+
+tests\test_login.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15631: in click
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:162: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:566: in _click
+    await self._channel.send(""click"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF4D91D800>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_role(""button"", name=re.compile(r""log\s*in|sign\s*in"", re.IGNORECASE))
+E               - locator resolved to <button disabled type=""submit"" class=""btn btn-primary w-100 login-btn""> Sign In </button>
+E             - attempting click action
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is not enabled
+E               - retrying click action
+E               - waiting 20ms
+E               2 × waiting for element to be visible, enabled and stable
+E                 - element is not enabled
+E               - retrying click action
+E                 - waiting 100ms
+E               27 × waiting for element to be visible, enabled and stable
+E                  - element is not enabled
+E                - retrying click action
+E                  - waiting 500ms
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165352_LOGIN-005_a1_1.png,videos/login-005_a1_2.webm,traces/login-005_a1_1.zip,2026-10-15T16:53:31.954+05:30,2026-10-15T16:53:54.636+05:30,22.68,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_empty[chromium]
+LOGIN-004[missing-at],Malformed email cannot log in [missing-at],Login,Input validation,"Negative, Validation",Login page is open,"email = missingatsign.com
+reason = missing-at","1. Open the login page
+2. Log in as 'missingatsign.com' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4D0B1490>
+email = 'missingatsign.com', reason = 'missing-at'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""email,reason"", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])
+    @tc(""LOGIN-004"", ""Malformed email cannot log in"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_invalid_email_format(login, email, reason):
+>       login.login(email, ""Whatever@123"")
+
+tests\test_login.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF4DA43240>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165411_LOGIN-004_missing-at_a1_1.png,videos/login-004-missing-at_a1_2.webm,traces/login-004-missing-at_a1_1.zip,2026-10-15T16:53:54.649+05:30,2026-10-15T16:54:14.473+05:30,19.82,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]
+LOGIN-004[missing-domain],Malformed email cannot log in [missing-domain],Login,Input validation,"Negative, Validation",Login page is open,"email = user@
+reason = missing-domain","1. Open the login page
+2. Log in as 'user@' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4F72A690>
+email = 'user@', reason = 'missing-domain'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""email,reason"", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])
+    @tc(""LOGIN-004"", ""Malformed email cannot log in"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_invalid_email_format(login, email, reason):
+>       login.login(email, ""Whatever@123"")
+
+tests\test_login.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF4F7C1300>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165435_LOGIN-004_missing-domain_a1_1.png,videos/login-004-missing-domain_a1_2.webm,traces/login-004-missing-domain_a1_1.zip,2026-10-15T16:54:14.485+05:30,2026-10-15T16:54:38.885+05:30,24.4,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]
+LOGIN-004[missing-tld],Malformed email cannot log in [missing-tld],Login,Input validation,"Negative, Validation",Login page is open,"email = user@domain
+reason = missing-tld","1. Open the login page
+2. Log in as 'user@domain' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4F9C87C0>
+email = 'user@domain', reason = 'missing-tld'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""email,reason"", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])
+    @tc(""LOGIN-004"", ""Malformed email cannot log in"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_invalid_email_format(login, email, reason):
+>       login.login(email, ""Whatever@123"")
+
+tests\test_login.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF4F9CD300>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165457_LOGIN-004_missing-tld_a1_1.png,videos/login-004-missing-tld_a1_2.webm,traces/login-004-missing-tld_a1_1.zip,2026-10-15T16:54:38.901+05:30,2026-10-15T16:55:00.077+05:30,21.18,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]
+LOGIN-004[double-at],Malformed email cannot log in [double-at],Login,Input validation,"Negative, Validation",Login page is open,"email = user@@domain.com
+reason = double-at","1. Open the login page
+2. Log in as 'user@@domain.com' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4F934C50>
+email = 'user@@domain.com', reason = 'double-at'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""email,reason"", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])
+    @tc(""LOGIN-004"", ""Malformed email cannot log in"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_invalid_email_format(login, email, reason):
+>       login.login(email, ""Whatever@123"")
+
+tests\test_login.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF4F453060>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165517_LOGIN-004_double-at_a1_1.png,videos/login-004-double-at_a1_2.webm,traces/login-004-double-at_a1_1.zip,2026-10-15T16:55:00.091+05:30,2026-10-15T16:55:20.367+05:30,20.28,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_invalid_email_format[chromium-double-at]
+LOGIN-004[space-in-local],Malformed email cannot log in [space-in-local],Login,Input validation,"Negative, Validation",Login page is open,"email = user name@domain.com
+reason = space-in-local","1. Open the login page
+2. Log in as 'user name@domain.com' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4F937050>
+email = 'user name@domain.com', reason = 'space-in-local'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""email,reason"", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])
+    @tc(""LOGIN-004"", ""Malformed email cannot log in"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_invalid_email_format(login, email, reason):
+>       login.login(email, ""Whatever@123"")
+
+tests\test_login.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF4F16C180>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165537_LOGIN-004_space-in-local_a1_1.png,videos/login-004-space-in-local_a1_2.webm,traces/login-004-space-in-local_a1_1.zip,2026-10-15T16:55:20.379+05:30,2026-10-15T16:55:41.417+05:30,21.04,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]
+LOGIN-004[illegal-chars],Malformed email cannot log in [illegal-chars],Login,Input validation,"Negative, Validation",Login page is open,"email = user!#@domain.com
+reason = illegal-chars","1. Open the login page
+2. Log in as 'user!#@domain.com' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF4FA026C0>
+email = 'user!#@domain.com', reason = 'illegal-chars'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""email,reason"", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])
+    @tc(""LOGIN-004"", ""Malformed email cannot log in"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_invalid_email_format(login, email, reason):
+>       login.login(email, ""Whatever@123"")
+
+tests\test_login.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF506FEA20>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165601_LOGIN-004_illegal-chars_a1_1.png,videos/login-004-illegal-chars_a1_2.webm,traces/login-004-illegal-chars_a1_1.zip,2026-10-15T16:55:41.433+05:30,2026-10-15T16:56:04.807+05:30,23.37,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]
+LOGIN-004[missing-local],Malformed email cannot log in [missing-local],Login,Input validation,"Negative, Validation",Login page is open,"email = @nouser.com
+reason = missing-local","1. Open the login page
+2. Log in as '@nouser.com' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF50638B90>
+email = '@nouser.com', reason = 'missing-local'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""email,reason"", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])
+    @tc(""LOGIN-004"", ""Malformed email cannot log in"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_invalid_email_format(login, email, reason):
+>       login.login(email, ""Whatever@123"")
+
+tests\test_login.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF5061B880>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165622_LOGIN-004_missing-local_a1_1.png,videos/login-004-missing-local_a1_2.webm,traces/login-004-missing-local_a1_1.zip,2026-10-15T16:56:04.822+05:30,2026-10-15T16:56:24.874+05:30,20.05,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]
+LOGIN-004[empty],Malformed email cannot log in [empty],Login,Input validation,"Negative, Validation",Login page is open,"email = 
+reason = empty","1. Open the login page
+2. Log in as '' [FAILED]",User stays off the dashboard,Not as expected: TimeoutError: Locator.fill: Timeout 15000ms exceeded.,FAIL,TimeoutError: Locator.fill: Timeout 15000ms exceeded.,Element Not Found / Not Actionable,"login = <pages.login_page.LoginPage object at 0x000001FF502CDD30>, email = ''
+reason = 'empty'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""email,reason"", INVALID_EMAILS, ids=[r for _, r in INVALID_EMAILS])
+    @tc(""LOGIN-004"", ""Malformed email cannot log in"", feature=""Input validation"",
+        types=[""Negative"", ""Validation""], preconditions=[LOGIN_OPEN], expected=""User stays off the dashboard"")
+    def test_login_invalid_email_format(login, email, reason):
+>       login.login(email, ""Whatever@123"")
+
+tests\test_login.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+reporting\collector.py:235: in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+pages\login_page.py:21: in login
+    self._email().fill(email)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15983: in fill
+    self._sync(
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:215: in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:607: in fill
+    await self._fill(**locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:619: in _fill
+    await self._channel.send(""fill"", self._timeout, locals_to_params(locals()))
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000001FF4CED2900>
+cb = <function Channel.send.<locals>.<lambda> at 0x000001FF50294D60>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, ""__pw_stack__"", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f""{parsed_st['apiName']}: {error}"") from None
+E           playwright._impl._errors.TimeoutError: Locator.fill: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_placeholder(re.compile(r""email"", re.IGNORECASE))
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError",screenshots/165643_LOGIN-004_empty_a1_1.png,videos/login-004-empty_a1_2.webm,traces/login-004-empty_a1_1.zip,2026-10-15T16:56:24.886+05:30,2026-10-15T16:56:46.582+05:30,21.7,chromium 145.0.7632.6,UAT,Office,local,1,1,0,0,False,tests/test_login.py::test_login_invalid_email_format[chromium-empty]

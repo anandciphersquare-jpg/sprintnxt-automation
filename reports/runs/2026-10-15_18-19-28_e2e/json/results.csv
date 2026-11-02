@@ -1,0 +1,71 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+E2E-001,Register -> admin activates -> merchant logs in,End-to-End,Merchant onboarding,"End-to-End, Functional","Signup and admin portals reachable
+UAT OTP is 123456
+Admin credentials in .env","merchant email = qa.auto+1792068577388966@gmail.com
+merchant mobile = 6270197112
+activation remarks = Activated by QA automation","1. Open the signup page
+2. Register merchant 'qa.auto+1792068577388966@gmail.com' / '6270197112'
+3.   Enter name 'Reyansh Ahuja' and business 'Varghese Raman and Krishnan'
+4.   Enter email 'qa.auto+1792068577388966@gmail.com'
+5.   Verify email with OTP
+6.   Enter mobile '6270197112'
+7.   Verify mobile with OTP
+8.   Enter password and confirm password
+9.   Click Sign Up (skipped when the button stays disabled)
+10. Check for the 'Registration Successful' page
+11. Open the admin login
+12. Log in to the admin panel
+13. Open Register Partner
+14. Search partner 'qa.auto+1792068577388966@gmail.com'
+15. Activate partner 'qa.auto+1792068577388966@gmail.com' with remarks 'Activated by QA automation'
+16. Wait for partner 'qa.auto+1792068577388966@gmail.com' to show Active
+17. Open the login page
+18. Log in as 'qa.auto+1792068577388966@gmail.com'
+19.   Click Sign In (skipped when the button stays disabled)
+20. Finish login (OTP / Proceed if asked) and reach the dashboard","Merchant registers, admin activates it from Register Partner with remarks, and the merchant then logs in to the dashboard",Not as expected: Merchant did not reach the dashboard (url: https://uat.sprintnxt.in/NexGenV4Front/#/auth/change-password) assert False + where False = complete_login() + where complete_login = <pages.login_page.LoginPage object at 0x00000151C40238C0>.complete_login,FAIL,Merchant did not reach the dashboard (url: https://uat.sprintnxt.in/NexGenV4Front/#/auth/change-password) assert False + where False = complete_login() + where complete_login = <pages.login_page.LoginPage object at 0x00000151C40238C0>.complete_login,Assertion Failure,"page = <Page url='https://uat.sprintnxt.in/NexGenV4Front/#/auth/change-password'>
+browser = <Browser type=<BrowserType name=chromium executable_path=C:\Users\Office\AppData\Local\ms-playwright\chromium-1208\chrome-win64\chrome.exe> version=145.0.7632.6>
+browser_context_args = {'geolocation': {'latitude': 28.6139, 'longitude': 77.209}, 'ignore_https_errors': True, 'permissions': ['geolocation'], 'record_video_dir': 'C:\\Users\\Office\\AppData\\Local\\Temp\\playwright-pytest-3dobwpkg', ...}
+config = <config.Config object at 0x00000151C3EDE210>
+
+    @pytest.mark.positive
+    @tc(""E2E-001"", ""Register -> admin activates -> merchant logs in"", feature=""Merchant onboarding"",
+        types=[""End-to-End"", ""Functional""],
+        preconditions=[""Signup and admin portals reachable"", ""UAT OTP is 123456"", ""Admin credentials in .env""],
+        expected=""Merchant registers, admin activates it from Register Partner with remarks, ""
+                 ""and the merchant then logs in to the dashboard"")
+    def test_full_merchant_journey(page, browser, browser_context_args, config):
+        person = valid_person()
+        email, mobile, password = unique_email(), valid_mobile(), valid_password()
+        report.data(""merchant email"", email)
+        report.data(""merchant mobile"", mobile)
+        report.data(""activation remarks"", ACTIVATION_REMARKS)
+    
+        # 1) Merchant registers (merchant window)
+        reg = RegistrationPage(page, config).open()
+        reg.register(person[""first_name""], person[""last_name""], person[""business_name""],
+                     email, mobile, password)
+        assert reg.is_registration_success(), ""Registration did not reach the success page""
+        report.screenshot(""Merchant: registration successful"", page)
+    
+        # 2) Admin activates the new partner in a second window (opened now; merchant window stays open)
+        with open_admin_window(browser, browser_context_args, config) as admin_page:
+            admin = AdminPage(admin_page, config).open_login().login()
+            admin.open_register_partner().search_partner(email)
+            assert admin.partner_status(email).lower() == ""inactive"", ""New partner should start Inactive""
+            admin.activate_partner(email, ACTIVATION_REMARKS)
+            assert admin.wait_until_active(email).lower() == ""active"", ""Partner did not become Active""
+            report.screenshot(""Admin: partner activated"", admin_page)
+    
+            # 3) Merchant logs in (back in the merchant window, admin window still open)
+            page.bring_to_front()
+            login = LoginPage(page, config).open()
+            login.login(email, password)
+>           assert login.complete_login(), f""Merchant did not reach the dashboard (url: {page.url})""
+E           AssertionError: Merchant did not reach the dashboard (url: https://uat.sprintnxt.in/NexGenV4Front/#/auth/change-password)
+E           assert False
+E            +  where False = complete_login()
+E            +    where complete_login = <pages.login_page.LoginPage object at 0x00000151C40238C0>.complete_login
+
+tests\test_e2e_merchant_journey.py:47: AssertionError","screenshots/181955_E2E-001_a1_1.png
+screenshots/182014_E2E-001_a1_2.png
+screenshots/182102_E2E-001_a1_3.png",videos/e2e-001_a1_2.webm,traces/e2e-001_a1_1.zip,2026-10-15T18:19:29.558+05:30,2026-10-15T18:21:16.572+05:30,107.01,chromium 145.0.7632.6,UAT,Office,local,22,1,0,0,False,tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]

@@ -1,0 +1,1943 @@
+{
+  "schema": 1,
+  "run": {
+    "id": "2026-10-15_18-23-44_e2e",
+    "name": "E2E",
+    "project": "SprintNXT",
+    "start": "2026-10-15T18:23:44.776+05:30",
+    "end": "2026-10-15T18:25:02.426+05:30",
+    "duration_ms": 77649,
+    "environment": "UAT",
+    "base_url": "https://uat.sprintnxt.in/NexGenV4Front",
+    "build": "local",
+    "executed_by": "Office",
+    "browser": "chromium 145.0.7632.6",
+    "platform": "Windows 10 (AMD64)",
+    "python": "3.13.3",
+    "pytest": "9.0.2",
+    "playwright": "1.58.0",
+    "command": "pytest -m e2e --headed --report-name E2E -p no:cacheprovider",
+    "markexpr": "e2e",
+    "ci": {},
+    "workers": 1,
+    "exit_status": 0,
+    "hostname": "DESKTOP-0EGM1TC",
+    "pdf": true,
+    "generated": "2026-10-15T18:25:02.440+05:30",
+    "dir": "reports/runs/2026-10-15_18-23-44_e2e"
+  },
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "blocked": 0,
+    "skipped": 0,
+    "executed": 1,
+    "pass_rate": 100.0,
+    "flaky": 0,
+    "retried": 0,
+    "test_time_ms": 76221,
+    "modules": [
+      {
+        "module": "End-to-End",
+        "total": 1,
+        "duration_ms": 76221,
+        "PASS": 1,
+        "FAIL": 0,
+        "BLOCKED": 0,
+        "SKIPPED": 0
+      }
+    ],
+    "categories": {}
+  },
+  "tests": [
+    {
+      "id": "E2E-001",
+      "nodeid": "tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]",
+      "title": "Register -> admin activates -> merchant logs in",
+      "module": "End-to-End",
+      "feature": "Merchant onboarding",
+      "types": [
+        "End-to-End",
+        "Functional"
+      ],
+      "preconditions": [
+        "Signup and admin portals reachable",
+        "UAT OTP is 123456",
+        "Admin credentials in .env"
+      ],
+      "expected": "Merchant registers, admin activates it from Register Partner with remarks, and the merchant then logs in to the dashboard",
+      "description": "",
+      "file": "tests\\test_e2e_merchant_journey.py",
+      "line": 15,
+      "markers": [
+        "e2e",
+        "positive"
+      ],
+      "status": "PASS",
+      "actual": "As expected: Merchant registers, admin activates it from Register Partner with remarks, and the merchant then logs in to the dashboard",
+      "failure_reason": "",
+      "failure_category": "",
+      "error": "",
+      "test_data": {
+        "merchant email": "qa.auto+1792068835260190@gmail.com",
+        "merchant mobile": "8829314130",
+        "activation remarks": "Activated by QA automation"
+      },
+      "steps": [
+        {
+          "title": "Open the signup page",
+          "depth": 0,
+          "start_ms": 9100,
+          "duration_ms": 1834,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/sign-up",
+          "depth": 1,
+          "start_ms": 9569,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Register merchant 'qa.auto+1792068835260190@gmail.com' / '8829314130'",
+          "depth": 0,
+          "start_ms": 10934,
+          "duration_ms": 10796,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "first": "Timothy",
+            "last": "Barad",
+            "business": "Chauhan LLC",
+            "email": "qa.auto+1792068835260190@gmail.com",
+            "mobile": "8829314130",
+            "password": "d6XeT^QfNmCF",
+            "confirm": null,
+            "verify_email": true,
+            "verify_mobile": true
+          },
+          "error": ""
+        },
+        {
+          "title": "Enter name 'Timothy Barad' and business 'Chauhan LLC'",
+          "depth": 1,
+          "start_ms": 10934,
+          "duration_ms": 2348,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "first": "Timothy",
+            "last": "Barad",
+            "business": "Chauhan LLC"
+          },
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/sign-up",
+          "depth": 2,
+          "start_ms": 11694,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Enter email 'qa.auto+1792068835260190@gmail.com'",
+          "depth": 1,
+          "start_ms": 13282,
+          "duration_ms": 204,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.auto+1792068835260190@gmail.com"
+          },
+          "error": ""
+        },
+        {
+          "title": "Verify email with OTP",
+          "depth": 1,
+          "start_ms": 13486,
+          "duration_ms": 5301,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "code": null
+          },
+          "error": ""
+        },
+        {
+          "title": "Enter mobile '8829314130'",
+          "depth": 1,
+          "start_ms": 18787,
+          "duration_ms": 94,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "mobile": "8829314130"
+          },
+          "error": ""
+        },
+        {
+          "title": "Verify mobile with OTP",
+          "depth": 1,
+          "start_ms": 18881,
+          "duration_ms": 2026,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "code": null
+          },
+          "error": ""
+        },
+        {
+          "title": "Enter password and confirm password",
+          "depth": 1,
+          "start_ms": 20907,
+          "duration_ms": 591,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "password": "d6XeT^QfNmCF",
+            "confirm": null
+          },
+          "error": ""
+        },
+        {
+          "title": "Click Sign Up (skipped when the button stays disabled)",
+          "depth": 1,
+          "start_ms": 21498,
+          "duration_ms": 232,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Check for the 'Registration Successful' page",
+          "depth": 0,
+          "start_ms": 21730,
+          "duration_ms": 1651,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "timeout": 15000
+          },
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/info-register-successfully",
+          "depth": 1,
+          "start_ms": 23043,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Open the admin login",
+          "depth": 0,
+          "start_ms": 26831,
+          "duration_ms": 1218,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenAdminFront/#/auth/login",
+          "depth": 1,
+          "start_ms": 27157,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in to the admin panel",
+          "depth": 0,
+          "start_ms": 28049,
+          "duration_ms": 4426,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "user": null,
+            "password": null
+          },
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenAdminFront/#/dashboard",
+          "depth": 1,
+          "start_ms": 31415,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Open Register Partner",
+          "depth": 0,
+          "start_ms": 32475,
+          "duration_ms": 1805,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenAdminFront/#/partner/partner-list",
+          "depth": 1,
+          "start_ms": 34280,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Search partner 'qa.auto+1792068835260190@gmail.com'",
+          "depth": 0,
+          "start_ms": 34280,
+          "duration_ms": 2958,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.auto+1792068835260190@gmail.com"
+          },
+          "error": ""
+        },
+        {
+          "title": "Activate partner 'qa.auto+1792068835260190@gmail.com' with remarks 'Activated by QA automation'",
+          "depth": 0,
+          "start_ms": 37315,
+          "duration_ms": 3062,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.auto+1792068835260190@gmail.com",
+            "remarks": "Activated by QA automation"
+          },
+          "error": ""
+        },
+        {
+          "title": "Wait for partner 'qa.auto+1792068835260190@gmail.com' to show Active",
+          "depth": 0,
+          "start_ms": 40377,
+          "duration_ms": 192,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.auto+1792068835260190@gmail.com",
+            "timeout": 20000
+          },
+          "error": ""
+        },
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 40844,
+          "duration_ms": 165,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/login",
+          "depth": 1,
+          "start_ms": 40978,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as 'qa.auto+1792068835260190@gmail.com'",
+          "depth": 0,
+          "start_ms": 41009,
+          "duration_ms": 370,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.auto+1792068835260190@gmail.com",
+            "password": "d6XeT^QfNmCF"
+          },
+          "error": ""
+        },
+        {
+          "title": "Click Sign In (skipped when the button stays disabled)",
+          "depth": 1,
+          "start_ms": 41161,
+          "duration_ms": 218,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Finish login (OTP / Proceed if asked)",
+          "depth": 0,
+          "start_ms": 41379,
+          "duration_ms": 4659,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "timeout": 45000
+          },
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/change-password",
+          "depth": 1,
+          "start_ms": 45261,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Create a new password on first login",
+          "depth": 0,
+          "start_ms": 46594,
+          "duration_ms": 8849,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "new_password": "C7%Op2eZfRXX"
+          },
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/login",
+          "depth": 1,
+          "start_ms": 47676,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Open the login page",
+          "depth": 0,
+          "start_ms": 55443,
+          "duration_ms": 101,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/auth/login",
+          "depth": 1,
+          "start_ms": 55538,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Log in as 'qa.auto+1792068835260190@gmail.com'",
+          "depth": 0,
+          "start_ms": 55544,
+          "duration_ms": 549,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "email": "qa.auto+1792068835260190@gmail.com",
+            "password": "C7%Op2eZfRXX"
+          },
+          "error": ""
+        },
+        {
+          "title": "Click Sign In (skipped when the button stays disabled)",
+          "depth": 1,
+          "start_ms": 55777,
+          "duration_ms": 316,
+          "status": "passed",
+          "kind": "step",
+          "params": {},
+          "error": ""
+        },
+        {
+          "title": "Finish login (OTP / Proceed if asked)",
+          "depth": 0,
+          "start_ms": 56093,
+          "duration_ms": 1674,
+          "status": "passed",
+          "kind": "step",
+          "params": {
+            "timeout": 45000
+          },
+          "error": ""
+        },
+        {
+          "title": "Navigated to https://uat.sprintnxt.in/NexGenV4Front/#/dashboard",
+          "depth": 1,
+          "start_ms": 56924,
+          "duration_ms": 0,
+          "status": "passed",
+          "kind": "navigation",
+          "params": {},
+          "error": ""
+        }
+      ],
+      "artifacts": [
+        {
+          "kind": "screenshot",
+          "title": "Merchant: registration successful",
+          "path": "screenshots/182409_E2E-001_a1_1.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "screenshot",
+          "title": "Admin: partner activated",
+          "path": "screenshots/182426_E2E-001_a1_2.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "screenshot",
+          "title": "Merchant: Create New Password (first login)",
+          "path": "screenshots/182432_E2E-001_a1_3.png",
+          "mime": "image/png",
+          "attempt": 1
+        },
+        {
+          "kind": "screenshot",
+          "title": "Merchant: dashboard after login",
+          "path": "screenshots/182443_E2E-001_a1_4.png",
+          "mime": "image/png",
+          "attempt": 1
+        }
+      ],
+      "api_logs": [
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/site-settings",
+          "status": 200,
+          "duration_ms": 320.3,
+          "at_ms": 11294,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"niamod\": \"dWF0LnNwcmludG54dC5pbg==\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Details Fetched\",\n  \"data\": {\n    \"site_mode\": 1,\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/signup/email/send-otp",
+          "status": 200,
+          "duration_ms": 697.4,
+          "at_ms": 15120,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"email\": \"qa.auto+1792068835260190@gmail.com\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"OTP sent to qa.auto+1792068835260190@gmail.com\",\n  \"data\": {\n    \"resend_in\": 30,\n    \"expires_in\": 300,\n    \"sends_left\": 2\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/signup/email/verify-otp",
+          "status": 200,
+          "duration_ms": 128.7,
+          "at_ms": 18715,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"email\": \"qa.auto+1792068835260190@gmail.com\",\n  \"otp\": \"123456\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Email verified\",\n  \"data\": {\n    \"verified\": true,\n    \"verify_token\": \"ev_3180c9a67c75a0042c2640006da5784ff962ecc72f4c26cbc68422e4a661fecf\",\n    \"token_expires_in\": 1800\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/signup/mobile/send-otp",
+          "status": 200,
+          "duration_ms": 125.4,
+          "at_ms": 19308,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"mobile\": \"8829314130\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"OTP sent to 8829314130\",\n  \"data\": {\n    \"resend_in\": 30,\n    \"expires_in\": 300,\n    \"sends_left\": 2\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/signup/mobile/verify-otp",
+          "status": 200,
+          "duration_ms": 332.5,
+          "at_ms": 21301,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"mobile\": \"8829314130\",\n  \"otp\": \"123456\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Mobile number verified\",\n  \"data\": {\n    \"verified\": true,\n    \"verify_token\": \"mv_8ec5ab91c305f81deae3f9bae052757a0c01305865d8ede4b4d6ddb672338d43\",\n    \"token_expires_in\": 1800\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/register",
+          "status": 200,
+          "duration_ms": 1290.7,
+          "at_ms": 23062,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"fullname\": \"Chauhan LLC\",\n  \"fname\": \"Timothy\",\n  \"lname\": \"Barad\",\n  \"email\": \"qa.auto+1792068835260190@gmail.com\",\n  \"phone\": \"8829314130\",\n  \"role\": 4,\n  \"password\": \"d6XeT^QfNmCF\",\n  \"password_confirmation\": \"d6XeT^QfNmCF\",\n  \"email_verify_token\": \"ev_3180c9a67c75a0042c2640006da5784ff962ecc72f4c26cbc68422e4a661fecf\",\n  \"mobile_verify_token\": \"mv_8ec5ab91c305f81deae3f9bae052757a0c01305865d8ede4b4d6ddb672338d43\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"User registered successfully\"\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/site-settings",
+          "status": 200,
+          "duration_ms": 130.1,
+          "at_ms": 28213,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "dW5kZWZpbmVkLXVuZGVmaW5lZA==",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*"
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"Success!\",\n  \"data\": {\n    \"encrypt\": 0\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/auth/login",
+          "status": 200,
+          "duration_ms": 327.7,
+          "at_ms": 30457,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json"
+          },
+          "request_body": "{\n  \"email\": \"superadmin@gmail.com\",\n  \"password\": \"••••••\",\n  \"lat\": 28.6139,\n  \"lng\": 77.209\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"Success!\",\n  \"data\": {\n    \"allowTwoStep\": false,\n    \"requireTOTP\": false,\n    \"phone\": 8778675764,\n    \"user_id\": 1,\n    \"firstLogin\": 0,\n    \"authtoken\": \"eyJpdiI6Im5VaUtzUWNaQWdTOWh5aUVsMCtRb0E9PSIsInZhbHVlIjoiVjlhYnFPRzgyaXBycERwZUxLY25UbGE0cWhQbnJjZS9XaE91WTVJaHVLY3h1YnRkVkQ1Umt1N2h2UUhVTTVzNTNYdzVUc29nUTdYU3QwdlVLbjM4eTFaaGRSYlFTVUxpaUZud24wdlpveVdCRGZmZWtkOWJ0bGtvNU0zSUN6aWFuMXlWNnh1MjR0QkR4RU8rTlJCTStxL2kvTG56U1FscEpwUTZPaCtEUTdYRTlKYXZTRHp0Z1J5ODBpQWhMRWc5QktzWnlNclF1czBoNU4wZ3BnOWpZa1JId3NDbWFGdGV0bnhUYTI4WXdaVzF5RHFaQXZzb0VZdGdqZ2pmR3ZmdkNkUW1RTVpNS2ZOOXl1ZHc5b25KdWJNTU9HQUpaSVg2YVZwMjVTRFhFRUZsVnNPbDZyODIvajZhWUpUMnBJNWZrUVN4WDRqTTUwa05nNDI1d1pub3ZkN2IwSDNXYWpxeHVWdnh4SlhmQkhoRXVGVzZSNFp6VWU3dDJnTXlpMzY2c210ZSthN2szbk84N3FMUnRwVzh1Y0JzbVFKSktYbHE4U0s4RXVRMUhMND0iLCJtYWMiOiI2ZDNhZWQxMjlkMmNhZDJlZGIwMjAwMmQyZDU1NjlkNTIyNzY4NDNlZDg5ZjRhM2Y0OWE3MGFkYWVmZTU2ZDhhIiwidGFnIjoiIn0=\",\n    \"OnboardToken\": null,\n    \"email\": \"superadmin@gmail.com\",\n    \"role\": 1,\n    \"role_name\": \"Super Admin\",\n    \"mfaSetupRequired\": false,\n    \"encrypt_enabled\": false\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/new/get-role-button-permissions",
+          "status": 200,
+          "duration_ms": 287.6,
+          "at_ms": 30899,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          "request_body": "role_id=1",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"Details fetched successfully.\",\n  \"data\": [\n    {\n      \"parent_id\": 4,\n      \"parent_name\": \"Payments\",\n      \"module_id\": null,\n      \"module_name\": null,\n      \"group_name\": \"Payments (General)\",\n      \"permissions\": [\n        {\n          \"role_id\": 1,\n          \"permission_id\": 30,\n          \"name\": \"add dispute\",\n          \"key\": \"add_disputes\",\n          \"status\": 1\n        }\n      ]\n    },\n    {\n      \"parent_id\": 4,\n      \"parent_name\": \"Payments\",\n      \"module_id\": 12,\n      \"module_name\": \"Payout Transaction\",\n      \"group_name\": \"Payout Transaction\",\n      \"permissions\": [\n        {\n          \"role_id\": 1,\n          \"permission_id\": 19,\n          \"name\": \"Update Status\",\n          \"key\": \"payout_transaction_update_status\",\n          \"status\": 1\n        },\n        {\n          \"role_id\": 1,\n          \"permission_id\": 20,\n          \"name\": \"Requery\",\n          \"key\": \"payout_transaction_requery\",\n          \"status\": 1\n        },\n        {\n          \"role_id\": 1,\n          \"permission_id\": 21,\n          \"name\": \"View Logs\",\n          \"key\": \"payout_transaction_view_logs\",\n          \"status\": 1\n        },\n        {\n          \"role_id\": 1,\n          \"permission_id\": 23,\n          \"name\": \"Payout export\",\n          \"key\": \"payout_transaction_export\",\n          \"status\": 1\n        },\n        {\n          \"role_id\": 1,\n          \"permission_id\": 24,\n          \"name\": \"Bulk update\",\n          \"key\": \"payout_txn_bulk_update\",\n          \"status\": 1\n        }\n      ]\n    },\n    {\n      \"parent_id\": 6,\n      \"parent_name\": \"Admin\",\n      \"module_id\": 20,\n      \"module_name\": \"Users\",\n      \"group_name\": \"Users\",\n      \"permissions\": [\n        {\n          \"role_id\": 1,\n          \"permission_id\": 40,\n          \"name\": \"Delete user\",\n          \"key\": \"users_delete\",\n          \"status\": 1\n        }\n      ]\n    }\n  ]\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/new/password-expiry-reminder",
+          "status": 200,
+          "duration_ms": 194.9,
+          "at_ms": 32880,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*"
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": null,\n  \"expiry_date\": \"2027-02-28\",\n  \"days_left\": 136,\n  \"show_alert\": false,\n  \"alert_type\": null,\n  \"show_change_password\": false\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/bussiness-banking/bank-list",
+          "status": 200,
+          "duration_ms": 238.5,
+          "at_ms": 33343,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*"
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"status\": true,\n  \"statuscode\": 200,\n  \"message\": \"List fetched\",\n  \"recordsFiltered\": 20,\n  \"recordsTotal\": 20,\n  \"header\": [\n    {\n      \"name\": \"name\",\n      \"value\": \"Name\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"status\",\n      \"value\": \"Status\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"created\",\n      \"value\": \"Created At\",\n      \"is_show\": 1,\n      \"issort\": 0\n    }\n  ],\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"ICICI Bank\",\n      \"status\": \"Active\",\n      \"created\": \"16-07-2025\"\n    },\n    {\n      \"id\": 10,\n      \"name\": \"Pinelab\",\n      \"status\": \"Deactive\",\n      \"created\": \"09-08-2024\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Yes Bank\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"Fino Bank\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"Canara Bank\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 5,\n      \"name\": \"RBL Bank\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 6,\n      \"name\": \"Bank 3.O\",\n      \"status\": \"Deactive\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 7,\n      \"name\": \"AXIS Bank\",\n      \"status\": \"Deactive\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 8,\n      \"name\": \"IDFC\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 11,\n      \"name\": \"AU\",\n      \"status\": \"Deactive\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 12,\n      \"name\": \"JIO\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 13,\n      \"name\": \"HDFC Bank\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 14,\n      \"name\": \"Slice Bank\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 16,\n      \"name\": \"Collect 2.0\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 20,\n      \"name\": \"RAZORPAY\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 21,\n      \"name\": \"NSDL\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 24,\n      \"name\": \"DECENTRO\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 25,\n      \"name\": \"Indusind\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 26,\n      \"name\": \"COSMOS\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    },\n    {\n      \"id\": 27,\n      \"name\": \"CASHFREE\",\n      \"status\": \"Active\",\n      \"created\": \"02-06-2023\"\n    }\n  ],\n  \"filter\": []\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/new/get-menu",
+          "status": 200,
+          "duration_ms": 291.1,
+          "at_ms": 33482,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*"
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"Menu items fetched successfully.\",\n  \"data\": [\n    {\n      \"parent\": \"MerchantPermission\",\n      \"parent_id\": 26,\n      \"order\": null,\n      \"modules\": [\n        {\n          \"menu_source\": null,\n          \"module\": \"Main Menu\",\n          \"module_id\": 70,\n          \"module_order\": null,\n          \"status\": 1,\n          \"icon\": \"icon-modules\",\n          \"url\": \"/main-menu\"\n        },\n        {\n          \"menu_source\": null,\n          \"module\": \"Permission\",\n          \"module_id\": 72,\n          \"module_order\": null,\n          \"status\": 1,\n          \"icon\": \"icon-modules\",\n          \"url\": \"/permission-management\"\n        }\n      ]\n    },\n    {\n      \"parent\": \"UPI Management Module\",\n      \"parent_id\": 27,\n      \"order\": null,\n      \"modules\": [\n        {\n          \"menu_source\": null,\n          \"module\": \"UPI Traffic Control\",\n          \"module_id\": 75,\n          \"module_order\": null,\n          \"status\": 1,\n          \"icon\": \"icon-upi-transactions\",\n          \"url\": \"upi-traffic-control\"\n        }\n      ]\n    },\n    {\n      \"parent\": \"Main Menu\",\n      \"parent_id\": 1,\n      \"order\": 1,\n      \"modules\": [\n        {\n          \"menu_source\": null,\n          \"module\": \"Excrow\",\n          \"module_id\": 76,\n          \"module_order\": null,\n          \"status\": 1,\n          \"icon\": \"icon-connected-bank\",\n          \"url\": \"excrow/dashboard\"\n        }\n      ]\n    },\n    {\n      \"parent\": \"Payments\",\n      \"parent_id\": 4,\n      \"order\": 1,\n      \"modules\": [\n        {\n          \"menu_source\": null,\n          \"module\": \"Wallet Transaction\",\n          \"module_id\": 91,\n          \"module_order\": null,\n          \"status\": 1,\n          \"icon\": \"icon-payouts-transaction\",\n          \"url\": \"/reports/wallet-statement\"\n        },\n        {\n          \"menu_source\": null,\n          \"module\": \"UPI Charges\",\n          \"module_id\": 68,\n          \"module_order\": 1,\n          \"status\": 1,\n          \"icon\": \"icon-partner-commission\",\n          \"url\": \"/upi-charges\"\n        },\n        {\n          \"menu_source\": null,\n          \"module\": \"Bene List\",\n          \"module_id\": 11,\n          \"module_order\": 2,\n          \"status\": 1,\n          \"icon\": \"icon-beneficiary-list\",\n          \"url\": \"/bene/bene-list\"\n        },\n        {\n          \"menu_source\": null,\n          \"module\": \"Payout Transaction\",\n          \"module_id\": 12,\n          \"module_order\": 3,\n          \"status\": 1,\n          \"icon\": \"icon-payouts-transaction\",\n          \"url\": \"/reports/payout-transaction\"\n        },\n        {\n          \"menu_source\": null,\n          \"module\": \"Charges\",\n          \"module_id\": 13,\n          \"module_order\": 4,\n          \"status\": 1,\n          \"icon\": \"icon-partner-commission\",\n          \"url\": \"/charges\"\n        },\n        {\n          \"menu_source\": null,\n          \"module\": \"Bulk Status Update\",\n          \"module_id\": 22,\n          \"module_order\": 5,\n          \"status\": 1,\n          \"icon\": \"icon-beneficiary-list\",\n          \"url\": \"/bulk-payout-status\"\n        }\n      ]\n    },\n    {\n      \"parent\": \"Business Banking\",\n      \"parent_id\": 2,\n      \"order\": 2,\n      \"modules\": [\n        {\n          \"menu_source\": null,\n          \"module\": \"Wallet balance\",\n          \"module_id\": 74,\n          \"module_order\": null,\n          \"status\": 1,\n          \"icon\": \"icon-partner-reports\",\n          \"url\": \"/wallet-balance\"\n        },\n        {\n          \"menu_source\": null,\n          \"module\": \"Add Business Bank\",\n          \"module_id\": 2,\n          \"module_order\": 1,\n          \"status\": 1,\n          \"icon\": \"icon-add-business-bank\",\n          \"url\": \"/bank-list\"\n        },\n        {\n          \"menu_source\": null,\n          \"module\": \"Business Bank Forms\",\n          \"module_id\": 3,\n          \"module_order\": 2,\n          \"status\": 1,\n          \"icon\": \"icon-business-bank-forms\",\n          \"url\": \"/bank-forms\"\n        },\n        {\n          \"menu_source\": null,\n          \"module\": \"New Bank Requests\",\n          \"module_id\": 4,\n  \n… [truncated 9408 chars]",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/reports/get-va-transactions",
+          "status": 200,
+          "duration_ms": 337.5,
+          "at_ms": 33515,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          "request_body": "startdate=&enddate=&user_id=&bank_id=null&txn_source=1",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"Success!\",\n  \"va_total_transaction\": 0,\n  \"va_total_volume\": 0,\n  \"va_suspense_vol\": 0,\n  \"va_suspense_txn\": 0\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/reports/get-activity-ticker",
+          "status": 200,
+          "duration_ms": 339.1,
+          "at_ms": 33564,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*"
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"Success!\",\n  \"data\": [\n    {\n      \"id\": \"global-1\",\n      \"source\": \"global_window\",\n      \"severity\": \"warning\",\n      \"title\": \"Global Window\",\n      \"message\": \"Blackout mode active 02:00 PM–03:00 PM\",\n      \"when_label\": \"\"\n    }\n  ]\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/reports/get-payout-transactions",
+          "status": 200,
+          "duration_ms": 349.7,
+          "at_ms": 33597,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          "request_body": "startdate=&enddate=&user_id=&bank_id=null&txn_source=1",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"Success!\",\n  \"po_total_transaction\": 0,\n  \"po_total_volume\": 0,\n  \"po_total_pending\": 0,\n  \"po_total_hold\": 0,\n  \"po_total_failed\": 0\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/auth/2fa/status",
+          "status": 200,
+          "duration_ms": 312.1,
+          "at_ms": 33631,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*"
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"2FA status retrieved successfully.\",\n  \"data\": {\n    \"is_enabled\": false,\n    \"enabled_at\": null,\n    \"is_locked\": false,\n    \"locked_until\": null\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/reports/get-qr-transactions",
+          "status": 200,
+          "duration_ms": 392.7,
+          "at_ms": 33792,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          "request_body": "startdate=&enddate=&user_id=&bank_id=null&txn_source=1",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"Success!\",\n  \"qr_total_transaction\": 0,\n  \"qr_total_volume\": 0,\n  \"qr_total_pending\": 0,\n  \"qr_total_expired\": 0\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/v2/partner-details/partner-reports",
+          "status": 200,
+          "duration_ms": 163.6,
+          "at_ms": 34443,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          "request_body": "search=&start=0&length=10&orderby=created_at&order=desc&startdate=&enddate=&txn_source=1&searchBy=&status=&searchValue=",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"List fetched successfully!\",\n  \"recordsFiltered\": 10,\n  \"recordsTotal\": 108,\n  \"header\": [\n    {\n      \"name\": \"partner_name\",\n      \"value\": \"Business Name\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"user_id\",\n      \"value\": \"User Name\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"phone\",\n      \"value\": \"Phone\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"email\",\n      \"value\": \"Email\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"createdat\",\n      \"value\": \"Added On\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"remarks\",\n      \"value\": \"Remarks\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"status\",\n      \"value\": \"Status\",\n      \"is_show\": 1,\n      \"issort\": 0\n    }\n  ],\n  \"data\": [\n    {\n      \"id\": 1337,\n      \"partner_name\": \"Chauhan LLC\",\n      \"user_id\": \"NXT337426\",\n      \"email\": \"qa.auto+1792068835260190@gmail.com\",\n      \"phone\": 8829314130,\n      \"remarks\": null,\n      \"allowip\": [],\n      \"role\": 4,\n      \"txn_source\": 1,\n      \"excrow_id\": null,\n      \"status\": \"Deactive\",\n      \"createdat\": \"15-10-2026\"\n    },\n    {\n      \"id\": 1336,\n      \"partner_name\": \"Varghese Raman and Krishnan\",\n      \"user_id\": \"NXT878509\",\n      \"email\": \"qa.auto+1792068577388966@gmail.com\",\n      \"phone\": 6270197112,\n      \"remarks\": \"Activated by QA automation\",\n      \"allowip\": [],\n      \"role\": 4,\n      \"txn_source\": 1,\n      \"excrow_id\": null,\n      \"status\": \"Active\",\n      \"createdat\": \"15-10-2026\"\n    },\n    {\n      \"id\": 1335,\n      \"partner_name\": \"Pillay PLC\",\n      \"user_id\": \"NXT355421\",\n      \"email\": \"qa.auto+1792068449010429@gmail.com\",\n      \"phone\": 6192256814,\n      \"remarks\": \"Activated by QA automation\",\n      \"allowip\": [],\n      \"role\": 4,\n      \"txn_source\": 1,\n      \"excrow_id\": null,\n      \"status\": \"Active\",\n      \"createdat\": \"15-10-2026\"\n    },\n    {\n      \"id\": 1334,\n      \"partner_name\": \"Pai Kannan and Palla\",\n      \"user_id\": \"NXT746223\",\n      \"email\": \"qa.auto+1792068351604194@gmail.com\",\n      \"phone\": 6137116819,\n      \"remarks\": \"Activated by QA automation\",\n      \"allowip\": [],\n      \"role\": 4,\n      \"txn_source\": 1,\n      \"excrow_id\": null,\n      \"status\": \"Active\",\n      \"createdat\": \"15-10-2026\"\n    },\n    {\n      \"id\": 1333,\n      \"partner_name\": \"Parikh Group\",\n      \"user_id\": \"NXT609196\",\n      \"email\": \"qa.auto+1792068194223713@gmail.com\",\n      \"phone\": 9614103046,\n      \"remarks\": null,\n      \"allowip\": [],\n      \"role\": 4,\n      \"txn_source\": 1,\n      \"excrow_id\": null,\n      \"status\": \"Deactive\",\n      \"createdat\": \"15-10-2026\"\n    },\n    {\n      \"id\": 1332,\n      \"partner_name\": \"Tripathi Garde and Rajan\",\n      \"user_id\": \"NXT948932\",\n      \"email\": \"qa.auto+1792063944296973@gmail.com\",\n      \"phone\": 8940434429,\n      \"remarks\": null,\n      \"allowip\": [],\n      \"role\": 4,\n      \"txn_source\": 1,\n      \"excrow_id\": null,\n      \"status\": \"Deactive\",\n      \"createdat\": \"15-10-2026\"\n    },\n    {\n      \"id\": 1331,\n      \"partner_name\": \"Chander Sule\",\n      \"user_id\": \"NXT643853\",\n      \"email\": \"qa.auto+1792063278131644@gmail.com\",\n      \"phone\": 9839550417,\n      \"remarks\": null,\n      \"allowip\": [],\n      \"role\": 4,\n      \"txn_source\": 1,\n      \"excrow_id\": null,\n      \"status\": \"Deactive\",\n      \"createdat\": \"15-10-2026\"\n    },\n    {\n      \"id\": 1330,\n      \"partner_name\": \"Ben Barad and Iyer\",\n      \"user_id\": \"NXT324818\",\n      \"email\": \"qa.auto+1792062769279572@gmail.com\",\n      \"phone\": 6293241222,\n      \"remarks\": null,\n      \"allowip\": [],\n      \"role\": 4,\n      \"txn_source\": 1,\n      \"excrow_id\": null,\n      \"status\": \"Deactive\",\n      \"createdat\": \"15-10-2026\"\n    },\n    {\n      \"id\": 1329,\n      \"partner_name\": \"Bhakta PLC\",\n      \"user_id\": \"NXT175477\",\n      \"email\": \"qa.auto+1792057136938399@gmail.com\",\n      \"phone\": 9768626410,\n      \"remarks\": null,\n      \"allowip\": [],\n      \"role\": 4,\n… [truncated 470 chars]",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/v2/partner-details/partner-reports",
+          "status": 200,
+          "duration_ms": 2171.5,
+          "at_ms": 37077,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          "request_body": "search=&start=0&length=10&orderby=created_at&order=desc&startdate=&enddate=&txn_source=1&searchBy=&status=&searchValue=qa.auto%2B1792068835260190%40gmail.com",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"List fetched successfully!\",\n  \"recordsFiltered\": 1,\n  \"recordsTotal\": 1,\n  \"header\": [\n    {\n      \"name\": \"partner_name\",\n      \"value\": \"Business Name\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"user_id\",\n      \"value\": \"User Name\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"phone\",\n      \"value\": \"Phone\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"email\",\n      \"value\": \"Email\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"createdat\",\n      \"value\": \"Added On\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"remarks\",\n      \"value\": \"Remarks\",\n      \"is_show\": 1,\n      \"issort\": 0\n    },\n    {\n      \"name\": \"status\",\n      \"value\": \"Status\",\n      \"is_show\": 1,\n      \"issort\": 0\n    }\n  ],\n  \"data\": [\n    {\n      \"id\": 1337,\n      \"partner_name\": \"Chauhan LLC\",\n      \"user_id\": \"NXT337426\",\n      \"email\": \"qa.auto+1792068835260190@gmail.com\",\n      \"phone\": 8829314130,\n      \"remarks\": null,\n      \"allowip\": [],\n      \"role\": 4,\n      \"txn_source\": 1,\n      \"excrow_id\": null,\n      \"status\": \"Deactive\",\n      \"createdat\": \"15-10-2026\"\n    }\n  ]\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/NexGenAdminBackend/v2/partner-details/update-partner",
+          "status": 200,
+          "duration_ms": 198.3,
+          "at_ms": 39930,
+          "resource_type": "xhr",
+          "request_headers": {
+            "x-frontend-auth-token": "5f82dc81dad6280a8fff8aa66ee72ba60ce23a7db65d3e3b7f04920a48159d9e",
+            "authorization": "••••••",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenAdminFront/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "lat_long": "MjguNjEzOS03Ny4yMDk=",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+          },
+          "request_body": "user_id=1337&status=1&remarks=Activated+by+QA+automation",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"message\": \"Updated Successfully\"\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/login",
+          "status": 200,
+          "duration_ms": 883.8,
+          "at_ms": 42595,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"email\": \"qa.auto+1792068835260190@gmail.com\",\n  \"password\": \"d6XeT^QfNmCF\",\n  \"lat\": 28.6139,\n  \"lng\": 77.209\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"OTP send successfully.\",\n  \"allwoTwostep\": true,\n  \"data\": {\n    \"email\": \"XXXXXXo+1792068835260190@gmail.com\"\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/login/verifyOtp",
+          "status": 200,
+          "duration_ms": 701.4,
+          "at_ms": 45321,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"email\": \"qa.auto+1792068835260190@gmail.com\",\n  \"password\": \"d6XeT^QfNmCF\",\n  \"lat\": 28.6139,\n  \"lng\": 77.209,\n  \"otp\": \"123456\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"User login successfully.\",\n  \"data\": {\n    \"authtoken\": \"eyJodiI6IkdcLzBZS1lvZWpSaXhJN3pRS3Y0K084d2gzQnRvS0ZibmhzaUIyUWRsbFhSbDAzM2JsTzBxVWdPU2dJdFFkUWNNZmJmQnFnMXB1dThCQVwvaXNCZUxrbEg5d243ZXR6dHRjSGorRlk5aEhaaTNSczduZ0tBU1A4UkZmQWVPcEhPWWJ3VXdBNDBBS3VYWVJyMVZsd2FtXC9MMVJjUFhCY1Zad1UxOTJrbGxHREpiQmNZUjlRZjBpMlFEYWVldDVnUldwOWdmY1wvN2YrN0NIMTNKbVM4WERFaHEzeUg2REp3Q0hCWmVLU3V6ZTFhXC9aZUhHYmVEbG1cLzdzc0NIQUdYcjE5Yit1eVNWaTRzbWZCREo5bVZKemUrOHNxWjFUekdlUGFvM1RpMWFCK1Vkek1KcmJ3cENJXC9zMmd2aE8yMzloNjZqVDBxUUJ1OXd0VnZ0ZjZMZmdTRm1OdmhMMnFYbThHbjI4TVwvMENLU2JXd0cyY25NSEdcL2JEenpMMHFDZ1NiQ3QrQU5LS3VaN1dIVU1ObGhINkNnQVg1TDl0Snh6SGQzcVdndDdSMDZNVFwvTnYxa1wvdUROZTZjMTI5eTEySHFcL0lMTDNManpEbjl4ZEcxdUJyUHZ3NUExZGZOWFJjcHVsS3I3emFYeFhcL3pYNklJYnlBaTNrajZSVk1Zb0pWNW9MKzhyXC8iLCJpdiI6ImZiODQyMTBjZjdlZWE5MWM4YWI3ZDczMDFkYWM0MDYwIiwicyI6ImM2NWQyZjVhYzk1OTg1NjAifQ==\",\n    \"is_ticket\": 0,\n    \"is_subuser\": 0,\n    \"role\": 4,\n    \"session_timeout\": \"60\",\n    \"OnboardToken\": \"eyJodiI6Imd6MVJDZW5qM1M4NmU0WDdtZU45RXY2VkNHZjJ2aTZNZkdJUFwvdkZBeDJKQjFiMVFhK0krNXRHbERjNk9xQ25BZFBJcTNvRXNmVVBhMkFtVUIxaVFON3Nyc2JPSno0em91eCtST2d6RkQ5YlNIVTJyNnFBWkZHbHdxM1EwTGZSUFZ5TWpjUjVIZmErVmtHSlR0dk9GMDh1czhJM3hKTTN3WlhsYUQraHlGM1k9IiwiaXYiOiI0YzQwZTE2Y2JjNDFjZTJjZGE0MWE5OTdlOWY1MTNmZCIsInMiOiJkZDk5OWI3NGY1OWQ5YjNjIn0=\",\n    \"firstlogin\": 1,\n    \"details\": {\n      \"id\": 1337,\n      \"fullname\": \"Chauhan LLC\",\n      \"username\": \"NXT337426\",\n      \"email\": \"qa.auto+1792068835260190@gmail.com\",\n      \"role\": 4,\n      \"phone\": 8829314130,\n      \"is_kyc\": 2,\n      \"profile_pic\": null,\n      \"fname\": \"Timothy\",\n      \"lname\": \"Barad\",\n      \"is_subuser\": 0\n    },\n    \"user_id\": 1337\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/changePassword",
+          "status": 200,
+          "duration_ms": 573.1,
+          "at_ms": 47708,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"password\": \"C7%Op2eZfRXX\",\n  \"password_confirmation\": \"C7%Op2eZfRXX\",\n  \"token\": \"••••••\"\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Password updated successfully\"\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/login",
+          "status": 200,
+          "duration_ms": 641.7,
+          "at_ms": 56806,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{\n  \"email\": \"qa.auto+1792068835260190@gmail.com\",\n  \"password\": \"C7%Op2eZfRXX\",\n  \"lat\": 28.6139,\n  \"lng\": 77.209\n}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"User login successfully.\",\n  \"data\": {\n    \"authtoken\": \"eyJodiI6IkJWYlMzd1orMGQ5QmlRZmtSK3BqYjZjdTVNcUF4b1VmRjNUN0xTOUoyVEV4OXA0ZDVrWjZcL1dcLzV4V1A5dXJcLzc1c2YzWVRwT1hXcDdWWktpWnBXc2ZLa2dpQ2JyRTFFVkU5elwvb08zc3F6OWlVOEM5akJMRjZMUlFzM0UweHRcL3NLcXd2RGo2R3YzaWZxSkxqMWRRelE2eHkwNjNaZFlzRDBKWFdGK052b2NZTTR5SDhXblIzalMzaXk2OGU2enBpbVpRenl0OEdIajRrWWw4QW1MV3JWbFlhdmFpdTBTalwvUjJZUmtLQlF5ZTA1NVN4RWlaQ1ZLekNLZ21oTnYzQno4T2xOR0pqd1Rsc3V3NjZqZW92UFhacFFVQ2RSS2JhRlF0OTdiNHM0aEJBaXlWaXVEUkdOaXVYUjV4UWVBWVE0a0RYZFc0cHA0MjdhWWNIWWtvbTJxVXhBdzZnMVRPRWlZeEljalpTc1RZNDlWVDc4VlBMeGRDVEJmVEJcL04ybmp1TVQwNm82WE5sZ285aFZJT2NrQkdBRXU1RGU5a1RpXC9YaEx4djhFamV4XC9BT3RzcHJ3NnBUMUgzZEdhOG1Mck5qeEwxcGZySFdcL3lBRnoxemVcL2FVYXRtMlFKV1ZMaDB5YWREcElvV1c2ZG89IiwiaXYiOiJlZWE2MTRhOWUwNGE5OWMzMjFmNTgxNWE5ZTAxMTBiYyIsInMiOiJiYjk5NGJjZmRhZTAyMTdiIn0=\",\n    \"is_ticket\": 0,\n    \"is_subuser\": 0,\n    \"role\": 4,\n    \"session_timeout\": \"60\",\n    \"OnboardToken\": \"eyJodiI6Imd6MVJDZW5qM1M4NmU0WDdtZU45RXY2VkNHZjJ2aTZNZkdJUFwvdkZBeDJKQjFiMVFhK0krNXRHbERjNk9xQ25BZFBJcTNvRXNmVVBhMkFtVUIxaVFON3Nyc2JPSno0em91eCtST2d6RkQ5YlNIVTJyNnFBWkZHbHdxM1EwTGZSUFZ5TWpjUjVIZmErVmtHSlR0dk9GMDh1czhJM3hKTTN3WlhsYUQraHlGM1k9IiwiaXYiOiI0YzQwZTE2Y2JjNDFjZTJjZGE0MWE5OTdlOWY1MTNmZCIsInMiOiJkZDk5OWI3NGY1OWQ5YjNjIn0=\",\n    \"firstlogin\": 0,\n    \"details\": {\n      \"id\": 1337,\n      \"fullname\": \"Chauhan LLC\",\n      \"username\": \"NXT337426\",\n      \"email\": \"qa.auto+1792068835260190@gmail.com\",\n      \"role\": 4,\n      \"phone\": 8829314130,\n      \"is_kyc\": 2,\n      \"profile_pic\": null,\n      \"fname\": \"Timothy\",\n      \"lname\": \"Barad\",\n      \"is_subuser\": 0\n    }\n  }\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/kyc-status",
+          "status": 200,
+          "duration_ms": 134.9,
+          "at_ms": 56958,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "authorization": "••••••",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"statuscode\": 200,\n  \"status\": true,\n  \"responsecode\": 1,\n  \"kyc_status\": 2,\n  \"account_id\": \"\",\n  \"bank_status\": 0,\n  \"message\": \"Status fetched successfully\"\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/v3/user-management/sidebar",
+          "status": 200,
+          "duration_ms": 166.3,
+          "at_ms": 57376,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "authorization": "••••••",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "{}",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"Menu Fetched Successfully!\",\n  \"data\": [\n    {\n      \"name\": \"Dashboard\",\n      \"icon\": \"icon-dashboard\",\n      \"url\": \"/dashboard\"\n    },\n    {\n      \"name\": \"Manage\",\n      \"icon\": \"icon-manage\",\n      \"menu\": [\n        {\n          \"name\": \"Banks\",\n          \"url\": \"/bankList\"\n        },\n        {\n          \"name\": \"Wallet\",\n          \"url\": \"/wallet-statement\"\n        },\n        {\n          \"name\": \"API's\",\n          \"url\": \"/account-settings/credentials/api-credential\"\n        },\n        {\n          \"name\": \"User Management\",\n          \"url\": \"/user-management\"\n        },\n        {\n          \"name\": \"Profile\",\n          \"url\": \"/account-settings/Edit_Profile\"\n        }\n      ]\n    }\n  ]\n}",
+          "failure": ""
+        },
+        {
+          "method": "POST",
+          "url": "https://uat.sprintnxt.in/usermanagement/auth/notifications-count",
+          "status": 200,
+          "duration_ms": 1364.1,
+          "at_ms": 58664,
+          "resource_type": "xhr",
+          "request_headers": {
+            "sec-ch-ua-platform": "\"Windows\"",
+            "authorization": "••••••",
+            "referer": "https://uat.sprintnxt.in/NexGenV4Front/",
+            "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "noisrev": "MC4wLjEx",
+            "accept": "application/json, text/plain, */*",
+            "emanetis": "c3ByaW50bnh0",
+            "niamod": "dWF0LnNwcmludG54dC5pbg=="
+          },
+          "request_body": "",
+          "response_headers": {
+            "content-type": "application/json"
+          },
+          "response_body": "{\n  \"code\": 200,\n  \"responsecode\": 1,\n  \"status\": true,\n  \"message\": \"count fetched\",\n  \"data\": 1\n}",
+          "failure": ""
+        }
+      ],
+      "console": [
+        {
+          "level": "warning",
+          "text": "NG0912: Component ID generation collision detected. Components '_BulkBatchReportComponent' and '_BulkBeneBatchReportComponent' with selector 'app-bulk-batch-report' generated the same component ID. To fix this, you can change the selector of one of those components or add an extra host attribute to force a different ID. Find more at https://v20.angular.dev/errors/NG0912",
+          "at_ms": 17397,
+          "location": "https://uat.sprintnxt.in/NexGenV4Front/chunk-CGKUL63J.js:14705"
+        }
+      ],
+      "network_failures": [],
+      "captured_output": "----- Captured log setup -----\nINFO     reporting:plugin.py:210 START   E2E-001  tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]",
+      "start": "2026-10-15T18:23:46.189+05:30",
+      "end": "2026-10-15T18:25:02.411+05:30",
+      "duration_ms": 76221,
+      "browser": "chromium 145.0.7632.6",
+      "worker": "main",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "PASS",
+          "duration_ms": 76221,
+          "failure_reason": "",
+          "failure_category": ""
+        }
+      ],
+      "retries": 0,
+      "flaky": false,
+      "user_properties": {}
+    }
+  ],
+  "history": [
+    {
+      "run_id": "2026-10-15_13-40-41_demo-sequential",
+      "name": "Demo - sequential",
+      "start": "2026-10-15T13:40:41.471+05:30",
+      "duration_ms": 21736,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_13-40-41_demo-sequential/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_13-41-13_demo-parallel",
+      "name": "Demo - parallel",
+      "start": "2026-10-15T13:41:13.351+05:30",
+      "duration_ms": 35688,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_13-41-13_demo-parallel/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_14-23-42_demo-log-order-check",
+      "name": "Demo - log order check",
+      "start": "2026-10-15T14:23:42.217+05:30",
+      "duration_ms": 26069,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_14-23-42_demo-log-order-check/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_15-04-03_full-suite",
+      "name": "Full suite",
+      "start": "2026-10-15T15:04:03.605+05:30",
+      "duration_ms": 1347807,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_15-04-03_full-suite/html/index.html",
+      "total": 81,
+      "passed": 2,
+      "failed": 64,
+      "blocked": 14,
+      "skipped": 1,
+      "pass_rate": 2.5,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-01-08_demo-media-check",
+      "name": "Demo - media check",
+      "start": "2026-10-15T16:01:08.705+05:30",
+      "duration_ms": 34211,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-01-08_demo-media-check/html/index.html",
+      "total": 12,
+      "passed": 5,
+      "failed": 3,
+      "blocked": 2,
+      "skipped": 2,
+      "pass_rate": 50.0,
+      "flaky": 1
+    },
+    {
+      "run_id": "2026-10-15_16-40-58_registration-headed",
+      "name": "Registration (headed)",
+      "start": "2026-10-15T16:40:58.097+05:30",
+      "duration_ms": 402964,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-40-58_registration-headed/html/index.html",
+      "total": 42,
+      "passed": 41,
+      "failed": 1,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 97.6,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-51-11_registration-reg-001-rerun",
+      "name": "Registration REG-001 rerun",
+      "start": "2026-10-15T16:51:11.344+05:30",
+      "duration_ms": 21129,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-51-11_registration-reg-001-rerun/html/index.html",
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 100.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-52-16_login",
+      "name": "Login",
+      "start": "2026-10-15T16:52:16.301+05:30",
+      "duration_ms": 270293,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-52-16_login/html/index.html",
+      "total": 13,
+      "passed": 0,
+      "failed": 12,
+      "blocked": 1,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_16-57-09_forgot-password",
+      "name": "Forgot Password",
+      "start": "2026-10-15T16:57:09.803+05:30",
+      "duration_ms": 227823,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_16-57-09_forgot-password/html/index.html",
+      "total": 12,
+      "passed": 1,
+      "failed": 11,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 8.3,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_17-01-19_change-password",
+      "name": "Change Password",
+      "start": "2026-10-15T17:01:19.810+05:30",
+      "duration_ms": 21357,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_17-01-19_change-password/html/index.html",
+      "total": 11,
+      "passed": 0,
+      "failed": 0,
+      "blocked": 11,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_17-01-54_admin",
+      "name": "Admin",
+      "start": "2026-10-15T17:01:54.618+05:30",
+      "duration_ms": 8695,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_17-01-54_admin/html/index.html",
+      "total": 2,
+      "passed": 0,
+      "failed": 0,
+      "blocked": 2,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_17-02-17_e2e",
+      "name": "E2e",
+      "start": "2026-10-15T17:02:17.737+05:30",
+      "duration_ms": 34562,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_17-02-17_e2e/html/index.html",
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_17-07-19_login",
+      "name": "Login",
+      "start": "2026-10-15T17:07:19.460+05:30",
+      "duration_ms": 94788,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_17-07-19_login/html/index.html",
+      "total": 13,
+      "passed": 12,
+      "failed": 0,
+      "blocked": 1,
+      "skipped": 0,
+      "pass_rate": 92.3,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_17-09-15_forgot-password",
+      "name": "Forgot Password",
+      "start": "2026-10-15T17:09:15.646+05:30",
+      "duration_ms": 167534,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_17-09-15_forgot-password/html/index.html",
+      "total": 12,
+      "passed": 11,
+      "failed": 0,
+      "blocked": 1,
+      "skipped": 0,
+      "pass_rate": 91.7,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_17-12-16_e2e",
+      "name": "E2e",
+      "start": "2026-10-15T17:12:16.352+05:30",
+      "duration_ms": 26029,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_17-12-16_e2e/html/index.html",
+      "total": 1,
+      "passed": 0,
+      "failed": 0,
+      "blocked": 1,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_18-08-14_admin",
+      "name": "Admin",
+      "start": "2026-10-15T18:08:14.706+05:30",
+      "duration_ms": 39997,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_18-08-14_admin/html/index.html",
+      "total": 3,
+      "passed": 2,
+      "failed": 0,
+      "blocked": 1,
+      "skipped": 0,
+      "pass_rate": 66.7,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_18-12-41_admin-e2e",
+      "name": "Admin + E2E",
+      "start": "2026-10-15T18:12:41.554+05:30",
+      "duration_ms": 55162,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_18-12-41_admin-e2e/html/index.html",
+      "total": 4,
+      "passed": 2,
+      "failed": 1,
+      "blocked": 1,
+      "skipped": 0,
+      "pass_rate": 50.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_18-15-45_e2e",
+      "name": "E2E",
+      "start": "2026-10-15T18:15:45.215+05:30",
+      "duration_ms": 52259,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_18-15-45_e2e/html/index.html",
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_18-17-19_e2e",
+      "name": "E2E",
+      "start": "2026-10-15T18:17:18.991+05:30",
+      "duration_ms": 73092,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_18-17-19_e2e/html/index.html",
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_18-19-28_e2e",
+      "name": "E2E",
+      "start": "2026-10-15T18:19:28.306+05:30",
+      "duration_ms": 108299,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_18-19-28_e2e/html/index.html",
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 0.0,
+      "flaky": 0
+    },
+    {
+      "run_id": "2026-10-15_18-23-44_e2e",
+      "name": "E2E",
+      "start": "2026-10-15T18:23:44.776+05:30",
+      "duration_ms": 77649,
+      "environment": "UAT",
+      "build": "local",
+      "report": "runs/2026-10-15_18-23-44_e2e/html/index.html",
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "blocked": 0,
+      "skipped": 0,
+      "pass_rate": 100.0,
+      "flaky": 0
+    }
+  ],
+  "test_history": {
+    "tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]": [
+      "FAIL",
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "PASS"
+    ],
+    "tests/test_login.py::test_login_valid[chromium]": [
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_wrong_password[chromium]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_unregistered_email[chromium]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-no-at-or-domain]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_empty[chromium]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-at]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-domain]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-tld]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-double-at]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-space-in-local]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-illegal-chars]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-missing-local]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_login.py::test_login_invalid_email_format[chromium-empty]": [
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_valid_email[chromium]": [
+      "-",
+      "-",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_empty[chromium]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]": [
+      "-",
+      "-",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_admin_activation.py::test_admin_login[chromium]": [
+      "-",
+      "-",
+      "-",
+      "-",
+      "PASS",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_admin_activation.py::test_register_partner_list[chromium]": [
+      "-",
+      "-",
+      "-",
+      "-",
+      "PASS",
+      "PASS",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    "tests/test_admin_activation.py::test_activate_merchant[chromium]": [
+      "-",
+      "-",
+      "-",
+      "-",
+      "BLOCKED",
+      "BLOCKED",
+      "-",
+      "-",
+      "-",
+      "-"
+    ]
+  }
+}

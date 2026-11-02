@@ -1,0 +1,27 @@
+2026-10-15 16:57:09,839 INFO    [reporting] Run 2026-10-15_16-57-09_forgot-password started (worker=main, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_16-57-09_forgot-password)
+2026-10-15 16:57:10,547 INFO    [reporting] START   FPW-FD211  tests/test_forgot_password.py::test_forgot_valid_email[chromium]
+2026-10-15 16:57:21,252 INFO    [reporting] FINISH  FPW-FD211  FAIL  tests/test_forgot_password.py::test_forgot_valid_email[chromium]  10.69s  -> assert 'error' not in 'error\nthe ...s not valid!' 'error' is contained here: error the provided information is not valid!
+2026-10-15 16:57:21,258 INFO    [reporting] START   FPW-7AA29[no-at-or-domain]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]
+2026-10-15 16:57:41,368 INFO    [reporting] FINISH  FPW-7AA29[no-at-or-domain]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-no-at-or-domain]  20.10s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 16:57:41,372 INFO    [reporting] START   FPW-46640  tests/test_forgot_password.py::test_forgot_empty[chromium]
+2026-10-15 16:58:01,253 INFO    [reporting] FINISH  FPW-46640  FAIL  tests/test_forgot_password.py::test_forgot_empty[chromium]  19.87s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 16:58:01,257 INFO    [reporting] START   FPW-0182C  tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]
+2026-10-15 16:58:12,185 INFO    [reporting] FINISH  FPW-0182C  PASS  tests/test_forgot_password.py::test_forgot_no_account_enumeration[chromium]  10.93s
+2026-10-15 16:58:12,189 INFO    [reporting] START   FPW-7AA29[missing-at]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]
+2026-10-15 16:58:34,592 INFO    [reporting] FINISH  FPW-7AA29[missing-at]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-at]  22.39s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 16:58:34,595 INFO    [reporting] START   FPW-7AA29[missing-domain]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]
+2026-10-15 16:58:54,414 INFO    [reporting] FINISH  FPW-7AA29[missing-domain]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-domain]  19.81s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 16:58:54,418 INFO    [reporting] START   FPW-7AA29[missing-tld]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]
+2026-10-15 16:59:13,883 INFO    [reporting] FINISH  FPW-7AA29[missing-tld]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-tld]  19.46s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 16:59:13,886 INFO    [reporting] START   FPW-7AA29[double-at]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]
+2026-10-15 16:59:33,331 INFO    [reporting] FINISH  FPW-7AA29[double-at]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-double-at]  19.44s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 16:59:33,335 INFO    [reporting] START   FPW-7AA29[space-in-local]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]
+2026-10-15 16:59:54,797 INFO    [reporting] FINISH  FPW-7AA29[space-in-local]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-space-in-local]  21.45s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 16:59:54,801 INFO    [reporting] START   FPW-7AA29[illegal-chars]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]
+2026-10-15 17:00:14,908 INFO    [reporting] FINISH  FPW-7AA29[illegal-chars]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-illegal-chars]  20.10s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 17:00:14,911 INFO    [reporting] START   FPW-7AA29[missing-local]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]
+2026-10-15 17:00:37,105 INFO    [reporting] FINISH  FPW-7AA29[missing-local]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-missing-local]  22.18s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 17:00:37,108 INFO    [reporting] START   FPW-7AA29[empty]  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]
+2026-10-15 17:00:57,623 INFO    [reporting] FINISH  FPW-7AA29[empty]  FAIL  tests/test_forgot_password.py::test_forgot_invalid_email_format[chromium-empty]  20.50s  -> TimeoutError: Locator.click: Timeout 15000ms exceeded.
+2026-10-15 17:01:12,187 INFO    [reporting] Deleted old screenshots/videos: 2026-10-15_16-52-16_login
+2026-10-15 17:01:12,188 INFO    [reporting] Report written: C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_16-57-09_forgot-password\html\index.html

@@ -1,0 +1,73 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+BANK-012,Account number rejects letters,Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,,"1. Open the login page
+2. Log in as 'qa.auto+1792068835260190@gmail.com'
+3. Finish login (OTP / Proceed if asked)
+4. Open Add Bank
+5. Select bank 'IDFC First Bank'
+6. Choose services {services}
+7. Continue to Fill Details
+8. Fill bank details {data}
+9. Click Submit",An error under Bank Account Number (UAT 2026-10-16: 'abcdefghij' was accepted),Not as expected: Letters accepted as an account number assert '' + where '' = field_error('Bank Account Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000205EC2D23C0>.field_error,FAIL,Letters accepted as an account number assert '' + where '' = field_error('Bank Account Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000205EC2D23C0>.field_error,Assertion Failure,"form = <pages.add_bank_page.AddBankPage object at 0x00000205EC2D23C0>
+
+    @pytest.mark.negative
+    @tc(""BANK-012"", ""Account number rejects letters"", module=MODULE, feature=""Field validation"",
+        types=[""Negative"", ""Validation""], preconditions=[ON_FORM],
+        expected=""An error under Bank Account Number (UAT 2026-10-16: 'abcdefghij' was accepted)"")
+    def test_account_number_letters(form):
+        form.fill_details({""Bank Account Number"": ""abcdefghij""}).submit()
+>       assert form.field_error(""Bank Account Number""), ""Letters accepted as an account number""
+E       AssertionError: Letters accepted as an account number
+E       assert ''
+E        +  where '' = field_error('Bank Account Number')
+E        +    where field_error = <pages.add_bank_page.AddBankPage object at 0x00000205EC2D23C0>.field_error
+
+tests\test_add_bank.py:164: AssertionError",screenshots/123414_BANK-012_a1_1.png,,,2026-10-16T12:33:53.825+05:30,2026-10-16T12:34:14.658+05:30,20.83,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_account_number_letters[chromium]
+BANK-013,Organisation name rejects symbols only,Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",An error under Organisation Name (UAT 2026-10-16: '@@##' was accepted),Not as expected: '@@##' accepted as organisation name assert '' + where '' = field_error('Organisation Name') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000205EBFFF4D0>.field_error,FAIL,'@@##' accepted as organisation name assert '' + where '' = field_error('Organisation Name') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000205EBFFF4D0>.field_error,Assertion Failure,"form = <pages.add_bank_page.AddBankPage object at 0x00000205EBFFF4D0>
+
+    @pytest.mark.negative
+    @tc(""BANK-013"", ""Organisation name rejects symbols only"", module=MODULE, feature=""Field validation"",
+        types=[""Negative"", ""Validation""], preconditions=[ON_FORM],
+        expected=""An error under Organisation Name (UAT 2026-10-16: '@@##' was accepted)"")
+    def test_organisation_symbols(form):
+        form.fill_details({""Organisation Name"": ""@@##""}).submit()
+>       assert form.field_error(""Organisation Name""), ""'@@##' accepted as organisation name""
+E       AssertionError: '@@##' accepted as organisation name
+E       assert ''
+E        +  where '' = field_error('Organisation Name')
+E        +    where field_error = <pages.add_bank_page.AddBankPage object at 0x00000205EBFFF4D0>.field_error
+
+tests\test_add_bank.py:173: AssertionError",screenshots/123416_BANK-013_a1_1.png,,,2026-10-16T12:34:14.663+05:30,2026-10-16T12:34:16.344+05:30,1.68,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_organisation_symbols[chromium]
+BANK-007[Registered Mobile Number],Mandatory field cannot be empty [Registered Mobile Number],Add Bank,Mandatory fields,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,label = Registered Mobile Number,"1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Clear 'Registered Mobile Number'
+6. Click Submit",'Field is required' under the field,Not as expected: Registered Mobile Number: got '' assert 'Field is required' in '' + where '' = field_error('Registered Mobile Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000205EC5C8A50>.field_error,FAIL,Registered Mobile Number: got '' assert 'Field is required' in '' + where '' = field_error('Registered Mobile Number') + where field_error = <pages.add_bank_page.AddBankPage object at 0x00000205EC5C8A50>.field_error,Assertion Failure,"form = <pages.add_bank_page.AddBankPage object at 0x00000205EC5C8A50>
+label = 'Registered Mobile Number'
+
+    @pytest.mark.negative
+    @pytest.mark.parametrize(""label"", MANDATORY_FIELDS)
+    @tc(""BANK-007"", ""Mandatory field cannot be empty"", module=MODULE, feature=""Mandatory fields"",
+        types=[""Negative"", ""Validation""], preconditions=[ON_FORM], expected=f""'{MSG_REQUIRED}' under the field"")
+    def test_mandatory(form, label):
+        form.clear(label).submit()
+>       assert MSG_REQUIRED in form.field_error(label), f""{label}: got '{form.field_error(label)}'""
+E       AssertionError: Registered Mobile Number: got ''
+E       assert 'Field is required' in ''
+E        +  where '' = field_error('Registered Mobile Number')
+E        +    where field_error = <pages.add_bank_page.AddBankPage object at 0x00000205EC5C8A50>.field_error
+
+tests\test_add_bank.py:119: AssertionError",screenshots/123418_BANK-007_Registered_Mobile_Number_a1_1.png,,,2026-10-16T12:34:16.349+05:30,2026-10-16T12:34:18.925+05:30,2.58,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_mandatory[chromium-Registered Mobile Number]
+BANK-009[mobile-letters],Invalid value shows its error [mobile-letters],Add Bank,Field validation,"Negative, Validation",Add Bank > IDFC First Bank > Payout > Fill Details is open,"label = Registered Mobile Number
+value = abcdefghij
+message = Invalid Registered Mobile Number","1. Open Add Bank
+2. Select bank 'IDFC First Bank'
+3. Choose services {services}
+4. Continue to Fill Details
+5. Fill bank details {data}
+6. Click Submit",The field's validation message,As expected: The field's validation message,PASS,,,,,,,2026-10-16T12:34:18.928+05:30,2026-10-16T12:34:21.419+05:30,2.49,chromium 145.0.7632.6,UAT,Office,local,3,0,0,0,False,tests/test_add_bank.py::test_invalid_input[chromium-mobile-letters]

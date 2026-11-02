@@ -1,0 +1,8 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+E2E-06F59,Register -> (Admin activates) -> Merchant login -> Change password (round-trip),End-to-End,E2e merchant journey,"End-to-End, Functional",Browser launched with a fresh context (geolocation granted),,"1. Open the signup page
+2. Register merchant 'qa.auto+1792064541998386@gmail.com' / '9004375550' [FAILED]
+3.   Enter name 'Krish Varghese' and business 'Narang Raj'
+4.   Enter email 'qa.auto+1792064541998386@gmail.com'
+5.   Verify email with OTP
+6.   Enter mobile '9004375550'
+7.   Verify mobile with OTP [FAILED]",All assertions in the test pass,"Not executed (blocked): UAT rate-limited send-otp (HTTP 429, 'Too many attempts from this network'). Re-run OTP tests after the block expires.",BLOCKED,"UAT rate-limited send-otp (HTTP 429, 'Too many attempts from this network'). Re-run OTP tests after the block expires.",Precondition Not Met,,,,,2026-10-15T17:12:17.043+05:30,2026-10-15T17:12:42.374+05:30,25.33,chromium 145.0.7632.6,UAT,Office,local,4,2,1,0,False,tests/test_e2e_merchant_journey.py::test_full_merchant_journey[chromium]

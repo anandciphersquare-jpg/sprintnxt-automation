@@ -1,0 +1,15 @@
+2026-10-15 13:41:19,413 INFO    [reporting] Run 2026-10-15_13-41-13_demo-parallel started (worker=gw0, reports=C:\Users\Office\Downloads\sprintnxt-automation\reports\runs\2026-10-15_13-41-13_demo-parallel)
+2026-10-15 13:41:19,680 INFO    [reporting] START   DEMO-001  examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]
+2026-10-15 13:41:28,882 INFO    [reporting] FINISH  DEMO-001  PASS  examples/reporting_demo/test_reporting_demo.py::test_login_success[chromium]  9.20s
+2026-10-15 13:41:28,890 INFO    [reporting] START   DEMO-002[no-at]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]
+2026-10-15 13:41:30,687 INFO    [reporting] FINISH  DEMO-002[no-at]  PASS  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-no-at]  1.79s
+2026-10-15 13:41:30,693 INFO    [reporting] START   DEMO-005  examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]
+2026-10-15 13:41:37,453 INFO    [reporting] FINISH  DEMO-005  FAIL  examples/reporting_demo/test_reporting_demo.py::test_send_otp_rate_limited[chromium]  6.74s  -> Locator expected to be visible Actual value: None Error: element(s) not found
+2026-10-15 13:41:37,459 INFO    [reporting] START   DEMO-007  examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]
+2026-10-15 13:41:39,150 INFO    [reporting] FINISH  DEMO-007  SKIPPED  examples/reporting_demo/test_reporting_demo.py::test_bulk_import[chromium]  1.69s  -> Bulk import is not part of release 4.2
+2026-10-15 13:41:39,156 INFO    [reporting] START   DEMO-009  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]
+2026-10-15 13:41:42,811 INFO    [reporting] FINISH  DEMO-009  FAIL  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]  3.64s  -> Banner did not render in time (simulated race condition) assert 1 >= 2
+2026-10-15 13:41:42,825 INFO    [reporting] START   DEMO-009  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium] (attempt 2)
+2026-10-15 13:41:45,008 INFO    [reporting] FINISH  DEMO-009  PASS  examples/reporting_demo/test_reporting_demo.py::test_session_banner_flaky[chromium]  2.18s
+2026-10-15 13:41:45,018 INFO    [reporting] START   DEMO-002[missing-domain]  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]
+2026-10-15 13:41:48,459 INFO    [reporting] FINISH  DEMO-002[missing-domain]  PASS  examples/reporting_demo/test_reporting_demo.py::test_login_invalid_email[chromium-missing-domain]  3.44s

@@ -1,0 +1,11 @@
+﻿Test Case ID,Test Case Name,Module,Feature/Flow,Type,Preconditions,Test Data,Steps,Expected Result,Actual Result,Status,Failure Reason,Failure Category,Error / Stack Trace,Screenshots,Video,Trace,Start,End,Duration (s),Browser,Environment,Executed By,Build,API Calls,Console Errors,Network Failures,Retries,Flaky,Node ID
+API-001,API Access Control opens from Profile & Settings,API Access,API keys,Functional,Activated merchant is logged in,,"1. Open the login page
+2. Log in as 'qa.auto+1792068835260190@gmail.com'
+3. Finish login (OTP / Proceed if asked)
+4. Open Profile & Settings > API Access Control","API Credentials, Authorized IPs and the webhook / 2FA tabs are shown","As expected: API Credentials, Authorized IPs and the webhook / 2FA tabs are shown",PASS,,,,,,,2026-10-16T11:28:30.940+05:30,2026-10-16T11:28:44.043+05:30,13.1,chromium 145.0.7632.6,UAT,Office,local,8,2,0,0,False,tests/test_api_access.py::test_api_access_tabs[chromium]
+API-002,Merchant has an active API key,API Access,API keys,"Functional, Smoke","Activated merchant is logged in
+API key OTP is 1234 on UAT",active keys = 1,"1. Open the login page
+2. Log in as 'qa.auto+1792068835260190@gmail.com'
+3. Finish login (OTP / Proceed if asked)
+4. Open Profile & Settings > API Access Control
+5. Make sure an active API key exists",An Active key is listed (generated with the OTP if there was none),As expected: An Active key is listed (generated with the OTP if there was none),PASS,,,,,,,2026-10-16T11:28:44.050+05:30,2026-10-16T11:29:18.404+05:30,34.35,chromium 145.0.7632.6,UAT,Office,local,9,1,0,0,False,tests/test_api_access.py::test_api_key_active[chromium]
